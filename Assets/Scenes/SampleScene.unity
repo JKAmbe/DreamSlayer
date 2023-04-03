@@ -2069,9 +2069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1441251643}
   smoothSpeed: 3
-  mouseStrength: 20
+  mouseStrength: 10
   offset: {x: 0, y: 1, z: -13}
-  mouseEffect: 0
+  mouseEffect: 1
 --- !u!1 &1038943243
 GameObject:
   m_ObjectHideFlags: 0
