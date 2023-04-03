@@ -242,7 +242,7 @@ MonoBehaviour:
   pewForce: 4
   duration: 1
   maxBeamSize: 3
-  playerSpeed: 40
+  playerSpeed: 39
   AxisDamping: {x: 0.5, y: 0.5}
   directionRange: {x: 60, y: 60, z: 60}
   RotationSpeed: 4

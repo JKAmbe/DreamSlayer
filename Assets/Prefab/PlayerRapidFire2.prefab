@@ -15,10 +15,10 @@ PrefabInstance:
     - target: {fileID: 8300535424414130617, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ef67851fd7e4714408badaf8e8626189, type: 2}
+      objectReference: {fileID: 2100000, guid: 2499911f714cf95488dfe4203fd406ca, type: 2}
     - target: {fileID: 8300535424414130620, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Name
-      value: PlayerRapidFire
+      value: PlayerRapidFire2
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_RootOrder
@@ -65,12 +65,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: pewForce
+      value: 6.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: firingMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: playerSpeed
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxRateOfFire
-      value: 0.11
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

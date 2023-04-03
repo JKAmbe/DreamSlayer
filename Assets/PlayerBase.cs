@@ -108,6 +108,14 @@ public class PlayerBase : MonoBehaviour
         {
             case aimingType.Mouse:
                 Direction = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, DistancePoint).normalized;
+
+                // use raycast to fix the direction?
+                //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                //if (Physics.Raycast(ray, out RaycastHit rayHit, 999f))
+                //{
+                //    Direction = rayHit.point;
+                //}
+                //Direction = Direction.normalized;
                 break;
             case aimingType.PitchYaw:
                 Direction = transform.forward;
