@@ -9,6 +9,7 @@ public class CharacterSwitchController : MonoBehaviour
     GameObject currentCharacter;
     Vector3 charPosition;
     public CameraFollow MainCamera;
+    public AimingReticle Reticle;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +37,11 @@ public class CharacterSwitchController : MonoBehaviour
         // disable all character except for the selected one
         foreach (GameObject character in CharacterPrefabs) { character.SetActive(false); }
         currentCharacter = CharacterPrefabs[characterIndex];
-        // move the character and update camera before activating
+        // for some reason the character's position needs to be changed before they can move
         currentCharacter.transform.position = charPosition;
-        MainCamera.target = currentCharacter.transform;
-
         CharacterPrefabs[characterIndex].SetActive(true);
+        MainCamera.target = currentCharacter.transform;
+        Reticle.player = currentCharacter;
     }
 
     // Cycle through and switch to different characters
