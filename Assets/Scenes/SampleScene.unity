@@ -1095,7 +1095,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 963194227}
-  m_PlaneDistance: 30
+  m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2021,7 +2021,7 @@ MonoBehaviour:
   target: {fileID: 0}
   smoothSpeed: 3
   mouseStrength: 10
-  offset: {x: 0, y: 1, z: -13}
+  offset: {x: 0, y: 0, z: -13}
   mouseEffect: 1
 --- !u!1 &991824465 stripped
 GameObject:
@@ -2604,6 +2604,10 @@ PrefabInstance:
     - target: {fileID: 8328457866238544013, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: duration
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

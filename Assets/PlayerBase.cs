@@ -107,7 +107,7 @@ public class PlayerBase : MonoBehaviour
         switch (aimingMode)
         {
             case aimingType.Mouse:
-                Direction = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, DistancePoint).normalized;
+                Direction = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, (Screen.width + Screen.height) / 4).normalized;
 
                 // use raycast to fix the direction?
                 //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
