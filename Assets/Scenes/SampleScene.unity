@@ -2343,6 +2343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0edd88bd1cf8441b0e27936266c118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aimingMode: 0
+  firingMode: 0
+  maxRateOfFire: 0.25
   pew: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
   spawn: {fileID: 790300550}
   DistancePoint: 250
@@ -2354,6 +2357,9 @@ MonoBehaviour:
   AxisDamping: {x: 0.5, y: 0.5}
   directionRange: {x: 60, y: 60, z: 60}
   RotationSpeed: 4
+  baseHealth: 0
+  currentHealth: 0
+  baseDamage: 0
 --- !u!1 &1520970404
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,18 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum aimingType 
+{
+    PitchYaw,
+    Mouse,
+    AutoLock
+};
+
+public enum firingType
+{
+    ChargeShot,
+    RapidFire,
+};
+
 public class PlayerBase : MonoBehaviour
 {
-    
+
     [Header("Firing System")]
+    public aimingType aimingMode;
+    public firingType firingMode;
+    public float ChargingSpeed = 10.0f;
+    public float maxRateOfFire = 0.5f;
     public GameObject pew;
     public Transform spawn;
     public float DistancePoint = 250f;
     public float pewForce = 4f;
     public int duration = 1;
     public float maxBeamSize = 10;
-    public bool mouseAim = true;
     private float beamSize = 0;
+    private float ROFTimer = 0;
+    private bool haveFired = false;
 
     [Header("Movement System")]
     public int playerSpeed;
@@ -22,6 +40,12 @@ public class PlayerBase : MonoBehaviour
     public float RotationSpeed = 4;
     CharacterController controller;
 
+    [Header("Health and Damage System")]
+    public int baseHealth;
+    public int currentHealth;
+    public int baseDamage;
+
+    
 
     private void Start()
     {
@@ -40,26 +64,65 @@ public class PlayerBase : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        if (!haveFired)
         {
-            ChargeBeam();
+            if (firingMode == firingType.RapidFire)
+            {
+                if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+                {
+                    FireBeam();
+                }
+            }
+            if (firingMode == firingType.ChargeShot)
+            {
+                if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0))
+                {
+                    FireBeam();
+                }
+                if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+                {
+                    ChargeBeam();
+                }
+            }
+            
         }
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0))
+        else
         {
-            Debug.Log(beamSize);
-            FireBeam();
+            ROFTimer += Time.deltaTime;
+            if (ROFTimer >= maxRateOfFire)
+            {
+                haveFired = false;
+                ROFTimer = 0;
+            }
         }
+        
+
+
     }
 
     private void FireBeam()
     {
-        Vector3 Direction = mouseAim ? new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, DistancePoint).normalized : transform.forward;
-        float tmp = Mathf.Pow(3, beamSize);
+        Debug.Log(beamSize);
+        Vector3 Direction = Vector3.forward;
+        switch (aimingMode)
+        {
+            case aimingType.Mouse:
+                Direction = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, DistancePoint).normalized;
+                break;
+            case aimingType.PitchYaw:
+                Direction = transform.forward;
+                break;
+            case aimingType.AutoLock:
+                //placeholder, direction should be whatever the target location is
+                break;
+        }
+        float tmp = Mathf.Pow(ChargingSpeed, beamSize);
         GameObject pewTmp = Instantiate(pew, spawn.position, Quaternion.identity, transform.parent);
         pewTmp.transform.localScale = pewTmp.transform.localScale * tmp;
         pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
         Destroy(pewTmp, duration);
         beamSize = 0;
+        haveFired = true;
     }
 
     private void ChargeBeam()
