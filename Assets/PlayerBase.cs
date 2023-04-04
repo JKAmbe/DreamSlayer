@@ -31,7 +31,6 @@ public class PlayerBase : MonoBehaviour
     public float maxBeamSize = 10;
     private float beamSize = 0;
     private float ROFTimer = 0;
-    private bool haveFired = false;
 
     [Header("Movement System")]
     public int playerSpeed;
@@ -64,12 +63,14 @@ public class PlayerBase : MonoBehaviour
     void Update()
     {
 
-        if (!haveFired)
+        if (Time.time - ROFTimer >= maxRateOfFire)
         {
+            
             if (firingMode == firingType.RapidFire)
             {
                 if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
                 {
+                    ROFTimer = Time.time;
                     FireBeam();
                 }
             }
@@ -77,6 +78,7 @@ public class PlayerBase : MonoBehaviour
             {
                 if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0))
                 {
+                    ROFTimer = Time.time;
                     FireBeam();
                 }
                 if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
@@ -86,18 +88,6 @@ public class PlayerBase : MonoBehaviour
             }
             
         }
-        else
-        {
-            ROFTimer += Time.deltaTime;
-            if (ROFTimer >= maxRateOfFire)
-            {
-                haveFired = false;
-                ROFTimer = 0;
-            }
-        }
-        
-
-
     }
 
     private void FireBeam()
@@ -108,14 +98,6 @@ public class PlayerBase : MonoBehaviour
         {
             case aimingType.Mouse:
                 Direction = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, (Screen.width + Screen.height) / 4).normalized;
-
-                // use raycast to fix the direction?
-                //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                //if (Physics.Raycast(ray, out RaycastHit rayHit, 999f))
-                //{
-                //    Direction = rayHit.point;
-                //}
-                //Direction = Direction.normalized;
                 break;
             case aimingType.PitchYaw:
                 Direction = transform.forward;
@@ -126,11 +108,11 @@ public class PlayerBase : MonoBehaviour
         }
         float tmp = Mathf.Pow(ChargingSpeed, beamSize);
         GameObject pewTmp = Instantiate(pew, spawn.position, Quaternion.identity, transform.parent);
+        pewTmp.GetComponent<AudioSource>().pitch = 1 / (beamSize+1);
         pewTmp.transform.localScale = pewTmp.transform.localScale * tmp;
         pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
         Destroy(pewTmp, duration);
         beamSize = 0;
-        haveFired = true;
     }
 
     private void ChargeBeam()

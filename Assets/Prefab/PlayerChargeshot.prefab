@@ -240,7 +240,7 @@ MonoBehaviour:
   spawn: {fileID: 8300535426183915264}
   DistancePoint: 250
   pewForce: 4
-  duration: 1
+  duration: 2
   maxBeamSize: 3
   playerSpeed: 39
   AxisDamping: {x: 0.5, y: 0.5}
