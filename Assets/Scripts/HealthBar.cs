@@ -6,32 +6,27 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 
 {
-    [SerializeField] private Image healthbarSprite;
 
     public float maxHealth;
-    [SerializeField] private float currentHealth;
+    public float currentHealth;
 
-    public void UpdateHealthBar(float maxHealth, float currentHealth)
-    {
-        healthbarSprite.fillAmount = currentHealth / maxHealth;
-    }
-
-
-
-
-
+    public Image healthBar;
 
 
     void Start()
     {
-        currentHealth = maxHealth;
+       maxHealth = currentHealth;
     }
 
-   public void TakeDamage(float amount)
+    void Update()
+    {
+        healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
+    }
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("The player died");
             currentHealth = maxHealth;

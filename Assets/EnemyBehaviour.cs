@@ -19,8 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool seePlayer;
 
+   
     public float damage;
-    public float KOtime;
     private bool isAttack;
 
     void Start()
@@ -74,7 +74,8 @@ public class EnemyBehaviour : MonoBehaviour
         if(collision.collider.tag == "Player")
         {
             collision.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
-            Destroy(gameObject);
+           
+            Destroy(this.gameObject);
         }
     }
 
