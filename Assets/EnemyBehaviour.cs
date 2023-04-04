@@ -56,7 +56,6 @@ public class EnemyBehaviour : MonoBehaviour
                 }
                 else
                 {
-
                     var heading = target.transform.position - transform.position;
                     var distance = heading.magnitude;
                     var direction = heading / distance;
