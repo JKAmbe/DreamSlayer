@@ -19,7 +19,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool seePlayer;
 
-
+    public float damage;
+    public float KOtime;
+    private bool isAttack;
 
     void Start()
     {
@@ -66,4 +68,17 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Player")
+        {
+            collision.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+
+
+
+
 }
