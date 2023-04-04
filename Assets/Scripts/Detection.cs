@@ -14,6 +14,7 @@ public class Detection : MonoBehaviour
     public float shootSpeed = 10f;
     public float timetoShoot = 1.3f;
     float originalTime;
+    public float damage;
     void Start()
     {
         originalTime = timetoShoot;
@@ -26,6 +27,7 @@ public class Detection : MonoBehaviour
         {
             enemy.LookAt(target.transform);
         }
+
     }
 
     private void FixedUpdate()
@@ -42,11 +44,16 @@ public class Detection : MonoBehaviour
 
           
         }
+
+        if (originalTime > 5)
+        {
+            Destroy(bullet);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.gameObject.CompareTag("Player"))
         {
             detected = true;
             target = other.gameObject;
@@ -65,7 +72,9 @@ public class Detection : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            Destroy(bullet);
+            collision.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+
+            Destroy(this.bullet);
         }
     }
 }

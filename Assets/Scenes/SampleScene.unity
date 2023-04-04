@@ -2251,8 +2251,9 @@ MonoBehaviour:
   enemy: {fileID: 515235830}
   bullet: {fileID: 7270365283419375815, guid: 86be5507841cbec4c8e37ea30ecf227c, type: 3}
   shootPoint: {fileID: 330384859}
-  shootSpeed: 300
+  shootSpeed: 200
   timetoShoot: 1
+  damage: 10
 --- !u!65 &911074535
 BoxCollider:
   m_ObjectHideFlags: 0
