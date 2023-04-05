@@ -44,10 +44,14 @@ public class PlayerBase : MonoBehaviour
     public int currentHealth;
     public int baseDamage;
 
+    public float maxHealth;
+    public float health;
+
     
 
     private void Start()
     {
+     
         controller = GetComponent<CharacterController>();
     }
     // Update is called once per frame
