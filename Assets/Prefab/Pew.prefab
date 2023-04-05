@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4459663804099346764}
   - component: {fileID: -6524794342506791688}
   - component: {fileID: -6091449043167223559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5078,7 +5078,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &-6524794342506791688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5124,7 +5124,7 @@ GameObject:
   - component: {fileID: 7730886760505896428}
   - component: {fileID: 4309000121765929330}
   - component: {fileID: 8940409840769524482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

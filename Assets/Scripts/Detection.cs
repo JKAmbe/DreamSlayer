@@ -45,13 +45,6 @@ public class Detection : MonoBehaviour
                 ShootPlayer();
                 timetoShoot = originalTime;
             }
-
-          
-        }
-
-        if (originalTime > 5)
-        {
-            Destroy(bullet);
         }
     }
 
@@ -59,6 +52,8 @@ public class Detection : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            Debug.Log(transform.parent);
+            transform.parent = transform.parent.parent;
             detected = true;
             target = other.gameObject;
         }
@@ -68,7 +63,7 @@ public class Detection : MonoBehaviour
     {
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
-
+        Destroy(currentBullet, 5);
         rb.AddForce(transform.forward * shootSpeed, ForceMode.VelocityChange);
     }
 

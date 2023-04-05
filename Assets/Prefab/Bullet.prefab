@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   enemyBullet: {fileID: 7270365283419375815}
-  despwantimer: 3
+  despwantimer: 4
 --- !u!96 &7626242596434858512
 TrailRenderer:
   serializedVersion: 3

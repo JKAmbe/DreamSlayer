@@ -24,11 +24,7 @@ public class Enemyhealthbar : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-
         if (currentHealth <= 0)
-        {
             Destroy(gameObject);
-           
-        }
     }
 }
