@@ -5,9 +5,12 @@ using UnityEngine;
 public class BulletCollision : MonoBehaviour
 {
     public float damage;
+    public GameObject enemyBullet;
+    public float despwantimer;
+
     void Start()
     {
-        
+        Destroy(this.gameObject, despwantimer);
     }
 
     // Update is called once per frame
@@ -16,12 +19,12 @@ public class BulletCollision : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "Player")
+        if (other.GetComponent<Collider>().tag == "Player")
         {
-            collision.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
-
+            other.GetComponent<Collider>().gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+        
             Destroy(this.gameObject);
         }
     }

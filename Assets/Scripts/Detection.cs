@@ -25,7 +25,11 @@ public class Detection : MonoBehaviour
     {
         if (detected)
         {
-            enemy.LookAt(target.transform);
+            if (target)
+            {
+                enemy.LookAt(target.transform);
+            }
+            
         }
 
     }

@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class HealthBar : MonoBehaviour
-
+public class Enemyhealthbar : MonoBehaviour
 {
-
     public float maxHealth;
     public float currentHealth;
 
@@ -16,7 +14,7 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-       maxHealth = currentHealth;
+        maxHealth = currentHealth;
     }
 
     void Update()
@@ -29,10 +27,8 @@ public class HealthBar : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-         
-            
-            
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+            Destroy(gameObject);
+           
         }
     }
 }

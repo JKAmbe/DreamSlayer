@@ -74,7 +74,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             collision.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
            
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.2f);
         }
     }
 
