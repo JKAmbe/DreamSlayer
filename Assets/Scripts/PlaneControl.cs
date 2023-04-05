@@ -17,9 +17,9 @@ public class PlaneControl : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + Vector3.back * Speed * Time.deltaTime;
-        if (transform.position.z < destoryPosition)
-        {
-            GameObject.Destroy(gameObject);
-        }
+        // if (transform.position.z < destoryPosition)
+        // {
+        //     GameObject.Destroy(gameObject);
+        // }
     }
 }
