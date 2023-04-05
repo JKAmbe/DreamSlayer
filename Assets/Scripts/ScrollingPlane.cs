@@ -13,10 +13,11 @@ public class ScrollingPlane : MonoBehaviour
     {
         ScrollPlane();
     }
+    
 
     void ScrollPlane()
     {
-        GameObject.Instantiate(Plane, new Vector3(0, 0, StartingZ), Quaternion.identity);
-        Invoke("ScrollPlane", 10);
+        GameObject.Instantiate(Plane, new Vector3(0, -13, StartingZ), Quaternion.identity);
+        Invoke("ScrollPlane", 1);
     }
 }
