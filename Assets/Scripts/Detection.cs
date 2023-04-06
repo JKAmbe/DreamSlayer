@@ -53,7 +53,7 @@ public class Detection : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log(transform.parent);
-            transform.parent = transform.parent.parent;
+            transform.SetParent(transform.parent.parent, true);
             detected = true;
             target = other.gameObject;
         }
