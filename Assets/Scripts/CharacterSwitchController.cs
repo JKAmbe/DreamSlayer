@@ -30,7 +30,7 @@ public class CharacterSwitchController : MonoBehaviour
 
     void ActivateCharacter(int characterIndex)
     {
-        Debug.Log("Activate character at index " + characterIndex);
+        //Debug.Log("Activate character at index " + characterIndex);
         // Save the posistion of the current character
         charPosition = currentCharacter.transform.position;
 

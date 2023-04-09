@@ -17,15 +17,16 @@ public enum firingType
 
 public class PlayerBase : MonoBehaviour
 {
-
+    Camera cam;
+    
     [Header("Firing System")]
+    public float planeDistance;
     public aimingType aimingMode;
     public firingType firingMode;
     public float ChargingSpeed = 10.0f;
     public float maxRateOfFire = 0.5f;
     public GameObject pew;
     public Transform spawn;
-    public float DistancePoint = 250f;
     public float pewForce = 4f;
     public int duration = 1;
     public float maxBeamSize = 10;
@@ -39,19 +40,10 @@ public class PlayerBase : MonoBehaviour
     public float RotationSpeed = 4;
     CharacterController controller;
 
-    [Header("Health and Damage System")]
-    public int baseHealth;
-    public int currentHealth;
-    public int baseDamage;
-
-    public float maxHealth;
-    public float health;
-
-    
 
     private void Start()
     {
-     
+        cam = Camera.main;
         controller = GetComponent<CharacterController>();
     }
     // Update is called once per frame
@@ -96,12 +88,13 @@ public class PlayerBase : MonoBehaviour
 
     private void FireBeam()
     {
-        Debug.Log(beamSize);
+
+        //Debug.Log(beamSize);
         Vector3 Direction = Vector3.forward;
         switch (aimingMode)
         {
             case aimingType.Mouse:
-                Direction = new Vector3(Input.mousePosition.x - Screen.width / 2, Input.mousePosition.y - Screen.height / 2, (Screen.width + Screen.height) / 4).normalized;
+                Direction = (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
                 break;
             case aimingType.PitchYaw:
                 Direction = transform.forward;

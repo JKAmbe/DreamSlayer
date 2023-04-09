@@ -23,6 +23,7 @@ public class Enemyhealthbar : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
+        Debug.Log(currentHealth);
         currentHealth -= amount;
         if (currentHealth <= 0)
             Destroy(gameObject);
