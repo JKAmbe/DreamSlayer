@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AimingReticle : MonoBehaviour
@@ -10,6 +10,7 @@ public class AimingReticle : MonoBehaviour
     public GameObject nearReticle;
     Canvas canvas;
     public GameObject player;
+    public Sprite ReticleSprite;
 
     void Start()
     {
@@ -45,10 +46,11 @@ public class AimingReticle : MonoBehaviour
                     break;
             }
         }
+    }
 
-       
-        
-
-        
+    public void ChangeCrosshairSprite(Sprite newCrosshairSprite)
+    {
+        farReticle.GetComponent<Image>().sprite = newCrosshairSprite;
+        nearReticle.GetComponent<Image>().sprite = newCrosshairSprite;
     }
 }

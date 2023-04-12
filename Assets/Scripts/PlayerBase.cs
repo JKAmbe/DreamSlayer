@@ -18,8 +18,9 @@ public enum firingType
 public class PlayerBase : MonoBehaviour
 {
     Camera cam;
-    
+
     [Header("Firing System")]
+    public Sprite Reticle;
     public float planeDistance;
     public aimingType aimingMode;
     public firingType firingMode;
