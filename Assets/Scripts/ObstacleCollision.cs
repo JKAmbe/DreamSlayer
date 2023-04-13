@@ -8,9 +8,11 @@ public class ObstacleCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log(other.name);
+            other.GetComponentInChildren<HealthBar>().TakeDamage(25);
         }
     }
 }

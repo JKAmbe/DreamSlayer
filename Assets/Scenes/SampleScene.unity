@@ -1339,7 +1339,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &604907577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1993,7 +1993,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &801730446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2720,7 +2720,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &897196282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3054,7 +3054,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1088404127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3332,7 +3332,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1097912631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3737,10 +3737,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
-    - target: {fileID: 1710024374791769813, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: maxHealth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3876,7 +3872,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 78
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1204900726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4149,7 +4145,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1384388003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4371,7 +4367,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1502384338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4821,7 +4817,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1679028185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4901,10 +4897,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
-    - target: {fileID: 1666040130542888932, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
-      propertyPath: maxHealth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130620, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Name
       value: PlayerChargeshot
@@ -5343,7 +5335,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 78
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1804510098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5489,7 +5481,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1925482023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5640,7 +5632,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1953276223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5786,7 +5778,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1983921260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6200,10 +6192,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
-    - target: {fileID: 1710024374791769813, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: maxHealth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder
       value: -1

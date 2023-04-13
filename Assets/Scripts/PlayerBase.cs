@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum aimingType 
 {
@@ -116,5 +117,9 @@ public class PlayerBase : MonoBehaviour
     {
         beamSize += Time.deltaTime;
         beamSize = Mathf.Clamp(beamSize, 0, maxBeamSize);
+    }
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
 }

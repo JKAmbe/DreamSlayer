@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3481541356734329019}
   - component: {fileID: 7626242596434858512}
   - component: {fileID: 8394508224074357011}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &3481541356734329019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  enemyBullet: {fileID: 7270365283419375815}
   despwantimer: 4
 --- !u!96 &7626242596434858512
 TrailRenderer:
