@@ -20,7 +20,6 @@ public class PlayerBase : MonoBehaviour
     Camera cam;
 
     [Header("Firing System")]
-    public Sprite Reticle;
     public float planeDistance;
     public aimingType aimingMode;
     public firingType firingMode;
@@ -33,6 +32,10 @@ public class PlayerBase : MonoBehaviour
     public float maxBeamSize = 10;
     private float beamSize = 0;
     private float ROFTimer = 0;
+
+    [Header("Reticle")]
+    public Sprite Reticle;
+    public Color ReticleColor;
 
     [Header("Movement System")]
     public int playerSpeed;

@@ -101,6 +101,18 @@ PrefabInstance:
       value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: ReticleColor.b
+      value: 0.5613208
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: ReticleColor.g
+      value: 0.5613208
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: ReticleColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: directionRange.x
       value: 90
       objectReference: {fileID: 0}

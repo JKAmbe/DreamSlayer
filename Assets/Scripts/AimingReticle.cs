@@ -48,9 +48,11 @@ public class AimingReticle : MonoBehaviour
         }
     }
 
-    public void ChangeCrosshairSprite(Sprite newCrosshairSprite)
+    public void ChangeCrosshairSprite(Sprite newCrosshairSprite, Color newColor)
     {
         farReticle.GetComponent<Image>().sprite = newCrosshairSprite;
+        farReticle.GetComponent<Image>().color = newColor;
         nearReticle.GetComponent<Image>().sprite = newCrosshairSprite;
+        nearReticle.GetComponent<Image>().color = newColor;
     }
 }
