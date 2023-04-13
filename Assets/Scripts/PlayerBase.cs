@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum aimingType 
@@ -44,6 +45,7 @@ public class PlayerBase : MonoBehaviour
     public float RotationSpeed = 4;
     CharacterController controller;
 
+    public CharacterSwitchController switchController;
 
     private void Start()
     {
@@ -114,6 +116,9 @@ public class PlayerBase : MonoBehaviour
         pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
         Destroy(pewTmp, duration);
         beamSize = 0;
+
+        // call the reticle shooting animation from the parent PlayerManager
+        switchController.Reticle.GetComponent<Animator>().SetTrigger("Shoot");
     }
 
     private void ChargeBeam()
