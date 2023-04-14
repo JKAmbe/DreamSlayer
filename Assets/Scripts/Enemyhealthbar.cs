@@ -10,7 +10,9 @@ public class Enemyhealthbar : MonoBehaviour
     public float currentHealth;
 
     public Image healthBar;
-
+    
+    public Animator animator;
+    public ParticleSystem takeDamageParticle;
 
     void Start()
     {
@@ -25,6 +27,9 @@ public class Enemyhealthbar : MonoBehaviour
     {
         Debug.Log(currentHealth);
         currentHealth -= amount;
+        // trigger take damage animation
+        animator.SetTrigger("takeDamage");
+        takeDamageParticle.Play();
         if (currentHealth <= 0)
             Destroy(gameObject);
     }
