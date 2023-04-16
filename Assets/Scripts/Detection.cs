@@ -6,7 +6,6 @@ public class Detection : MonoBehaviour
 {
     bool detected;
     GameObject target;
-    public Transform enemy;
 
     public GameObject bullet;
     public Transform shootPoint;
@@ -14,7 +13,6 @@ public class Detection : MonoBehaviour
     public float shootSpeed = 10f;
     public float timetoShoot = 1.3f;
     float originalTime;
-    public float damage;
     void Start()
     {
         originalTime = timetoShoot;
@@ -27,7 +25,7 @@ public class Detection : MonoBehaviour
         {
             if (target)
             {
-                enemy.LookAt(target.transform);
+                transform.LookAt(target.transform);
             }
             
         }
@@ -50,7 +48,7 @@ public class Detection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             transform.SetParent(null, true);
             detected = true;
@@ -62,17 +60,7 @@ public class Detection : MonoBehaviour
     {
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
-        Destroy(currentBullet, 5);
         rb.AddForce(transform.forward * shootSpeed, ForceMode.VelocityChange);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            collision.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
-
-            Destroy(this.bullet);
-        }
-    }
 }

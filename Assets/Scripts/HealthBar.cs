@@ -28,9 +28,13 @@ public class HealthBar : MonoBehaviour
     {
         currentHealth -= amount;
         maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
-       
         if (currentHealth <= 0)
             Destroy(transform.parent.gameObject);
+    }
+    public void Heal (float amount)
+    {
+        currentHealth += amount;
+        maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
     }
 
 }

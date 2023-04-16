@@ -8,11 +8,9 @@ public class ObstacleCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("Player"))
         {
-            Debug.Log(other.name);
-            other.GetComponentInChildren<HealthBar>().TakeDamage(25);
+            other.GetComponentInChildren<HealthBar>().TakeDamage(50);
         }
     }
 }
