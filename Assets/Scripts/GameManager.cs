@@ -10,9 +10,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-    }
-
-    
+    }    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -20,11 +18,6 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
     }
-
-    
-
-
-
 
 
 }
