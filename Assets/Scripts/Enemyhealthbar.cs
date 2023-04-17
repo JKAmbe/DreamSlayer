@@ -13,6 +13,8 @@ public class Enemyhealthbar : MonoBehaviour
     
     public Animator animator;
     public ParticleSystem takeDamageParticle;
+    public GameObject deadParticleObject;
+    public AudioSource audiosource;
 
     void Start()
     {
@@ -30,7 +32,13 @@ public class Enemyhealthbar : MonoBehaviour
         // trigger take damage animation
         animator.SetTrigger("takeDamage");
         takeDamageParticle.Play();
+        audiosource.pitch = 1.0f + Random.Range(-0.25f, 0.25f);
+        audiosource.Play();
         if (currentHealth <= 0)
+        {
+            // play the dead particle
+            GameObject deadParticleInstance = Instantiate(deadParticleObject, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
     }
 }
