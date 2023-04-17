@@ -240,7 +240,7 @@ MonoBehaviour:
   maxRateOfFire: 0.25
   pew: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
   spawn: {fileID: 8300535426183915264}
-  pewForce: 2
+  pewForce: 1
   duration: 2
   maxBeamSize: 3
   Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
