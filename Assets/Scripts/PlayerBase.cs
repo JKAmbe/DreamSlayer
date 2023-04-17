@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum aimingType 
 {
@@ -19,6 +20,7 @@ public enum firingType
 public class PlayerBase : MonoBehaviour
 {
     Camera cam;
+    float damageMultiplier = 1;
 
     [Header("Firing System")]
     public float planeDistance;
@@ -114,6 +116,7 @@ public class PlayerBase : MonoBehaviour
         pewTmp.GetComponent<AudioSource>().pitch = 1 / (beamSize+1);
         pewTmp.transform.localScale = pewTmp.transform.localScale * tmp;
         pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
+        pewTmp.GetComponent<Projectile>().damage *= damageMultiplier;
         Destroy(pewTmp, duration);
         beamSize = 0;
 
@@ -125,5 +128,20 @@ public class PlayerBase : MonoBehaviour
     {
         beamSize += Time.deltaTime;
         beamSize = Mathf.Clamp(beamSize, 0, maxBeamSize);
+    }
+    public void BuffDamage(float multiplier, float buffDuration)
+    {
+        damageMultiplier = multiplier;
+        Invoke("revertBuff", buffDuration);
+    }
+
+    private void revertBuff()
+    {
+        damageMultiplier = 1;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

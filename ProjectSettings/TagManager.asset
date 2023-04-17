@@ -9,13 +9,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Health
+  - 
   - Water
   - UI
-  - Projectile
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Enemy Projectile
+  - Player Projectile
   - 
   - 
   - 

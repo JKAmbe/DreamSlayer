@@ -5,31 +5,36 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
-
 {
-
     public float maxHealth;
     public float currentHealth;
+    [SerializeField]
+    Image maskingBar;
+    [SerializeField]
+    Image healthBar;
 
-    public Image healthBar;
+    Vector2 baseSize;
 
-
-    void Start()
+     void Start()
     {
-        maxHealth = currentHealth;
+        maskingBar = GetComponentsInChildren<Image>()[0];
+        healthBar = GetComponentsInChildren<Image>()[1];
+        baseSize = maskingBar.rectTransform.sizeDelta;
+        currentHealth = maxHealth;
+        healthBar.pixelsPerUnitMultiplier = maxHealth / 400.0f;
     }
 
-    void Update()
-    {
-        healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
-    }
-    public void TakeDamage(float amount)
+    virtual public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-
+        maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
         if (currentHealth <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-        }
+            Destroy(transform.parent.gameObject);
     }
+    public void Heal (float amount)
+    {
+        currentHealth += amount;
+        maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
+    }
+
 }
