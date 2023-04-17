@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public enum aimingType 
 {
@@ -140,8 +140,4 @@ public class PlayerBase : MonoBehaviour
         damageMultiplier = 1;
     }
 
-    private void OnDestroy()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }

@@ -37,7 +37,7 @@ public class AimingReticle : MonoBehaviour
                     break;
                 case aimingType.PitchYaw:
                     Vector2 playerFrontDirection;
-                    RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, canvas.worldCamera.WorldToScreenPoint(player.transform.forward * 1000 + player.transform.position), canvas.worldCamera, out playerFrontDirection);
+                    RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, canvas.worldCamera.WorldToScreenPoint(player.transform.forward * 50 + player.transform.position), canvas.worldCamera, out playerFrontDirection);
                     farReticle.transform.position = canvas.transform.TransformPoint(playerFrontDirection);
                     nearReticle.transform.position = canvas.transform.TransformPoint((playerPos + playerFrontDirection) / 2);
                     break;
