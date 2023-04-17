@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
 
     Vector2 baseSize;
 
-    void Start()
+     void Start()
     {
         maskingBar = GetComponentsInChildren<Image>()[0];
         healthBar = GetComponentsInChildren<Image>()[1];
@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
         healthBar.pixelsPerUnitMultiplier = maxHealth / 400.0f;
     }
 
-    public void TakeDamage(float amount)
+    virtual public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);

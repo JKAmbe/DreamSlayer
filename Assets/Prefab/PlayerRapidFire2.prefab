@@ -97,6 +97,10 @@ PrefabInstance:
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: RotationSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxRateOfFire
       value: 0.08
       objectReference: {fileID: 0}
@@ -119,6 +123,10 @@ PrefabInstance:
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: directionRange.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: directionRange.z
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

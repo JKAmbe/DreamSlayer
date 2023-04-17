@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7270365283419375816}
   - component: {fileID: 7270365283419375817}
   - component: {fileID: 3949074990691356908}
-  - component: {fileID: 3481541356734329019}
   - component: {fileID: 8394508224074357011}
-  m_Layer: 7
+  - component: {fileID: 2725887308715302406}
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 385
+    m_Bits: 320
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -113,21 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &3481541356734329019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7270365283419375815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f680fc0057b553428c5aaeb4ed14ffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  maxTimer: 2
-  targetTag: Player
 --- !u!135 &8394508224074357011
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -141,7 +126,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 385
+    m_Bits: 320
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -149,3 +134,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.49999997
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2725887308715302406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7270365283419375815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec9eaab4f8f7bc4598a7c09556b30fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  maxTimer: 2
+  includeTag: Player

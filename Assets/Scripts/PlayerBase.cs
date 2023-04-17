@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public enum aimingType 
 {
@@ -21,7 +21,7 @@ public class PlayerBase : MonoBehaviour
 {
     Camera cam;
     float damageMultiplier = 1;
-   
+
     [Header("Firing System")]
     public float planeDistance;
     public aimingType aimingMode;
@@ -129,7 +129,6 @@ public class PlayerBase : MonoBehaviour
         beamSize += Time.deltaTime;
         beamSize = Mathf.Clamp(beamSize, 0, maxBeamSize);
     }
-
     public void BuffDamage(float multiplier, float buffDuration)
     {
         damageMultiplier = multiplier;
@@ -141,8 +140,4 @@ public class PlayerBase : MonoBehaviour
         damageMultiplier = 1;
     }
 
-    private void OnDestroy()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }

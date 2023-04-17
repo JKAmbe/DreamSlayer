@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float damage;
     public float maxTimer;
-    public string targetTag;
+    public string includeTag;
 
     void Start()
     {
@@ -15,7 +15,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInChildren<HealthBar>())
+        Debug.Log(other.name);
+        if (other.CompareTag(includeTag) &&other.GetComponentInChildren<HealthBar>())
             other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
     }
 
