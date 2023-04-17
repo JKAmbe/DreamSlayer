@@ -10,7 +10,7 @@ public class ObstacleCollision : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            other.GetComponentInChildren<HealthBar>().TakeDamage(50);
         }
     }
 }
