@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor.UI;
 
 public class CharacterSwitchController : MonoBehaviour
 {
@@ -37,11 +38,14 @@ public class CharacterSwitchController : MonoBehaviour
         // disable all character except for the selected one
         foreach (GameObject character in CharacterPrefabs) { character.SetActive(false); }
         currentCharacter = CharacterPrefabs[characterIndex];
+        currentCharacter.GetComponent<PlayerBase>().switchController = this;
+
         // for some reason the character's position needs to be changed before they can move
         currentCharacter.transform.position = charPosition;
         CharacterPrefabs[characterIndex].SetActive(true);
         MainCamera.target = currentCharacter.transform;
         Reticle.player = currentCharacter;
+        Reticle.ChangeCrosshairSprite(currentCharacter.GetComponent<PlayerBase>().Reticle, currentCharacter.GetComponent<PlayerBase>().ReticleColor);
     }
 
     // Cycle through and switch to different characters

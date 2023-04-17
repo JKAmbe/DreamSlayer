@@ -243,6 +243,8 @@ MonoBehaviour:
   pewForce: 2
   duration: 2
   maxBeamSize: 3
+  Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
+  ReticleColor: {r: 1, g: 0, b: 0.079761505, a: 1}
   playerSpeed: 39
   AxisDamping: {x: 0.5, y: 0.5}
   directionRange: {x: 60, y: 60, z: 60}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +21,7 @@ public class PlayerBase : MonoBehaviour
 {
     Camera cam;
     float damageMultiplier = 1;
-    
+   
     [Header("Firing System")]
     public float planeDistance;
     public aimingType aimingMode;
@@ -35,6 +36,10 @@ public class PlayerBase : MonoBehaviour
     private float beamSize = 0;
     private float ROFTimer = 0;
 
+    [Header("Reticle")]
+    public Sprite Reticle;
+    public Color ReticleColor;
+
     [Header("Movement System")]
     public int playerSpeed;
     public Vector2 AxisDamping;
@@ -42,6 +47,7 @@ public class PlayerBase : MonoBehaviour
     public float RotationSpeed = 4;
     CharacterController controller;
 
+    public CharacterSwitchController switchController;
 
     private void Start()
     {
@@ -113,6 +119,9 @@ public class PlayerBase : MonoBehaviour
         pewTmp.GetComponent<Projectile>().damage *= damageMultiplier;
         Destroy(pewTmp, duration);
         beamSize = 0;
+
+        // call the reticle shooting animation from the parent PlayerManager
+        switchController.Reticle.GetComponent<Animator>().SetTrigger("Shoot");
     }
 
     private void ChargeBeam()
