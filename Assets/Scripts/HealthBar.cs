@@ -12,6 +12,7 @@ public class HealthBar : MonoBehaviour
     Image maskingBar;
     [SerializeField]
     Image healthBar;
+    public bool binvulnerable = false;
 
     Vector2 baseSize;
 
@@ -26,10 +27,23 @@ public class HealthBar : MonoBehaviour
 
     virtual public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
-        maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
-        if (currentHealth <= 0)
-            Destroy(transform.parent.gameObject);
+        if (!binvulnerable)
+        {
+            currentHealth -= amount;
+            maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
+            // call to play the TakeDamage effect on the parent object, this class should be only handling the health mechanics
+            if (GetComponentInParent<PlayerBase>() != null)
+            {
+                if (GetComponentInParent<PlayerBase>().GetType().GetMethod("TakeDamageEffects") != null)
+                {
+                    GetComponentInParent<PlayerBase>().TakeDamageEffects();
+                }
+            }
+
+            if (currentHealth <= 0)
+                Destroy(transform.parent.gameObject);
+        }
+
     }
     public void Heal (float amount)
     {
