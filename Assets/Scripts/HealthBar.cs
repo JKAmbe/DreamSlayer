@@ -12,7 +12,6 @@ public class HealthBar : MonoBehaviour
     Image maskingBar;
     [SerializeField]
     Image healthBar;
-    public ParticleSystem TakeDamageParticle;
 
     Vector2 baseSize;
 
@@ -29,11 +28,15 @@ public class HealthBar : MonoBehaviour
     {
         currentHealth -= amount;
         maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
-        // play particle
-        if (TakeDamageParticle != null)
+        // call to play the TakeDamage effect on the parent object, this class should be only handling the health mechanics
+        if (GetComponentInParent<PlayerBase>() != null)
         {
-            TakeDamageParticle.Play();
+            if (GetComponentInParent<PlayerBase>().GetType().GetMethod("TakeDamageEffects") != null)
+            {
+                GetComponentInParent<PlayerBase>().TakeDamageEffects();
+            }
         }
+
         if (currentHealth <= 0)
             Destroy(transform.parent.gameObject);
     }

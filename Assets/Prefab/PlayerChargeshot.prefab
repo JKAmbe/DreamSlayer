@@ -336,6 +336,10 @@ MonoBehaviour:
   directionRange: {x: 90, y: 90, z: 60}
   RotationSpeed: 4
   switchController: {fileID: 0}
+  PlayerMesh: {fileID: 7074522579037514544}
+  TakeDamageParticle: {fileID: 4602807349411109134}
+  animator: {fileID: 807362437589709223}
+  iFrameTime: 0
 --- !u!95 &807362437589709223
 Animator:
   serializedVersion: 5
@@ -573,7 +577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2298585005377462198, guid: 6d601200fee79ba40a6e7277e38c68e4, type: 3}
       propertyPath: m_Name
-      value: PlayerDeadParticle
+      value: TakeDamageParticle
       objectReference: {fileID: 0}
     - target: {fileID: 6715847404308861382, guid: 6d601200fee79ba40a6e7277e38c68e4, type: 3}
       propertyPath: m_RootOrder
@@ -805,6 +809,10 @@ PrefabInstance:
     - target: {fileID: 8002024588103153269, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216311370407250745, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8216311370407250745, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: maxHealth

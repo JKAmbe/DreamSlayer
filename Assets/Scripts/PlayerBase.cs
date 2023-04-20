@@ -49,6 +49,16 @@ public class PlayerBase : MonoBehaviour
 
     public CharacterSwitchController switchController;
 
+    [Header("Visual Effects")]
+    public GameObject PlayerMesh;
+    public ParticleSystem TakeDamageParticle;
+    public Animator animator;
+
+    [Header("iFrame/Health")]
+    public HealthBar healthBar;
+    public float iFrameTime = 1;
+    float iframeCounter;
+
     private void Start()
     {
         cam = Camera.main;
@@ -138,6 +148,23 @@ public class PlayerBase : MonoBehaviour
     private void revertBuff()
     {
         damageMultiplier = 1;
+    }
+
+    public void TakeDamageEffects()
+    {
+        TakeDamageParticle.Play();
+        animator.SetBool("bTakeDamage", true);
+        // start iframe
+        StartCoroutine(useiFrame());
+    }
+
+    IEnumerator useiFrame()
+    {
+        healthBar.enabled = false;
+        yield return new WaitForSeconds(iFrameTime);
+        healthBar.enabled = true;
+        animator.SetBool("bTakeDamage", false);
+        yield return null;
     }
 
 }
