@@ -56,7 +56,7 @@ public class PlayerBase : MonoBehaviour
 
     [Header("iFrame/Health")]
     public HealthBar healthBar;
-    public float iFrameTime = 1;
+    public float iFrameTime = 1.0f;
     float iframeCounter;
 
     private void Start()
@@ -153,16 +153,17 @@ public class PlayerBase : MonoBehaviour
     public void TakeDamageEffects()
     {
         TakeDamageParticle.Play();
-        animator.SetBool("bTakeDamage", true);
         // start iframe
+        Debug.Log("Start iframe");
+        animator.SetBool("bTakeDamage", true);
         StartCoroutine(useiFrame());
     }
 
     IEnumerator useiFrame()
     {
-        healthBar.enabled = false;
+        healthBar.binvulnerable = true;
         yield return new WaitForSeconds(iFrameTime);
-        healthBar.enabled = true;
+        healthBar.binvulnerable = false;
         animator.SetBool("bTakeDamage", false);
         yield return null;
     }
