@@ -5176,6 +5176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 479747679}
     - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: iFrameTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: ReticleColor.b
       value: 0.64200425
       objectReference: {fileID: 0}

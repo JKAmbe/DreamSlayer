@@ -49,10 +49,11 @@ public class PlayerBase : MonoBehaviour
 
     public CharacterSwitchController switchController;
 
-    [Header("Visual Effects")]
+    [Header("Visual/Audio Effects")]
     public GameObject PlayerMesh;
     public ParticleSystem TakeDamageParticle;
     public Animator animator;
+    public AudioSource audioSource;
 
     [Header("iFrame/Health")]
     public HealthBar healthBar;
@@ -153,6 +154,7 @@ public class PlayerBase : MonoBehaviour
     public void TakeDamageEffects()
     {
         TakeDamageParticle.Play();
+        audioSource.Play();
         // start iframe
         Debug.Log("Start iframe");
         animator.SetBool("bTakeDamage", true);
