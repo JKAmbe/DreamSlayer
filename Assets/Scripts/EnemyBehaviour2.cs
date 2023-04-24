@@ -4,44 +4,35 @@ using UnityEngine;
 
 public class EnemyBehaviour2 : MonoBehaviour
 {
-    bool detected;
-    GameObject target;
-    Rigidbody rb;
+    public Transform target;
     public float speed = 20f;
-    public float multiplier = 10f;
+    Rigidbody rb;
+    public float damage;
+    public GameObject enemy;
 
-
-    void Update()
+    private void Start()
     {
-        if (detected)
-        {
-            if (target)
-            {
-                transform.LookAt(target.transform);
-            }
-
-        }
-
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        if (detected)
-        {
-            Vector3 velo = rb.velocity;
-            if(detected && velo.x > -2 && velo.x < 2 && velo.z > -2 && velo.z < 2)
-            {
-                rb.AddForce(speed * multiplier * Time.deltaTime * transform.forward);
-            }
-        }
+        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        rb.MovePosition(pos);
+        transform.LookAt(target);
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.collider.tag == "Player")
         {
-            transform.SetParent(null, true);
-            detected = true;
-            target = other.gameObject;
+            other.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+
+            Destroy(enemy);
+        }
+        else
+        {
+            Destroy(enemy);
         }
     }
 
