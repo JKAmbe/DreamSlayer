@@ -67,6 +67,10 @@ public class PlayerBase : MonoBehaviour
     {
         cam = Camera.main;
         controller = GetComponent<CharacterController>();
+        if (CharacterSpecialAbility)
+        {
+            CharacterSpecialAbility.parent = this;
+        }
     }
     // Update is called once per frame
     void FixedUpdate()

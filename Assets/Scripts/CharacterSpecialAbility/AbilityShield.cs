@@ -17,7 +17,6 @@ public class AbilityShield : SpecialAbility
 
     float cDuration = 0.0f;
     bool bForceCooldownOn = false;
-    PlayerBase parent = null;
 
 
     // Start is called before the first frame update
@@ -92,5 +91,20 @@ public class AbilityShield : SpecialAbility
         {
 
         }
+
+        // apply effects to the player
+        if (bOn) { useSpecialAbilityPlayerEffects(); } else { unuseSpecialAbilityPlayerEffects(); }
+    }
+
+    override public void useSpecialAbilityPlayerEffects()
+    {
+        // make the player invulnerable and slow them down
+        parent.healthBar.binvulnerable = true;
+    }
+
+    override public void unuseSpecialAbilityPlayerEffects()
+    {
+        // undo invulnerability and slowdown
+        parent.healthBar.binvulnerable = false;
     }
 }
