@@ -60,6 +60,7 @@ public class PlayerBase : MonoBehaviour
 
     [Header("iFrame/Health")]
     public HealthBar healthBar;
+    public bool bIframeOn = false;
     public float iFrameTime = 1.0f;
     float iframeCounter;
 
@@ -177,8 +178,10 @@ public class PlayerBase : MonoBehaviour
 
     IEnumerator useiFrame()
     {
+        bIframeOn = true;
         healthBar.binvulnerable = true;
         yield return new WaitForSeconds(iFrameTime);
+        bIframeOn = false;
         healthBar.binvulnerable = false;
         animator.SetBool("bTakeDamage", false);
         yield return null;

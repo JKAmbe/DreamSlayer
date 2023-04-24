@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class AbilityShield : SpecialAbility
 {
@@ -92,19 +93,37 @@ public class AbilityShield : SpecialAbility
 
         }
 
-        // apply effects to the player
+        //// apply effects to the player
+        //// right now there's a bug where the player cannot do iframes once they deactivate shields because this itself to turn off invulnerability every frame
         if (bOn) { useSpecialAbilityPlayerEffects(); } else { unuseSpecialAbilityPlayerEffects(); }
     }
 
     override public void useSpecialAbilityPlayerEffects()
     {
         // make the player invulnerable and slow them down
-        parent.healthBar.binvulnerable = true;
+        // if the player isnt already invulnerable, make the invulnerable
+        //parent.healthBar.binvulnerable = true;
+        if (!parent.healthBar.binvulnerable)
+        {
+            parent.healthBar.binvulnerable = true;
+        }
     }
 
     override public void unuseSpecialAbilityPlayerEffects()
     {
         // undo invulnerability and slowdown
-        parent.healthBar.binvulnerable = false;
+        if (!parent.bIframeOn)
+        {
+            parent.healthBar.binvulnerable = false;
+        }
+        //if (parent.healthBar.binvulnerable)
+        //{
+        //    parent.healthBar.binvulnerable = false; 
+        //}
+        // turn off invulnerability
+        //if (parent.healthBar.binvulnerable == false)
+        //{
+        //    parent.healthBar.binvulnerable = false;
+        //} 
     }
 }
