@@ -35,6 +35,9 @@ public class PlayerBase : MonoBehaviour
     public float maxBeamSize = 10;
     private float beamSize = 0;
     private float ROFTimer = 0;
+    [Header("Special Ability")]
+    public SpecialAbility CharacterSpecialAbility;
+
 
     [Header("Reticle")]
     public Sprite Reticle;
@@ -83,7 +86,7 @@ public class PlayerBase : MonoBehaviour
             
             if (firingMode == firingType.RapidFire)
             {
-                if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+                if (Input.GetButton("Fire1"))
                 {
                     ROFTimer = Time.time;
                     FireBeam();
@@ -91,17 +94,20 @@ public class PlayerBase : MonoBehaviour
             }
             if (firingMode == firingType.ChargeShot)
             {
-                if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0))
+                if (Input.GetButtonUp("Fire1"))
                 {
                     ROFTimer = Time.time;
                     FireBeam();
                 }
-                if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+                if (Input.GetButton("Fire1"))
                 {
                     ChargeBeam();
                 }
             }
-            
+        }
+        if (CharacterSpecialAbility && Input.GetButton("Fire3"))
+        {
+            CharacterSpecialAbility.useSpecialAbility();
         }
     }
 
