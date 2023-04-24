@@ -109,6 +109,10 @@ public class PlayerBase : MonoBehaviour
         {
             CharacterSpecialAbility.useSpecialAbility();
         }
+        if (CharacterSpecialAbility && Input.GetButtonUp("Fire3"))
+        {
+            CharacterSpecialAbility.unuseSpecialAbility();
+        }
     }
 
     private void FireBeam()
