@@ -1,6 +1,7 @@
 using Palmmedia.ReportGenerator.Core.Reporting.Builders;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbilityShield : SpecialAbility
@@ -11,6 +12,8 @@ public class AbilityShield : SpecialAbility
     public float MaxDuration = 2.0f;
     public float RechargeRate = 1.0f;
     public float ForceCooldownDuration = 3.0f;
+    public float ScaleAtMaxDuration = 1.0f;
+    public float ScaleAtMinDuration = 1.0f;
 
     float cDuration = 0.0f;
     bool bForceCooldownOn = false;
@@ -81,6 +84,8 @@ public class AbilityShield : SpecialAbility
                 bAbilityOn = false;
                 bForceCooldownOn = true;
             }
+            // change shield sphere depending on duration
+            ShieldSphere.transform.localScale = Vector3.one * Mathf.Lerp(ScaleAtMinDuration, ScaleAtMaxDuration, (cDuration / MaxDuration));
         }
         
         if (!bOn)
