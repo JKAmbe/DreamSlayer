@@ -44,7 +44,7 @@ public class PlayerBase : MonoBehaviour
     public Color ReticleColor;
 
     [Header("Movement System")]
-    public int playerSpeed;
+    public float playerSpeed;
     public Vector2 AxisDamping;
     public Vector3 directionRange;
     public float RotationSpeed = 4;
@@ -70,7 +70,7 @@ public class PlayerBase : MonoBehaviour
         controller = GetComponent<CharacterController>();
         if (CharacterSpecialAbility)
         {
-            CharacterSpecialAbility.parent = this;
+            CharacterSpecialAbility.Init(this);
         }
     }
     // Update is called once per frame

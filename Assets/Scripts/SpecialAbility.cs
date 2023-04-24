@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // this is a template class which each special ability will inherit from
-public class SpecialAbility : MonoBehaviour
+public abstract class SpecialAbility : MonoBehaviour
 {
     public bool bAbilityOn = false;
     // blocks abilities from being activated (forced cooldowns etc)
@@ -21,6 +21,12 @@ public class SpecialAbility : MonoBehaviour
     void Update()
     {
         
+    }
+
+    // called at PlayerBase.Start() as a way to pass variables and stuff
+    virtual public void Init(PlayerBase player)
+    {
+
     }
 
     virtual public void useSpecialAbility()

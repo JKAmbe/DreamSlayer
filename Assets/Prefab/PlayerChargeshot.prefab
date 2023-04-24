@@ -130,12 +130,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bAbilityOn: 0
   bAllowAbilityOn: 1
+  parent: {fileID: 0}
   ShieldSphere: {fileID: 464476110227286758}
   MaxDuration: 3
   RechargeRate: 1
   ForceCooldownDuration: 3
-  ScaleAtMaxDuration: 3
+  ScaleAtMaxDuration: 4
   ScaleAtMinDuration: 0.5
+  originalMovementSpeed: 0
 --- !u!1 &7074522579037514544
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +369,7 @@ Transform:
   - {fileID: 734004377362563297}
   - {fileID: 2507846925731994149}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &8300535424414130618
 CharacterController:
@@ -470,7 +472,7 @@ MonoBehaviour:
   CharacterSpecialAbility: {fileID: 7747904766568243493}
   Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
   ReticleColor: {r: 1, g: 0, b: 0.079761505, a: 1}
-  playerSpeed: 39
+  playerSpeed: 30
   AxisDamping: {x: 0.5, y: 0.5}
   directionRange: {x: 90, y: 90, z: 60}
   RotationSpeed: 4
@@ -480,6 +482,7 @@ MonoBehaviour:
   animator: {fileID: 807362437589709223}
   audioSource: {fileID: 4211394999447290440}
   healthBar: {fileID: 2692097091107042400}
+  bIframeOn: 0
   iFrameTime: 1
 --- !u!95 &807362437589709223
 Animator:

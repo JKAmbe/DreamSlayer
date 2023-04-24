@@ -18,7 +18,7 @@ public class AbilityShield : SpecialAbility
 
     float cDuration = 0.0f;
     bool bForceCooldownOn = false;
-
+    public float originalMovementSpeed = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,12 @@ public class AbilityShield : SpecialAbility
     {
         UpdateShield();
     }
-    
+    override public void Init(PlayerBase player)
+    {
+        parent = player;
+        originalMovementSpeed = player.playerSpeed;
+    }
+
     void UpdateShield()
     {
         // rechage shields
@@ -53,12 +58,9 @@ public class AbilityShield : SpecialAbility
     {
         if (bAllowAbilityOn)
         {
-            if (!bForceCooldownOn)
+            if (!bForceCooldownOn && cDuration > 0.0f)
             {
-                if (cDuration > 0.0f)
-                {
-                    bAbilityOn = true;
-                }
+                bAbilityOn = true;
             }
         }
     }
@@ -101,11 +103,10 @@ public class AbilityShield : SpecialAbility
     override public void useSpecialAbilityPlayerEffects()
     {
         // make the player invulnerable and slow them down
-        // if the player isnt already invulnerable, make the invulnerable
-        //parent.healthBar.binvulnerable = true;
         if (!parent.healthBar.binvulnerable)
         {
             parent.healthBar.binvulnerable = true;
+            parent.playerSpeed = originalMovementSpeed / 2;
         }
     }
 
@@ -115,15 +116,7 @@ public class AbilityShield : SpecialAbility
         if (!parent.bIframeOn)
         {
             parent.healthBar.binvulnerable = false;
+            parent.playerSpeed = originalMovementSpeed;
         }
-        //if (parent.healthBar.binvulnerable)
-        //{
-        //    parent.healthBar.binvulnerable = false; 
-        //}
-        // turn off invulnerability
-        //if (parent.healthBar.binvulnerable == false)
-        //{
-        //    parent.healthBar.binvulnerable = false;
-        //} 
     }
 }
