@@ -60,6 +60,7 @@ public class PlayerBase : MonoBehaviour
 
     [Header("iFrame/Health")]
     public HealthBar healthBar;
+    public bool bIframeOn = false;
     public float iFrameTime = 1.0f;
     float iframeCounter;
 
@@ -67,6 +68,10 @@ public class PlayerBase : MonoBehaviour
     {
         cam = Camera.main;
         controller = GetComponent<CharacterController>();
+        if (CharacterSpecialAbility)
+        {
+            CharacterSpecialAbility.parent = this;
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -108,6 +113,10 @@ public class PlayerBase : MonoBehaviour
         if (CharacterSpecialAbility && Input.GetButton("Fire3"))
         {
             CharacterSpecialAbility.useSpecialAbility();
+        }
+        if (CharacterSpecialAbility && Input.GetButtonUp("Fire3"))
+        {
+            CharacterSpecialAbility.unuseSpecialAbility();
         }
     }
 
@@ -169,8 +178,10 @@ public class PlayerBase : MonoBehaviour
 
     IEnumerator useiFrame()
     {
+        bIframeOn = true;
         healthBar.binvulnerable = true;
         yield return new WaitForSeconds(iFrameTime);
+        bIframeOn = false;
         healthBar.binvulnerable = false;
         animator.SetBool("bTakeDamage", false);
         yield return null;
