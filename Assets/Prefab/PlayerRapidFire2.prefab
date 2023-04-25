@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 846404231532351019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6009462860496030613}
@@ -154,7 +154,9 @@ MonoBehaviour:
   bAllowAbilityOn: 1
   parent: {fileID: 0}
   ParryCheckHitbox: {fileID: 846404231532351019}
-  parryCooldown: 0
+  parryCooldown: 3
+  parryWindow: 0.5
+  cParryWindow: -1
   parryDamage: 30
   parrySpeed: 3
 --- !u!1001 &46668428151679281
