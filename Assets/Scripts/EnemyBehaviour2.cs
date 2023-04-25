@@ -9,10 +9,13 @@ public class EnemyBehaviour2 : MonoBehaviour
     Rigidbody rb;
     public float damage;
     public GameObject enemy;
+    public float despwantimer;
+    public string includeTag;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Destroy(this.gameObject, despwantimer);
     }
 
     private void FixedUpdate()
@@ -22,18 +25,16 @@ public class EnemyBehaviour2 : MonoBehaviour
         transform.LookAt(target);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.collider.tag == "Player")
-        {
-            other.collider.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
-
-            Destroy(enemy);
-        }
-        else
-        {
-            Destroy(enemy);
-        }
+        
+            if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
+            {
+            other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
+            Destroy(this.gameObject);
+            }
+                
+        
     }
 
 
