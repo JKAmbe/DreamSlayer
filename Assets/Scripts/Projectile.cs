@@ -16,11 +16,15 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.name);
+        DamageOtherHealth(other);
+    }
+
+    public void DamageOtherHealth(Collider other)
+    {
         if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
         {
             other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
             Destroy(this.gameObject);
-        }   
+        }
     }
-
 }

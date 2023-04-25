@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : Projectile
 {
+    public bool bParried = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +19,22 @@ public class EnemyBullet : Projectile
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
+        if (!bParried)
         {
-            other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
-            Destroy(this.gameObject);
-        }
-        if (other.tag == "PlayerAbility")
-        {
-            // need to call parent because the collider is in its children
-            if (other.GetComponentInParent<AbilityParry>())
+            DamageOtherHealth(other);
+            if (other.tag == "PlayerAbility")
             {
-                other.GetComponentInParent<AbilityParry>().ParryBullet(this);
+                // need to call parent because the collider is in its children
+                if (other.GetComponentInParent<AbilityParry>())
+                {
+                    other.GetComponentInParent<AbilityParry>().ParryBullet(this);
+                }
             }
+        }
+        if (bParried)
+        {
+            Debug.Log("Parry hit " + other.name);
+            DamageOtherHealth(other);
         }
     }
 }

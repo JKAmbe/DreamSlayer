@@ -6,7 +6,6 @@ using UnityEngine;
 public class AbilityParry : SpecialAbility
 {
     public GameObject ParryCheckHitbox;
-
     [Header("Parry Bullet Stats")]
     public float parryDamage = 0.0f;
     public float parrySpeed = 0.0f;
@@ -39,9 +38,13 @@ public class AbilityParry : SpecialAbility
     {
         bAbilityOn = false;
     }
-    public void ParryBullet(Projectile EnemyBullet)
+    public void ParryBullet(EnemyBullet EnemyBullet)
     {
+        EnemyBullet.bParried = true;
         EnemyBullet.GetComponent<Rigidbody>().velocity *= -1 * parrySpeed;
+        //EnemyBullet.gameObject.tag = "Enemy";
+        EnemyBullet.gameObject.layer = 9;
         EnemyBullet.includeTag = "Enemy";
+        EnemyBullet.damage = parryDamage;
     }
 }

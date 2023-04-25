@@ -154,7 +154,7 @@ MonoBehaviour:
   bAllowAbilityOn: 1
   parent: {fileID: 0}
   ParryCheckHitbox: {fileID: 846404231532351019}
-  parryDamage: 0
+  parryDamage: 30
   parrySpeed: 3
 --- !u!1001 &46668428151679281
 PrefabInstance:
