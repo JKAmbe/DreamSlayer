@@ -14,10 +14,22 @@ public class BossBehaviour : MonoBehaviour
     public float timetoShoot = 1.3f;
     float originalTime;
     int current;
+    public HealthBar healthbar;
+
+    public enum Stage
+    {
+        Stage_1,
+        Stage_2,
+        Stage_3,
+    }
+
+    private Stage stage;
+
     void Start()
     {
         originalTime = timetoShoot;
         current = 0;
+        
     }
 
     // Update is called once per frame
@@ -45,6 +57,34 @@ public class BossBehaviour : MonoBehaviour
                 ShootPlayer();
                 timetoShoot = originalTime;
             }
+        }
+       
+    }
+
+    private void bossOnDamaged()
+    {
+        switch (stage)
+        {
+            default:
+            case Stage.Stage_1:
+                if (healthbar.getCurrentHealth() <= .7f)
+                {
+                    Debug.LogError("Phase 1 started");
+                    StartNextStage();
+                }
+                break;
+               
+        }
+    }
+
+    private void StartNextStage()
+    {
+        switch (stage)
+        {
+            default:
+            case Stage.Stage_1:
+                stage = Stage.Stage_2;
+                break;
         }
     }
 

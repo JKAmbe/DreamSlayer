@@ -16,6 +16,14 @@ public class HealthBar : MonoBehaviour
 
     Vector2 baseSize;
 
+    public float getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    
+
+    
      void Start()
     {
         maskingBar = GetComponentsInChildren<Image>()[0];
