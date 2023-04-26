@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4457786, g: 0.49007392, b: 0.54509884, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457783, g: 0.49007368, b: 0.54509795, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2745,7 +2745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 351129708465379793, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: parryWindow
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1710024374791769813, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: maxHealth
@@ -2804,9 +2804,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: reticle
       value: 
       objectReference: {fileID: 479747679}
+    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: aimSpread
+      value: 3.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4039,9 +4047,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: reticle
       value: 
       objectReference: {fileID: 479747679}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: playerSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5307,6 +5323,18 @@ PrefabInstance:
       propertyPath: bombMinSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: bomberCooldown
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: explosionRadius
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: bombDamagePerTick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5356,12 +5384,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: damage
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: reticle
       value: 
       objectReference: {fileID: 479747679}
     - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: iFrameTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: playerSpeed
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: ReticleColor.b

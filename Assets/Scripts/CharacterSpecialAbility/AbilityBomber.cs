@@ -41,7 +41,6 @@ public class AbilityBomber : SpecialAbility
             if (cFuse <= 0.0f)
             {
                 throwBomb();
-                bAbilityOn = false;
             }
         }
 
@@ -61,6 +60,7 @@ public class AbilityBomber : SpecialAbility
         if (bAllowAbilityOn && !bAbilityOn)
         {
             bAbilityOn = true;
+            bAllowAbilityOn = false;
             cFuse = bombFuse;
         }
     }
@@ -69,7 +69,6 @@ public class AbilityBomber : SpecialAbility
     {
         if (bAbilityOn)
         {
-            bAbilityOn = false;
             throwBomb();
         }
         cBomberCooldown = bomberCooldown;
@@ -81,5 +80,6 @@ public class AbilityBomber : SpecialAbility
         Debug.Log(bombSpeed);
         PlayerBomb bombInstance = Instantiate(BombPrefab, transform.position, Quaternion.identity);
         bombInstance.init(parent.GetPlayerToMouseAim(), bombSpeed, bombFuse, bombDamagePerTick, bombDamageTicks, explosionRadius );
+        bAbilityOn = false;
     }
 }
