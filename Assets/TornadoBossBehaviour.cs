@@ -9,7 +9,8 @@ public class TornadoBossBehaviour : MonoBehaviour
     float attackDuration = 0;
     HealthBar health;
     Animator anim;
-    public GameObject suckArea;
+    public GameObject EnemySpawnPrefab;
+    public Transform[] SpawnLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +22,16 @@ public class TornadoBossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackDuration -= Time.deltaTime;
-        if (attackDuration <= 0)
-            bAttacking = false;
+        
 
         if (!bAttacking)
             ResetAttack();
         else
+        {
             switch (currentAttack)
             {
                 case 0:
-                    SuckAttack();
+                    ReplenishEnemies();
                     break;
                 case 1:
                     SuckAttack();
@@ -40,9 +40,14 @@ public class TornadoBossBehaviour : MonoBehaviour
                     SuckAttack();
                     break;
                 case 3:
-                    SuckAttack();
+                    ReplenishEnemies();
                     break;
             }
+            attackDuration -= Time.deltaTime;
+            if (attackDuration <= 0)
+                bAttacking = false;
+        }
+            
 
     }
 
@@ -51,15 +56,15 @@ public class TornadoBossBehaviour : MonoBehaviour
         int newAttack = Random.Range(0, 4);
         if (currentAttack != newAttack)
             currentAttack = newAttack;
-        attackDuration = Random.Range(10, 20);
+        attackDuration = Random.Range(5, 10);
         bAttacking = true;
         anim.SetTrigger("Reset");
         anim.SetBool("Suck", false);
+        anim.SetBool("Spawn", false);
     }
     void SuckAttack()
     {
         anim.SetBool("Suck", true);
-        health.binvulnerable = true;
     }
 
     void TornadoPillars()
@@ -69,11 +74,17 @@ public class TornadoBossBehaviour : MonoBehaviour
 
     void ReplenishEnemies()
     {
-
+        anim.SetBool("Spawn", true);
     }
 
     void MathAttack()
     {
 
+    }
+
+    public void SpawnEnemy()
+    {
+        
+        Instantiate(EnemySpawnPrefab, SpawnLocation[Random.Range(0, SpawnLocation.Length)].position, Quaternion.identity, null);
     }
 }

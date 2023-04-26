@@ -11,6 +11,9 @@ public class Suck : MonoBehaviour
         Vector3 otherPosition = other.bounds.center;
         Vector3 pullForce = (Center - otherPosition).normalized*suction;
         pullForce.z = 0;
-        other.GetComponent<CharacterController>().Move (pullForce);
+        if (other.GetComponent<CharacterController>())
+            other.GetComponent<CharacterController>().Move (pullForce);
+        if (other.GetComponent<Rigidbody>())
+            other.GetComponent<Rigidbody>().AddForce(pullForce);
     }
 }

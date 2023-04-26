@@ -47,7 +47,7 @@ public class HealthBar : MonoBehaviour
     }
     public void Heal (float amount)
     {
-        currentHealth += amount;
+        currentHealth  = Mathf.Clamp(currentHealth +  amount,0, maxHealth);
         maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
     }
 
