@@ -57,9 +57,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TwirlAmount: 5.8
-    - _WobbleAmount: 0.29
+    - _WobbleAmount: 0.3
     - _WobbleFrequency: 2
-    - _WobbleIntensity: 2.57
+    - _WobbleIntensity: 2
     - _WobbleSPeed: 2
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
