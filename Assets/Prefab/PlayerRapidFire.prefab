@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7029625560012392566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5199897229779666577}
+  - component: {fileID: 2611798327918277600}
+  m_Layer: 0
+  m_Name: BomberAbility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5199897229779666577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029625560012392566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8328457866238544012}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2611798327918277600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029625560012392566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede1f62043b9c8645912062899bf410d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bAbilityOn: 0
+  bAllowAbilityOn: 1
+  parent: {fileID: 0}
+  BombPrefab: {fileID: 8367730289850961703, guid: b4ef4f2d0b0281b4b866c09ea62f6ef1, type: 3}
+  bombSpeed: 50
+  bombFuse: 1
+  bombDamagePerTick: 3
+  bombDamageTicks: 100
+  explosionRadius: 5
+  bomberCooldown: 2
 --- !u!1001 &46668428151679281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,12 +157,20 @@ PrefabInstance:
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: CharacterSpecialAbility
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2611798327918277600}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 1666040130542888932, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6688554027865377783, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5199897229779666577}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+--- !u!4 &8328457866238544012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+  m_PrefabInstance: {fileID: 46668428151679281}
+  m_PrefabAsset: {fileID: 0}
