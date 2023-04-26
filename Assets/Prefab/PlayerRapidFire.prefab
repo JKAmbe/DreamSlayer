@@ -48,7 +48,8 @@ MonoBehaviour:
   bAllowAbilityOn: 1
   parent: {fileID: 0}
   BombPrefab: {fileID: 8367730289850961703, guid: b4ef4f2d0b0281b4b866c09ea62f6ef1, type: 3}
-  bombSpeed: 50
+  bombMinSpeed: 10
+  bombMaxSpeed: 50
   bombFuse: 1
   bombDamagePerTick: 3
   bombDamageTicks: 100

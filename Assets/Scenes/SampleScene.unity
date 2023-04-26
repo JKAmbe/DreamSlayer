@@ -5131,6 +5131,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: bombMaxSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: bombMinSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder
       value: -1

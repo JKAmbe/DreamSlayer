@@ -60,7 +60,6 @@ public class PlayerBomb : MonoBehaviour
         }
         if (bBombActive)
         {
-            Debug.Log(damageTicks);
             damageTicks -= 1;
             // to make sure the bomb does damage overtime, switch the explosion and particle on and off
             ExplosionRadius.SetActive(damageTicks % 2 == 0);

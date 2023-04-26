@@ -7,8 +7,10 @@ public class AbilityBomber : SpecialAbility
 {
     [Header("Bomb stats")]
     public PlayerBomb BombPrefab;
-    public float bombSpeed;
-    public float bombFuse;
+    public float bombMinSpeed;
+    public float bombMaxSpeed;
+    public float bombFuse = 0.0f;
+    float cFuse = 0.0f;
     public float bombDamagePerTick;
     public float bombDamageTicks;
     public float explosionRadius;
@@ -31,9 +33,20 @@ public class AbilityBomber : SpecialAbility
 
     void UpdateBomber()
     {
-        if (cBomberCooldown > 0.0f)
+        if (bAbilityOn)
         {
-            Debug.Log("Bomb cooldown");
+            // track how much time special ability button is held down for
+            cFuse -= Time.deltaTime;
+            // force throw bomb when fuse is held down the whole duration
+            if (cFuse <= 0.0f)
+            {
+                throwBomb();
+                bAbilityOn = false;
+            }
+        }
+
+        if (cBomberCooldown > 0.0f && !bAbilityOn)
+        {
             cBomberCooldown -= Time.deltaTime;
             if (cBomberCooldown <= 0.0f)
             {
@@ -45,17 +58,27 @@ public class AbilityBomber : SpecialAbility
 
     override public void useSpecialAbility()
     {
-        if (bAllowAbilityOn)
+        if (bAllowAbilityOn && !bAbilityOn)
         {
-            // throw bomb
-            throwBomb();
-            cBomberCooldown = bomberCooldown;
-            bAllowAbilityOn = false;
+            bAbilityOn = true;
+            cFuse = bombFuse;
         }
+    }
+
+    public override void unuseSpecialAbility()
+    {
+        if (bAbilityOn)
+        {
+            bAbilityOn = false;
+            throwBomb();
+        }
+        cBomberCooldown = bomberCooldown;
     }
 
     void throwBomb()
     {
+        float bombSpeed = Mathf.Lerp(bombMaxSpeed, bombMinSpeed, cFuse / bombFuse);
+        Debug.Log(bombSpeed);
         PlayerBomb bombInstance = Instantiate(BombPrefab, transform.position, Quaternion.identity);
         bombInstance.init(parent.GetPlayerToMouseAim(), bombSpeed, bombFuse, bombDamagePerTick, bombDamageTicks, explosionRadius );
     }
