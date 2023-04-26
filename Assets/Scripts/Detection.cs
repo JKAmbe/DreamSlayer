@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Detection : MonoBehaviour
 {
-    bool detected;
+    public bool detected;
     GameObject target;
 
     public GameObject bullet;

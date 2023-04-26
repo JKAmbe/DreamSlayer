@@ -8,8 +8,15 @@ public class ExitLevel : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if (other.CompareTag("Player"))
         {
+            foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                if (enemy.GetComponentInChildren<Detection>().detected == true)
+                    return;
+                else
+                    continue;
+            }
             SceneManager.LoadScene("MainMenu");
         }
 
