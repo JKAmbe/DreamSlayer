@@ -22,7 +22,7 @@ public class PlayerBomb : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         BombUpdate();
     }
@@ -93,4 +93,5 @@ public class PlayerBomb : MonoBehaviour
                 break;
         }
     }
+
 }

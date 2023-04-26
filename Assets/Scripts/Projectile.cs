@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
         {
             other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }
