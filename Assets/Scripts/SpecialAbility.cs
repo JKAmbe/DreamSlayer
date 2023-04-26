@@ -26,7 +26,7 @@ public abstract class SpecialAbility : MonoBehaviour
     // called at PlayerBase.Start() as a way to pass variables and stuff
     virtual public void Init(PlayerBase player)
     {
-
+        parent = player;
     }
 
     virtual public void useSpecialAbility()

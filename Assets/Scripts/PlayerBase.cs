@@ -120,6 +120,11 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
+    public Vector3 GetPlayerToMouseAim()
+    {
+        return (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
+    }
+
     private void FireBeam()
     {
 
