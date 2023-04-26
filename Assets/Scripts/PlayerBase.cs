@@ -35,13 +35,16 @@ public class PlayerBase : MonoBehaviour
     public float maxBeamSize = 10;
     private float beamSize = 0;
     private float ROFTimer = 0;
+    [Header("Special Ability")]
+    public SpecialAbility CharacterSpecialAbility;
+
 
     [Header("Reticle")]
     public Sprite Reticle;
     public Color ReticleColor;
 
     [Header("Movement System")]
-    public int playerSpeed;
+    public float playerSpeed;
     public Vector2 AxisDamping;
     public Vector3 directionRange;
     public float RotationSpeed = 4;
@@ -57,6 +60,7 @@ public class PlayerBase : MonoBehaviour
 
     [Header("iFrame/Health")]
     public HealthBar healthBar;
+    public bool bIframeOn = false;
     public float iFrameTime = 1.0f;
     float iframeCounter;
 
@@ -64,6 +68,10 @@ public class PlayerBase : MonoBehaviour
     {
         cam = Camera.main;
         controller = GetComponent<CharacterController>();
+        if (CharacterSpecialAbility)
+        {
+            CharacterSpecialAbility.Init(this);
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -83,7 +91,7 @@ public class PlayerBase : MonoBehaviour
             
             if (firingMode == firingType.RapidFire)
             {
-                if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+                if (Input.GetButton("Fire1"))
                 {
                     ROFTimer = Time.time;
                     FireBeam();
@@ -91,18 +99,30 @@ public class PlayerBase : MonoBehaviour
             }
             if (firingMode == firingType.ChargeShot)
             {
-                if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.Mouse0))
+                if (Input.GetButtonUp("Fire1"))
                 {
                     ROFTimer = Time.time;
                     FireBeam();
                 }
-                if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+                if (Input.GetButton("Fire1"))
                 {
                     ChargeBeam();
                 }
             }
-            
         }
+        if (CharacterSpecialAbility && Input.GetButton("Fire3"))
+        {
+            CharacterSpecialAbility.useSpecialAbility();
+        }
+        if (CharacterSpecialAbility && Input.GetButtonUp("Fire3"))
+        {
+            CharacterSpecialAbility.unuseSpecialAbility();
+        }
+    }
+
+    public Vector3 GetPlayerToMouseAim()
+    {
+        return (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
     }
 
     private void FireBeam()
@@ -163,8 +183,10 @@ public class PlayerBase : MonoBehaviour
 
     IEnumerator useiFrame()
     {
+        bIframeOn = true;
         healthBar.binvulnerable = true;
         yield return new WaitForSeconds(iFrameTime);
+        bIframeOn = false;
         healthBar.binvulnerable = false;
         animator.SetBool("bTakeDamage", false);
         yield return null;

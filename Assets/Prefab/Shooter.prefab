@@ -104,7 +104,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -518,6 +518,7 @@ MonoBehaviour:
   currentHealth: 30
   maskingBar: {fileID: 0}
   healthBar: {fileID: 0}
+  binvulnerable: 0
   animator: {fileID: 9220155042656547595}
   takeDamageParticle: {fileID: 3315870345138158682}
   deadParticleObject: {fileID: 5496036196371738794, guid: 9afdbd6e7823f934a93768f0b0e5b97d, type: 3}

@@ -2739,6 +2739,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
+    - target: {fileID: 351129708465379793, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: parryDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 351129708465379793, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: parryWindow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1710024374791769813, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: maxHealth
       value: 0
@@ -5241,6 +5249,14 @@ PrefabInstance:
     - target: {fileID: 1710024374791769813, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: maxHealth
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: bombMaxSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: bombMinSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder
