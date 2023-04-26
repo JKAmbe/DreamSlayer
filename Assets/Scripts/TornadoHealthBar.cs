@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class TornadoHealthBar : HealthBar
 {
-
+    
     
 }

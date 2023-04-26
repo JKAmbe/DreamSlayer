@@ -9999,6 +9999,7 @@ GameObject:
   - component: {fileID: 4051925906904094246}
   - component: {fileID: 4051925906904094247}
   - component: {fileID: 5446642594106213156}
+  - component: {fileID: 5133315614886981331}
   m_Layer: 0
   m_Name: Tornado
   m_TagString: Enemy
@@ -10027,6 +10028,7 @@ Transform:
   - {fileID: 4051925906914722558}
   - {fileID: 4051925905365346324}
   - {fileID: 8320754979445604953}
+  - {fileID: 3908537351194313539}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10073,6 +10075,19 @@ CapsuleCollider:
   m_Height: 29.41
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5133315614886981331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4051925906904094245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a434051ee4ef9048a6857ca6dcae87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suckArea: {fileID: 8021179920002715039}
 --- !u!1 &4051925906914722557
 GameObject:
   m_ObjectHideFlags: 0
@@ -10239,6 +10254,82 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8021179920002715039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3908537351194313539}
+  - component: {fileID: 5860763273989217381}
+  - component: {fileID: 4210597456068932840}
+  - component: {fileID: 6697312656247722872}
+  m_Layer: 0
+  m_Name: SuckArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3908537351194313539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021179920002715039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0000017788, y: 16.06, z: 0}
+  m_LocalScale: {x: 35.261868, y: 53.02595, z: 35.261868}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4051925906904094246}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5860763273989217381
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021179920002715039}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &4210597456068932840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021179920002715039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6697312656247722872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021179920002715039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfecbec3fbfbb1d4a8d275f5bf94efc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suction: 0.1
 --- !u!1001 &2611370911929399334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10393,11 +10484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8216311370407250745, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: maxHealth
-      value: 500
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216311370407250745, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
+      propertyPath: binvulnerable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8216311370407250745, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: currentHealth
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8997366179611484731, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: m_RenderMode
