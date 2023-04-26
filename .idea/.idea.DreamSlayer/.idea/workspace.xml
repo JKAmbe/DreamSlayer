@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78125597-4db5-43c1-b120-94929a8b23c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlaneControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlaneControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DreamSlayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DreamSlayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObstacleCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObstacleCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4457783, g: 0.49007368, b: 0.54509795, a: 1}
+  m_IndirectSpecularColor: {r: 0.44577783, g: 0.49007332, b: 0.5450968, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -561,6 +561,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &604907576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1266,6 +1271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &801730445
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1412,6 +1422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &897196281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1912,6 +1927,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1088404126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2190,6 +2210,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1097912630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2734,6 +2759,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1204900725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3012,6 +3042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1384388002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3234,6 +3269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1502384337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3750,6 +3790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1679028184
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4212,6 +4257,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1804510097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4358,6 +4408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1925482022
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4509,6 +4564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1953276222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4655,6 +4715,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
+  count: 0
 --- !u!54 &1983921259
 Rigidbody:
   m_ObjectHideFlags: 0

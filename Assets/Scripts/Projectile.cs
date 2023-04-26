@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
         Debug.Log(other.name);
         if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
             other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
+        
     }
 
 }
