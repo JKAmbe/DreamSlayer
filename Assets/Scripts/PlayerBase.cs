@@ -26,6 +26,8 @@ public class PlayerBase : MonoBehaviour
     public float planeDistance;
     public aimingType aimingMode;
     public firingType firingMode;
+    public float damage = 10.0f;
+    public float aimSpread = 0.0f;
     public float ChargingSpeed = 10.0f;
     public float maxRateOfFire = 0.5f;
     public GameObject pew;
@@ -35,6 +37,7 @@ public class PlayerBase : MonoBehaviour
     public float maxBeamSize = 10;
     private float beamSize = 0;
     private float ROFTimer = 0;
+
     [Header("Special Ability")]
     public SpecialAbility CharacterSpecialAbility;
 
@@ -142,8 +145,12 @@ public class PlayerBase : MonoBehaviour
                 //placeholder, direction should be whatever the target location is
                 break;
         }
+        // add spread to direction (simulating weapon spread)
+        Direction.x += Random.Range(-aimSpread / 100, aimSpread / 100);
+        Direction.y += Random.Range(-aimSpread / 100, aimSpread / 100);
         float tmp = Mathf.Pow(ChargingSpeed, beamSize);
         GameObject pewTmp = Instantiate(pew, spawn.position, Quaternion.identity, transform.parent);
+        pewTmp.GetComponent<Projectile>().damage = this.damage;
         pewTmp.GetComponent<AudioSource>().pitch = 1 / (beamSize+1);
         pewTmp.transform.localScale = pewTmp.transform.localScale * tmp;
         pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
