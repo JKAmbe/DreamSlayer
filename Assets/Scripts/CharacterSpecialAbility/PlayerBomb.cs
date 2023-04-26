@@ -11,7 +11,6 @@ public class PlayerBomb : MonoBehaviour
     public GameObject ExplosionVisual;
 
     Vector3 velocity = Vector3.zero;
-    float speed = 0.0f;
     float fuse = 0.0f;
     bool bBombActive = false;
     float damageTicks = 0.0f;
