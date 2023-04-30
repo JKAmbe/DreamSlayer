@@ -52,8 +52,8 @@ MonoBehaviour:
   bombMaxSpeed: 50
   bombFuse: 1
   bombDamagePerTick: 3
-  bombDamageTicks: 100
-  explosionRadius: 5
+  bombDamageTicks: 300
+  explosionRadius: 15
   bomberCooldown: 2
 --- !u!1001 &46668428151679281
 PrefabInstance:
