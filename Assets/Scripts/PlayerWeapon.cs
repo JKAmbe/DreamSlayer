@@ -30,9 +30,16 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (bAllowWeaponFire &&  refireTimer >= 0.0f)
+        {
+            refireTimer -= Time.deltaTime;
+            if (refireTimer < 0.0f)
+            {
+                refireTimer = 0.0f;
+            }
+        }
     }
 
     public void WeaponFire()
@@ -48,11 +55,6 @@ public class PlayerWeapon : MonoBehaviour
                 projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
                 Destroy(projectileInstance, duration);
                 refireTimer = 1.0f / shotsPerSecond;
-            }
-            // cannot fire, wait for cooldown
-            else
-            {
-                refireTimer -= Time.deltaTime;
             }
         }
     }

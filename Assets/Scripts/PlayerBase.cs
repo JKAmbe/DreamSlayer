@@ -100,30 +100,6 @@ public class PlayerBase : MonoBehaviour
             CharacterWeapon.WeaponRelease();
         }
 
-        //if (Time.time - ROFTimer >= maxRateOfFire)
-        //{
-            
-        //    if (firingMode == firingType.RapidFire)
-        //    {
-        //        if (Input.GetButton("Fire1"))
-        //        {
-        //            ROFTimer = Time.time;
-        //            FireBeam();
-        //        }
-        //    }
-        //    if (firingMode == firingType.ChargeShot)
-        //    {
-        //        if (Input.GetButtonUp("Fire1"))
-        //        {
-        //            ROFTimer = Time.time;
-        //            FireBeam();
-        //        }
-        //        if (Input.GetButton("Fire1"))
-        //        {
-        //            ChargeBeam();
-        //        }
-        //    }
-        //}
         if (CharacterSpecialAbility && Input.GetButton("Fire3"))
         {
             CharacterSpecialAbility.useSpecialAbility();
@@ -134,11 +110,13 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
+    // Deprecated
     public Vector3 GetPlayerToMouseAim()
     {
         return (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
     }
 
+    // Deprecated
     private void FireBeam()
     {
 
@@ -180,13 +158,13 @@ public class PlayerBase : MonoBehaviour
     }
     public void BuffDamage(float multiplier, float buffDuration)
     {
-        damageMultiplier = multiplier;
+        CharacterWeapon.MultiplyDamage(multiplier);
         Invoke("revertBuff", buffDuration);
     }
 
     private void revertBuff()
     {
-        damageMultiplier = 1;
+        CharacterWeapon.MultiplyDamage();
     }
 
     public void TakeDamageEffects()
