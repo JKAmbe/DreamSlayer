@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619684459835590879}
-  - component: {fileID: 7476654395205215049}
+  - component: {fileID: 6960626937255802231}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Transform:
   m_Father: {fileID: 8300535424414130621}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7476654395205215049
+--- !u!114 &6960626937255802231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,15 +124,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6658422769727508104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d954f4dbb15276c45b515d418ff0fa4d, type: 3}
+  m_Script: {fileID: 11500000, guid: a326c243e5b5494448080c95c2333e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bAllowWeaponFire: 1
   WeaponProjectile: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
   WeaponAimingMode: 0
-  damage: 10
+  damage: 20
   aimSpread: 0
   shotsPerSecond: 2
+  WeaponProjectileFullCharge: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
+  damageFullCharge: 40
+  secondsToFullCharge: 2
 --- !u!1 &6688554027865377783
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +525,7 @@ MonoBehaviour:
   pewForce: 1
   duration: 2
   maxBeamSize: 3
-  CharacterWeapon: {fileID: 7476654395205215049}
+  CharacterWeapon: {fileID: 6960626937255802231}
   CharacterSpecialAbility: {fileID: 7747904766568243493}
   Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
   ReticleColor: {r: 1, g: 0, b: 0.079761505, a: 1}

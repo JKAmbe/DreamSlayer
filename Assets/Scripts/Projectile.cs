@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float damage;
     public float maxTimer;
     public string includeTag;
+    public bool bPiercingBullet = false;
 
     void Start()
     {
@@ -20,11 +21,13 @@ public class Projectile : MonoBehaviour
 
     public void DamageOtherHealth(Collider other)
     {
-        Debug.Log("Call twice");
         if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
         {
             other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
-            //Destroy(this.gameObject);
+            if (!bPiercingBullet)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

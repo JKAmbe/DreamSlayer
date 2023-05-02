@@ -34,7 +34,7 @@ public class EnemyBullet : Projectile
         if (bParried)
         {
             Debug.Log("Parry hit " + other.name);
-            DamageOtherHealth(other);
+            //DamageOtherHealth(other);
         }
     }
 }

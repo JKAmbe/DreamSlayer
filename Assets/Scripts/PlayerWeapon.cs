@@ -11,16 +11,17 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     float planeDistance = 50.0f;
-    float duration = 2.0f;
+    protected float duration = 2.0f;
     public bool bAllowWeaponFire = true;
     public GameObject WeaponProjectile;
-    float totalDamage = 0.0f;
+    protected float totalDamage = 0.0f;
     [Header("Weapon stats")]
     public EAimMode WeaponAimingMode;
     public float damage = 10.0f;
     public float aimSpread = 0.0f;
     public float shotsPerSecond = 12.0f;
-    float refireTimer = 0.0f;
+   
+    protected float refireTimer = 0.0f;
 
 
     // Start is called before the first frame update
@@ -42,8 +43,9 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    public void WeaponFire()
+    virtual public void WeaponFire()
     {
+
         if (bAllowWeaponFire)
         {
             // can fire, start timer
@@ -59,12 +61,12 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    public void WeaponRelease()
+    virtual public void WeaponRelease()
     {
 
     }
 
-    Vector3 GetProjectileDirection()
+    protected Vector3 GetProjectileDirection()
     {
         Vector3 Direction = Vector3.forward;
         // projectile direction based on aiming mode
@@ -84,7 +86,7 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     // buff/debuff weapon damage, pass no argument to reset damage
-    public void MultiplyDamage(float multiplyDamageBy = 1.0f)
+    virtual public void MultiplyDamage(float multiplyDamageBy = 1.0f)
     {
         totalDamage = damage * multiplyDamageBy;
     }

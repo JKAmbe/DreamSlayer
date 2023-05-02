@@ -295,6 +295,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: CharacterWeapon
+      value: 
+      objectReference: {fileID: 6792632941670543216}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: directionRange.x
       value: 90
       objectReference: {fileID: 0}
@@ -310,15 +314,42 @@ PrefabInstance:
       propertyPath: CharacterSpecialAbility
       value: 
       objectReference: {fileID: 351129708465379793}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6960626937255802231, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6688554027865377783, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6009462860496030613}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6792632941670543216}
   m_SourcePrefab: {fileID: 100100000, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+--- !u!1 &6684103306531301305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+  m_PrefabInstance: {fileID: 46668428151679281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6792632941670543216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684103306531301305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d954f4dbb15276c45b515d418ff0fa4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bAllowWeaponFire: 1
+  WeaponProjectile: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
+  WeaponAimingMode: 1
+  damage: 3
+  aimSpread: 5
+  shotsPerSecond: 20
 --- !u!4 &8328457866238544012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
