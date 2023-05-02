@@ -13,9 +13,8 @@ public class PlayerWeapon : MonoBehaviour
     float planeDistance = 50.0f;
     float duration = 2.0f;
     public bool bAllowWeaponFire = true;
-    public Transform ProjectileSpawnPoint;
     public GameObject WeaponProjectile;
-    public float totalDamage = 0.0f;
+    float totalDamage = 0.0f;
     [Header("Weapon stats")]
     public EAimMode WeaponAimingMode;
     public float damage = 10.0f;
@@ -27,7 +26,7 @@ public class PlayerWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        totalDamage = damage;
     }
 
     // Update is called once per frame
@@ -44,11 +43,11 @@ public class PlayerWeapon : MonoBehaviour
             if (refireTimer <= 0.0f)
             {
                 // create new instance and start firing timer
-                GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent);
+                GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
                 projectileInstance.GetComponent<Projectile>().damage = totalDamage;
                 projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
                 Destroy(projectileInstance, duration);
-                refireTimer = shotsPerSecond / 60.0f;
+                refireTimer = 1.0f / shotsPerSecond;
             }
             // cannot fire, wait for cooldown
             else
@@ -70,7 +69,7 @@ public class PlayerWeapon : MonoBehaviour
         switch (WeaponAimingMode)
         {
             case EAimMode.Freelook:
-                Direction = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position.normalized;
+                Direction = (Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
                 break;
             case EAimMode.PitchYaw:
                 Direction = transform.forward;

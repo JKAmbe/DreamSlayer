@@ -14,20 +14,13 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-
-        //Debug.Log(other.name);
+    {      
         DamageOtherHealth(other);
-
-        Debug.Log(other.name);
-        if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
-            other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
-        
-
     }
 
     public void DamageOtherHealth(Collider other)
     {
+        Debug.Log("Call twice");
         if (other.CompareTag(includeTag) && other.GetComponentInChildren<HealthBar>())
         {
             other.GetComponentInChildren<HealthBar>().TakeDamage(damage);

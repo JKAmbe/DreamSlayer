@@ -83,6 +83,56 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6658422769727508104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619684459835590879}
+  - component: {fileID: 7476654395205215049}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &619684459835590879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658422769727508104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8300535424414130621}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7476654395205215049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658422769727508104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d954f4dbb15276c45b515d418ff0fa4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bAllowWeaponFire: 1
+  WeaponProjectile: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
+  WeaponAimingMode: 0
+  damage: 10
+  aimSpread: 0
+  shotsPerSecond: 2
 --- !u!1 &6688554027865377783
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +418,7 @@ Transform:
   - {fileID: 5614881419069179076}
   - {fileID: 734004377362563297}
   - {fileID: 2507846925731994149}
+  - {fileID: 619684459835590879}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -471,6 +522,7 @@ MonoBehaviour:
   pewForce: 1
   duration: 2
   maxBeamSize: 3
+  CharacterWeapon: {fileID: 7476654395205215049}
   CharacterSpecialAbility: {fileID: 7747904766568243493}
   Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
   ReticleColor: {r: 1, g: 0, b: 0.079761505, a: 1}

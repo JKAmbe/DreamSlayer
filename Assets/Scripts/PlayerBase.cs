@@ -38,6 +38,9 @@ public class PlayerBase : MonoBehaviour
     private float beamSize = 0;
     private float ROFTimer = 0;
 
+    [Header("Weapon")]
+    public PlayerWeapon CharacterWeapon;
+
     [Header("Special Ability")]
     public SpecialAbility CharacterSpecialAbility;
 
@@ -88,31 +91,39 @@ public class PlayerBase : MonoBehaviour
     }
     void Update()
     {
-
-        if (Time.time - ROFTimer >= maxRateOfFire)
+        if (CharacterWeapon && Input.GetButton("Fire1"))
         {
-            
-            if (firingMode == firingType.RapidFire)
-            {
-                if (Input.GetButton("Fire1"))
-                {
-                    ROFTimer = Time.time;
-                    FireBeam();
-                }
-            }
-            if (firingMode == firingType.ChargeShot)
-            {
-                if (Input.GetButtonUp("Fire1"))
-                {
-                    ROFTimer = Time.time;
-                    FireBeam();
-                }
-                if (Input.GetButton("Fire1"))
-                {
-                    ChargeBeam();
-                }
-            }
+            CharacterWeapon.WeaponFire();
         }
+        if (CharacterWeapon && Input.GetButtonUp("Fire1"))
+        {
+            CharacterWeapon.WeaponRelease();
+        }
+
+        //if (Time.time - ROFTimer >= maxRateOfFire)
+        //{
+            
+        //    if (firingMode == firingType.RapidFire)
+        //    {
+        //        if (Input.GetButton("Fire1"))
+        //        {
+        //            ROFTimer = Time.time;
+        //            FireBeam();
+        //        }
+        //    }
+        //    if (firingMode == firingType.ChargeShot)
+        //    {
+        //        if (Input.GetButtonUp("Fire1"))
+        //        {
+        //            ROFTimer = Time.time;
+        //            FireBeam();
+        //        }
+        //        if (Input.GetButton("Fire1"))
+        //        {
+        //            ChargeBeam();
+        //        }
+        //    }
+        //}
         if (CharacterSpecialAbility && Input.GetButton("Fire3"))
         {
             CharacterSpecialAbility.useSpecialAbility();
