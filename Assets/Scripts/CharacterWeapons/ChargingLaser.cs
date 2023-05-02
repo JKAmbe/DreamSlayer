@@ -15,6 +15,7 @@ public class ChargingLaser : PlayerWeapon
     // Start is called before the first frame update
     void Start()
     {
+        totalDamage = damage;
         totalDamageFullCharge = damageFullCharge;
     }
 

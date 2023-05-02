@@ -128,12 +128,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bAllowWeaponFire: 1
-  WeaponProjectile: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
+  WeaponProjectile: {fileID: 5080587900697796606, guid: dc2e28faa00af3c4ca12b812b02cdc45, type: 3}
   WeaponAimingMode: 0
   damage: 20
   aimSpread: 0
   shotsPerSecond: 2
-  WeaponProjectileFullCharge: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
+  WeaponProjectileFullCharge: {fileID: 5080587900697796606, guid: dc2e28faa00af3c4ca12b812b02cdc45, type: 3}
   damageFullCharge: 40
   secondsToFullCharge: 2
 --- !u!1 &6688554027865377783
