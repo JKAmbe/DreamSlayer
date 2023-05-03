@@ -54,6 +54,7 @@ public class PlayerWeapon : MonoBehaviour
                 // create new instance and start firing timer
                 GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
                 projectileInstance.GetComponent<Projectile>().damage = totalDamage;
+                projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
                 projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
                 Destroy(projectileInstance, duration);
                 refireTimer = 1.0f / shotsPerSecond;

@@ -57,6 +57,7 @@ public class ChargingLaser : PlayerWeapon
             projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
             projectileInstance.GetComponent<Projectile>().damage = totalDamage;
         }
+        projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
         projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
         Destroy(projectileInstance, duration);
 

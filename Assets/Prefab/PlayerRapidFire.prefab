@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bAllowWeaponFire: 1
-  WeaponProjectile: {fileID: 1630309230217643898, guid: 96347a7f0488de441a29b24e4e47456a, type: 3}
+  WeaponProjectile: {fileID: 6083890636195533273, guid: 957a0127372bbfb4f8ebf9afd57d8bee, type: 3}
   WeaponAimingMode: 0
   damage: 10
   aimSpread: 0

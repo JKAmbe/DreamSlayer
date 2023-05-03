@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ProjectileOrange
+  m_Name: ProjectileRedFullCharge
   m_Shader: {fileID: -6465566751694194690, guid: 3909f537f478ec14a96ff0c740c7a509, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -64,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ProjectileTexture:
-        m_Texture: {fileID: 2800000, guid: 567b6d7d5de8a12438b448ac0565fe39, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d7718b465c005e418cf22f99ea4fd08, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -118,7 +118,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BoltColor: {r: 1, g: 0.60447556, b: 0, a: 0}
+    - _BoltColor: {r: 1, g: 0, b: 0.06448603, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
