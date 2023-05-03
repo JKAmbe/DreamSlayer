@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TornadoBossBehaviour : MonoBehaviour
 {
     bool bAttacking = true;
     int currentAttack = 0;
-    float attackDuration = 0;
+    float attackDuration = 5;
     HealthBar health;
     Animator anim;
     public GameObject EnemySpawnPrefab;
@@ -56,6 +57,21 @@ public class TornadoBossBehaviour : MonoBehaviour
         int newAttack = Random.Range(0, 4);
         if (currentAttack != newAttack)
             currentAttack = newAttack;
+        switch (currentAttack)
+        {
+            case 0:
+                attackDuration = 5;
+                break;
+            case 1:
+                attackDuration = 5;
+                break;
+            case 2:
+                attackDuration = 5;
+                break;
+            case 3:
+                attackDuration = 5;
+                break;
+        }
         attackDuration = Random.Range(5, 10);
         bAttacking = true;
         anim.SetTrigger("Reset");
@@ -86,5 +102,9 @@ public class TornadoBossBehaviour : MonoBehaviour
     {
         
         Instantiate(EnemySpawnPrefab, SpawnLocation[Random.Range(0, SpawnLocation.Length)].position, Quaternion.identity, null);
+    }
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

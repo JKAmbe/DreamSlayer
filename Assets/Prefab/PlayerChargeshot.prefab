@@ -465,12 +465,12 @@ MonoBehaviour:
   damage: 10
   aimSpread: 0
   ChargingSpeed: 10
-  maxRateOfFire: 0.25
+  maxRateOfFire: 0.5
   pew: {fileID: 3706323067966476811, guid: 122ea256ddcaddc4ab84b6661a24b7ec, type: 3}
   spawn: {fileID: 8300535426183915264}
   pewForce: 1
   duration: 2
-  maxBeamSize: 3
+  maxBeamSize: 1.5
   CharacterSpecialAbility: {fileID: 7747904766568243493}
   Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
   ReticleColor: {r: 1, g: 0, b: 0.079761505, a: 1}

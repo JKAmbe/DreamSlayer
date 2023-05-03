@@ -156,7 +156,6 @@ MonoBehaviour:
   ParryCheckHitbox: {fileID: 846404231532351019}
   parryCooldown: 3
   parryWindow: 0.5
-  cParryWindow: -1
   parryDamage: 30
   parrySpeed: 3
 --- !u!1001 &46668428151679281
@@ -265,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxRateOfFire
-      value: 0.08
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: ReticleColor.b
