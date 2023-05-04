@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextChange : MonoBehaviour
+public class TextChange1 : MonoBehaviour
 {
     public TextMeshProUGUI text;  // Reference to the TextMeshProUGUI component
     private string[] messages =
@@ -16,11 +16,11 @@ public class TextChange : MonoBehaviour
     public float duration = 10f;  // The duration each message should be shown for
     public float messageDelay = 1f;  // The delay between each message
 
-    private int currentMessageIndex = 0;  // The index of the current message being displayed
+    public int currentMessageIndex = 0;  // The index of the current message being displayed
     private bool shown = false;  // Whether a message has been shown yet
     private float shownTime = 0f;  // The time the current message was shown
     private float nextMessageTime = 0f;
-    
+
     void Start()
     {
         Invoke("ShowText", delay);
@@ -51,10 +51,13 @@ public class TextChange : MonoBehaviour
 
     void ShowText()
     {
-        text.enabled = true;  // Enable the TextMeshProUGUI component
-        text.text = messages[currentMessageIndex];  // Set the text to display
-        shown = true;  // Set the 'shown' flag to true
-        shownTime = Time.time;  // Record the time the text was shown
+        if (currentMessageIndex < 3)
+        {
+            text.enabled = true;  // Enable the TextMeshProUGUI component
+            text.text = messages[currentMessageIndex];  // Set the text to display
+            shown = true;  // Set the 'shown' flag to true
+            shownTime = Time.time;  // Record the time the text was shown
+        }
     }
 
     void HideText()
