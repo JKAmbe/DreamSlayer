@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextChange1 : MonoBehaviour
+public class TextChange2 : MonoBehaviour
 {
     public TextMeshProUGUI text;  // Reference to the TextMeshProUGUI component
     private string[] messages =
     {
-        "Now that we have mastered basic movement,\nLet's move onto shooting",
-        "Shooting can be achieved by pressing/holding left-click",
-        "Aim for the target!"
+        "Great Job!\nLet's dive into the other characters that are available to us",
+        "To change characters on the fly, press right-click"
     };  // The text to display
     public float delay = 5f;  // The delay before showing the first message
     public float duration = 10f;  // The duration each message should be shown for
@@ -51,7 +50,7 @@ public class TextChange1 : MonoBehaviour
 
     void ShowText()
     {
-        if (currentMessageIndex < 2)
+        if (currentMessageIndex < 3)
         {
             text.enabled = true;  // Enable the TextMeshProUGUI component
             text.text = messages[currentMessageIndex];  // Set the text to display

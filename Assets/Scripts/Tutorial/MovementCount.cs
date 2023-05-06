@@ -19,10 +19,14 @@ public class MovementCount : MonoBehaviour
 
     public float delay = 3f;
 
+    public GameObject otherGameObject;
+    public TextChange1 textChange1;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        textChange1 = otherGameObject.GetComponent<TextChange1>();
+        textChange1.enabled = false;
     }
 
     // Update is called once per frame
@@ -34,12 +38,12 @@ public class MovementCount : MonoBehaviour
             movementCheck10.count + movementCheck11.count + movementCheck12.count == 12)
         {
             Invoke("DisableObject" ,delay);
-            
         }
     }
 
     void DisableObject()
     {
         gameObject.SetActive(false);
+        textChange1.enabled = true;
     }
 }
