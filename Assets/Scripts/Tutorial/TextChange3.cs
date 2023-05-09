@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextChange2 : MonoBehaviour
+public class TextChange3 : MonoBehaviour
 {
     public TextMeshProUGUI text;  // Reference to the TextMeshProUGUI component
     private string[] messages =
     {
-        "Great Job!\nLet's dive into the other characters that are available to us",
-        "Different characters enable us to use different playstyles through shooting mechanics and abilities",
-        "Currently, we are using the default blue."
+        "Not only do each character have their own unique style...",
+        "Each character also has their own special ability!",
+        "We can access this ability by pressing space-bar",
+        "Let's go through them starting with blue"
     };  // The text to display
     public float delay = 5f;  // The delay before showing the first message
     public float duration = 10f;  // The duration each message should be shown for
@@ -47,13 +48,11 @@ public class TextChange2 : MonoBehaviour
         {
             ShowText();
         }
-        
-        
     }
 
     void ShowText()
     {
-        if (currentMessageIndex < 3)
+        if (currentMessageIndex < 4)
         {
             text.enabled = true;  // Enable the TextMeshProUGUI component
             text.text = messages[currentMessageIndex];  // Set the text to display

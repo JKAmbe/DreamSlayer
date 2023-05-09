@@ -9,8 +9,7 @@ public class TextChange1 : MonoBehaviour
     private string[] messages =
     {
         "Now that we have mastered basic movement,\nLet's move onto shooting",
-        "Shooting can be achieved by pressing/holding left-click",
-        "Aim for the target!"
+        "Shooting can be achieved by pressing/holding left-click"
     };  // The text to display
     public float delay = 5f;  // The delay before showing the first message
     public float duration = 10f;  // The duration each message should be shown for
