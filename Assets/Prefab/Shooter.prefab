@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f922d3f509fb7f14f9a11a79f4a429b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detected: 0
   bullet: {fileID: 7270365283419375815, guid: 86be5507841cbec4c8e37ea30ecf227c, type: 3}
   shootPoint: {fileID: 3647081395664579085}
   shootSpeed: 30
@@ -483,6 +484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7377957740451697289, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8216311370407250745, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
     m_RemovedGameObjects: []
@@ -516,8 +521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 30
-  maskingBar: {fileID: 0}
-  healthBar: {fileID: 0}
   binvulnerable: 0
   animator: {fileID: 9220155042656547595}
   takeDamageParticle: {fileID: 3315870345138158682}

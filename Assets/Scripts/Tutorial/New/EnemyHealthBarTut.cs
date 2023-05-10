@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHealthBarTut : HealthBar
 {
-
+    
     public Animator animator;
     public ParticleSystem takeDamageParticle;
     public GameObject deadParticleObject;
@@ -21,7 +21,7 @@ public class EnemyHealthBarTut : HealthBar
         takeDamageParticle.Play();
         audiosource.pitch = 1.0f + Random.Range(-0.25f, 0.25f);
         audiosource.Play();
-        if (currentHealth - amount <= 0)
+        if (currentHealth-amount <= 0)
         {
             GameObject deadParticleInstance = Instantiate(deadParticleObject, transform.position, transform.rotation);
             targetCheck = true;

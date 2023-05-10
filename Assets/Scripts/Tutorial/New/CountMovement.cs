@@ -20,9 +20,9 @@ public class CountMovement : MonoBehaviour
 
     void Update()
     {
-        if (cm1.clicked && cm2.clicked && cm3.clicked &&
-            cm4.clicked && cm5.clicked && cm6.clicked &&
-            cm7.clicked && cm8.clicked && cm9.clicked &&
+        if (cm1.clicked && cm2.clicked && cm3.clicked && 
+            cm4.clicked && cm5.clicked && cm6.clicked && 
+            cm7.clicked && cm8.clicked && cm9.clicked && 
             cm10.clicked && cm11.clicked && cm12.clicked)
         {
             total = true;
