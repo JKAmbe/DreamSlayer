@@ -21,7 +21,6 @@ public class ChargingLaser : PlayerWeapon
     {
         totalDamage = damage;
         totalDamageFullCharge = damageFullCharge;
-        // redudnt line of code because i need to merge
     }
 
     // Update is called once per frame

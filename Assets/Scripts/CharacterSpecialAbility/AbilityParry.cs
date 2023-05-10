@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class AbilityParry : SpecialAbility
 {
+    enum ParryState
+    {
+        Cooldown,
+        Usable,
+        InUse
+    }
+
     public GameObject ParryCheckHitbox;
     [Header("Parry ability Stats")]
     public float parryCooldown = 0.0f;
@@ -15,6 +22,7 @@ public class AbilityParry : SpecialAbility
     [Header("Parry Bullet Stats")]
     public float parryDamage = 0.0f;
     public float parrySpeed = 0.0f;
+    ParryState cParryState = ParryState.Usable;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,57 +34,47 @@ public class AbilityParry : SpecialAbility
     {
         UpdateParry();
     }
-
+    
     void UpdateParry()
     {
-        // ability can be used depending on if there's a cooldown
-        bAllowAbilityOn = cParryCooldown <= 0.0f;
-
-        if (bAllowAbilityOn)
+        if (cParryState == ParryState.Usable)
         {
-            if (cParryWindow != 0.0f)
-            {
-                cParryWindow -= Time.deltaTime;
-                // turn parry window off 
-                if (cParryWindow <= 0.0f)
-                {
-                    bAbilityOn = false;
-                    cParryWindow = 0.0f;
-                    // if the parry was success at this point force a cooldown
-                    if (bParrySuccess)
-                    {
-                        cParryCooldown = parryCooldown;
-                    }
-                }
-            }
-        } else {
-            bAbilityOn = false; 
-            if (cParryCooldown != 0.0f)
-            {
-                cParryCooldown -= Time.deltaTime;
-                if (cParryCooldown <= 0.0f)
-                {
-                    bParrySuccess = false;
-                    bAllowAbilityOn = true;
-                    cParryCooldown = 0.0f;
-                }
-            }
-
+            ParryCheckHitbox.SetActive(false);
         }
-
-        // allow parry to be used 
-        ParryCheckHitbox.SetActive(bAbilityOn);
+        // Parry is being used, activate the hitbox while parry window >= 0.0f and start cooldown once the window is 0
+        if (cParryState == ParryState.InUse)
+        {
+            ParryCheckHitbox.SetActive(true);
+            cParryWindow -= Time.deltaTime;
+            if (cParryWindow < 0.0f)
+            {
+                cParryCooldown = parryCooldown;
+                cParryState = ParryState.Cooldown;
+            }
+        }
+        // run cooldown timer and set state to usable once cooldown is done
+        if (cParryState == ParryState.Cooldown)
+        {
+            ParryCheckHitbox.SetActive(false);
+            cParryCooldown -= Time.deltaTime;
+            if (cParryCooldown < 0.0f)
+            {
+                cParryState = ParryState.Usable;
+            }
+        }
+        if (ParryCheckHitbox.active) { useSpecialAbilityPlayerEffects(); } else { unuseSpecialAbilityPlayerEffects(); }
     }
 
     override public void useSpecialAbility()
     {
-        // if the ability isnt already on, turn it on and start parry attempt
-        if (!bAbilityOn)
+        if (bAllowAbilityOn)
         {
-            bAbilityOn = true;
-            cParryWindow = parryWindow;
+            if (cParryState == ParryState.Usable)
+            {
+                cParryState = ParryState.InUse;
+                cParryWindow = parryWindow;
+            }
         }
-
     }
 
     public override void unuseSpecialAbility()
@@ -85,13 +83,23 @@ public class AbilityParry : SpecialAbility
     }
     public void ParryBullet(EnemyBullet EnemyBullet)
     {
-        bParrySuccess = true;
         // Parry the enemy bullet so it damages themselves
         EnemyBullet.bParried = true;
         EnemyBullet.GetComponent<Rigidbody>().velocity *= -1 * parrySpeed;
         EnemyBullet.gameObject.layer = 9;
         EnemyBullet.includeTag = "Enemy";
         EnemyBullet.damage = parryDamage;
+    }
 
+    public void useSpecialAbilityPlayerEffects()
+    {
+        // turn off player weapon use
+        parent.CharacterWeapon.bAllowWeaponFire = false;
+    }
+
+    public void unuseSpecialAbilityPlayerEffects()
+    {
+        // turn on player weapon use if its already not on
+        if (!parent.CharacterWeapon.bAllowWeaponFire) { parent.CharacterWeapon.bAllowWeaponFire = true; }
     }
 }
