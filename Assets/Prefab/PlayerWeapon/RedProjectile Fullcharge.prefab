@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482182294180450897, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5482182294180450897, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_LocalScale.y
@@ -66,11 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5482182294180450897, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7815212791516826201, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_Name
-      value: RedBolt Fullcharge
+      value: RedProjectile Fullcharge
       objectReference: {fileID: 0}
     - target: {fileID: 8820846931143959722, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_Size.x
@@ -102,11 +102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191168898556667186, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_Radius
-      value: 3.0795932
+      value: 4.5000305
       objectReference: {fileID: 0}
     - target: {fileID: 9191168898556667186, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_Center.y
-      value: -0.39651203
+      value: 0.36135483
       objectReference: {fileID: 0}
     - target: {fileID: 9191168898556667186, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_Center.z

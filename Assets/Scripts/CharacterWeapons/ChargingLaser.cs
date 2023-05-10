@@ -10,8 +10,12 @@ public class ChargingLaser : PlayerWeapon
     public float secondsToFullCharge = 1.0f;
     float cCharge = 0.0f;
     float totalDamageFullCharge = 0.0f;
+    float nearFullChargeRate = 0.85f;
 
 
+    [Header("Visuals")]
+    public ParticleSystem ChargeParticle;
+    public ParticleSystem FullchargeParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +35,20 @@ public class ChargingLaser : PlayerWeapon
         {
             if (refireTimer <= 0.0f)
             {
-                cCharge += Time.deltaTime;
-                if (refireTimer <= 0.0f && cCharge <= 0.0f)
-                {
-                    cCharge += Time.deltaTime;
-                    refireTimer = 1.0f / shotsPerSecond;
+                if (!ChargeParticle.isPlaying) 
+                { 
+                    ChargeParticle.Play();
                 }
+                if (ChargeParticle.isPlaying)
+                {
+                    ChargeParticle.transform.localScale = Vector3.one * Mathf.Lerp(0.1f, 1f, (cCharge / secondsToFullCharge));
+                }
+                cCharge += Time.deltaTime;
+                if (cCharge >= nearFullChargeRate)
+                {
+                    if (!FullchargeParticle.isPlaying) { FullchargeParticle.Play(); }
+                }
+                player.switchController.Reticle.PlayCrosshairAnimation();
             }
         }
     }
@@ -44,25 +56,31 @@ public class ChargingLaser : PlayerWeapon
     override public void WeaponRelease()
     {
         GameObject projectileInstance = null;
-        // change projectile to fire based on the charge rate
-        if (cCharge >= secondsToFullCharge)
+        // change damage depending on charge rate, if nearly full charge use the big projectile
+        if (cCharge >= nearFullChargeRate)
         {
             projectileInstance = Instantiate(WeaponProjectileFullCharge, transform.position, Quaternion.identity, transform.parent.parent);
-            projectileInstance.GetComponent<Projectile>().damage = totalDamageFullCharge;
             projectileInstance.GetComponent<Projectile>().bPiercingBullet = true;
             projectileInstance.GetComponent<AudioSource>().pitch = 0.8f;
+            if (cCharge >= secondsToFullCharge)
+            {
+                projectileInstance.transform.localScale *= 2;
+                projectileInstance.GetComponent<AudioSource>().pitch = 0.7f;
+            }
         }
         else
         {
             projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
-            projectileInstance.GetComponent<Projectile>().damage = totalDamage;
         }
+        float projectileDamage = projectileInstance.GetComponent<Projectile>().damage = Mathf.Lerp(totalDamage, totalDamageFullCharge, (cCharge / secondsToFullCharge));
         projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
         projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
         Destroy(projectileInstance, duration);
 
-
         cCharge = 0.0f;
+        player.switchController.Reticle.PlayCrosshairAnimation();
+        ChargeParticle.Stop();
+        FullchargeParticle.Stop();
     }
 
     override public void MultiplyDamage(float multiplyDamageBy = 1.0f)

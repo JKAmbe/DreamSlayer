@@ -7,9 +7,11 @@ public class PlayerWeapon : MonoBehaviour
     public enum EAimMode
     {
         Freelook,
-        PitchYaw
+        PitchYaw,
+        Autolock
     }
 
+    protected PlayerBase player;
     float planeDistance = 50.0f;
     protected float duration = 2.0f;
     public bool bAllowWeaponFire = true;
@@ -43,28 +45,9 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    virtual public void WeaponFire()
+    virtual public void Init(PlayerBase player)
     {
-
-        if (bAllowWeaponFire)
-        {
-            // can fire, start timer
-            if (refireTimer <= 0.0f)
-            {
-                // create new instance and start firing timer
-                GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
-                projectileInstance.GetComponent<Projectile>().damage = totalDamage;
-                projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
-                projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
-                Destroy(projectileInstance, duration);
-                refireTimer = 1.0f / shotsPerSecond;
-            }
-        }
-    }
-
-    virtual public void WeaponRelease()
-    {
-
+        this.player = player;
     }
 
     protected Vector3 GetProjectileDirection()
@@ -84,6 +67,33 @@ public class PlayerWeapon : MonoBehaviour
         Direction.x += Random.Range(-aimSpread / 100, aimSpread / 100);
         Direction.y += Random.Range(-aimSpread / 100, aimSpread / 100);
         return Direction;
+    }
+
+    virtual public void WeaponFire()
+    {
+
+        if (bAllowWeaponFire)
+        {
+            // can fire, start timer
+            if (refireTimer <= 0.0f)
+            {
+                // create new instance and start firing timer
+                GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
+                projectileInstance.GetComponent<Projectile>().damage = totalDamage;
+                projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
+                projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
+                Destroy(projectileInstance, duration);
+                refireTimer = 1.0f / shotsPerSecond;
+
+                // call the reticle shooting animation from the player and to PlayerManager
+                player.switchController.Reticle.PlayCrosshairAnimation();
+            }
+        }
+    }
+
+    virtual public void WeaponRelease()
+    {
+
     }
 
     // buff/debuff weapon damage, pass no argument to reset damage
