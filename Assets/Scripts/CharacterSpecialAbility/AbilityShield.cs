@@ -75,7 +75,6 @@ public class AbilityShield : SpecialAbility
     {
         // turn shieldsphere on or off
         ShieldSphere.enabled = bOn;
-        Debug.Log(ShieldSphere.enabled);
         
         if (bOn)
         {

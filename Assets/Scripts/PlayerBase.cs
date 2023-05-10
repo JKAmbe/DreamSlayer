@@ -22,24 +22,21 @@ public class PlayerBase : MonoBehaviour
     Camera cam;
     float damageMultiplier = 1;
 
-    //[Header("Firing System")]
+    [Header("Firing System")]
     public float planeDistance;
-    //public aimingType aimingMode;
-    //public firingType firingMode;
-    //public float damage = 10.0f;
-    //public float aimSpread = 0.0f;
-    //public float ChargingSpeed = 10.0f;
-    //public float maxRateOfFire = 0.5f;
-    //public GameObject pew;
-    //public Transform spawn;
-    //public float pewForce = 4f;
-    //public int duration = 1;
-    //public float maxBeamSize = 10;
-    //private float beamSize = 0;
-    //private float ROFTimer = 0;
-
-    [Header("Weapon")]
-    public PlayerWeapon CharacterWeapon;
+    public aimingType aimingMode;
+    public firingType firingMode;
+    public float damage = 10.0f;
+    public float aimSpread = 0.0f;
+    public float ChargingSpeed = 10.0f;
+    public float maxRateOfFire = 0.5f;
+    public GameObject pew;
+    public Transform spawn;
+    public float pewForce = 4f;
+    public int duration = 1;
+    public float maxBeamSize = 10;
+    private float beamSize = 0;
+    private float ROFTimer = 0;
 
     [Header("Special Ability")]
     public SpecialAbility CharacterSpecialAbility;
@@ -78,10 +75,6 @@ public class PlayerBase : MonoBehaviour
         {
             CharacterSpecialAbility.Init(this);
         }
-        if (CharacterWeapon)
-        {
-            CharacterWeapon.Init(this);
-        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -95,15 +88,31 @@ public class PlayerBase : MonoBehaviour
     }
     void Update()
     {
-        if (CharacterWeapon && Input.GetButton("Fire1"))
-        {
-            CharacterWeapon.WeaponFire();
-        }
-        if (CharacterWeapon && Input.GetButtonUp("Fire1"))
-        {
-            CharacterWeapon.WeaponRelease();
-        }
 
+        if (Time.time - ROFTimer >= maxRateOfFire)
+        {
+            
+            if (firingMode == firingType.RapidFire)
+            {
+                if (Input.GetButton("Fire1"))
+                {
+                    ROFTimer = Time.time;
+                    FireBeam();
+                }
+            }
+            if (firingMode == firingType.ChargeShot)
+            {
+                if (Input.GetButtonUp("Fire1"))
+                {
+                    ROFTimer = Time.time;
+                    FireBeam();
+                }
+                if (Input.GetButton("Fire1"))
+                {
+                    ChargeBeam();
+                }
+            }
+        }
         if (CharacterSpecialAbility && Input.GetButton("Fire3"))
         {
             CharacterSpecialAbility.useSpecialAbility();
@@ -119,53 +128,54 @@ public class PlayerBase : MonoBehaviour
         return (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
     }
 
-    // Deprecated
-    //private void FireBeam()
-    //{
+    private void FireBeam()
+    {
 
-    //    //Debug.Log(beamSize);
-    //    Vector3 Direction = Vector3.forward;
-    //    switch (aimingMode)
-    //    {
-    //        case aimingType.Mouse:
-    //            Direction = (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
-    //            break;
-    //        case aimingType.PitchYaw:
-    //            Direction = transform.forward;
-    //            break;
-    //        case aimingType.AutoLock:
-    //            //placeholder, direction should be whatever the target location is
-    //            break;
-    //    }
-    //    // add spread to direction (simulating weapon spread)
-    //    Direction.x += Random.Range(-aimSpread / 100, aimSpread / 100);
-    //    Direction.y += Random.Range(-aimSpread / 100, aimSpread / 100);
-    //    float tmp = Mathf.Pow(ChargingSpeed, beamSize);
-    //    GameObject pewTmp = Instantiate(pew, spawn.position, Quaternion.identity, transform.parent);
-    //    pewTmp.GetComponent<Projectile>().damage = this.damage;
-    //    pewTmp.GetComponent<AudioSource>().pitch = 1 / (beamSize+1);
-    //    pewTmp.transform.localScale = pewTmp.transform.localScale * tmp;
-    //    pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
-    //    pewTmp.GetComponent<Projectile>().damage *= damageMultiplier;
-    //    Destroy(pewTmp, duration);
-    //    beamSize = 0;
+        //Debug.Log(beamSize);
+        Vector3 Direction = Vector3.forward;
+        switch (aimingMode)
+        {
+            case aimingType.Mouse:
+                Direction = (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
+                break;
+            case aimingType.PitchYaw:
+                Direction = transform.forward;
+                break;
+            case aimingType.AutoLock:
+                //placeholder, direction should be whatever the target location is
+                break;
+        }
+        // add spread to direction (simulating weapon spread)
+        Direction.x += Random.Range(-aimSpread / 100, aimSpread / 100);
+        Direction.y += Random.Range(-aimSpread / 100, aimSpread / 100);
+        float tmp = Mathf.Pow(ChargingSpeed, beamSize);
+        GameObject pewTmp = Instantiate(pew, spawn.position, Quaternion.identity, transform.parent);
+        pewTmp.GetComponent<Projectile>().damage = this.damage;
+        pewTmp.GetComponent<AudioSource>().pitch = 1 / (beamSize+1);
+        pewTmp.transform.localScale = pewTmp.transform.localScale * tmp;
+        pewTmp.GetComponent<Rigidbody>().AddForce(Direction* pewForce);
+        pewTmp.GetComponent<Projectile>().damage *= damageMultiplier;
+        Destroy(pewTmp, duration);
+        beamSize = 0;
 
-    //}
+        // call the reticle shooting animation from the parent PlayerManager
+        switchController.Reticle.GetComponent<Animator>().SetTrigger("Shoot");
+    }
 
-    //private void ChargeBeam()
-    //{
-    //    beamSize += Time.deltaTime;
-    //    beamSize = Mathf.Clamp(beamSize, 0, maxBeamSize);
-    //}
+    private void ChargeBeam()
+    {
+        beamSize += Time.deltaTime;
+        beamSize = Mathf.Clamp(beamSize, 0, maxBeamSize);
+    }
     public void BuffDamage(float multiplier, float buffDuration)
     {
-        CharacterWeapon.MultiplyDamage(multiplier);
+        damageMultiplier = multiplier;
         Invoke("revertBuff", buffDuration);
     }
 
     private void revertBuff()
     {
-        CharacterWeapon.MultiplyDamage();
+        damageMultiplier = 1;
     }
 
     public void TakeDamageEffects()

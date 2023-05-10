@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using static PlayerWeapon;
 
 public class AimingReticle : MonoBehaviour
 {
@@ -28,21 +27,21 @@ public class AimingReticle : MonoBehaviour
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, canvas.worldCamera.WorldToScreenPoint(player.transform.position), canvas.worldCamera, out playerPos);
 
-            switch (player.GetComponent<PlayerBase>().CharacterWeapon.WeaponAimingMode)
+            switch (player.GetComponent<PlayerBase>().aimingMode)
             {
-                case EAimMode.Freelook:
+                case aimingType.Mouse:
                     Vector2 mousePos;
                     RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out mousePos);
                     farReticle.transform.position = canvas.transform.TransformPoint(mousePos);
                     nearReticle.transform.position = canvas.transform.TransformPoint((playerPos + mousePos) / 2);
                     break;
-                case EAimMode.PitchYaw:
+                case aimingType.PitchYaw:
                     Vector2 playerFrontDirection;
                     RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, canvas.worldCamera.WorldToScreenPoint(player.transform.forward * 50 + player.transform.position), canvas.worldCamera, out playerFrontDirection);
                     farReticle.transform.position = canvas.transform.TransformPoint(playerFrontDirection);
                     nearReticle.transform.position = canvas.transform.TransformPoint((playerPos + playerFrontDirection) / 2);
                     break;
-                case EAimMode.Autolock:
+                case aimingType.AutoLock:
                     //both reticle should auto lock into the closest target 
                     break;
             }
@@ -55,10 +54,5 @@ public class AimingReticle : MonoBehaviour
         farReticle.GetComponent<Image>().color = newColor;
         nearReticle.GetComponent<Image>().sprite = newCrosshairSprite;
         nearReticle.GetComponent<Image>().color = newColor;
-    }
-
-    public void PlayCrosshairAnimation()
-    {
-        GetComponent<Animator>().SetTrigger("Shoot");
     }
 }
