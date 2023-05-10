@@ -11011,8 +11011,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434fa8ac0a34f4546b08637ff1f20071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 750
-  currentHealth: 750
+  maxHealth: 500
+  currentHealth: 500
   binvulnerable: 0
   ArmorMultiplier: 1
 --- !u!224 &8320754979445604953 stripped

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TornadoBossBehaviour : MonoBehaviour
 {
     int currentAttack = 0;
-    float attackDuration = 10;
+    float attackDuration = 3;
     Animator anim;
     //TornadoHealthBar health;
     public GameObject EnemySpawnPrefab;
@@ -18,7 +18,7 @@ public class TornadoBossBehaviour : MonoBehaviour
     {
         //health = GetComponent<TornadoHealthBar>();
         anim = GetComponentInChildren<Animator>();
-        anim.SetTrigger("Suck");
+        anim.SetTrigger("SpawnMinion");
     }
 
     // Update is called once per frame

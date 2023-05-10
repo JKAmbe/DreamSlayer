@@ -16,11 +16,11 @@ public class SuckDamage : MonoBehaviour
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            health.GetComponentInChildren<HealthBar>().Heal(dps);
+            health.GetComponentInChildren<HealthBar>().Heal(dps/4);
             other.GetComponentInChildren<HealthBar>().TakeDamage(dps);
         } 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
-            health.GetComponentInChildren<HealthBar>().Heal(dps);
+            health.GetComponentInChildren<HealthBar>().Heal(dps/4);
     }
     private void OnTriggerExit(Collider other)
     {

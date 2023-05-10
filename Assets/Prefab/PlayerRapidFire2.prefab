@@ -348,9 +348,9 @@ MonoBehaviour:
   bAllowWeaponFire: 1
   WeaponProjectile: {fileID: 7294019108394446299, guid: 9c2a6e21d8cd0894ab5f3e211d7ea8aa, type: 3}
   WeaponAimingMode: 1
-  damage: 3
+  damage: 10
   aimSpread: 5
-  shotsPerSecond: 20
+  shotsPerSecond: 10
 --- !u!4 &8328457866238544012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}

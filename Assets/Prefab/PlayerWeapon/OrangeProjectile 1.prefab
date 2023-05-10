@@ -5221,7 +5221,7 @@ MonoBehaviour:
   damage: 10
   maxTimer: 2
   includeTag: Enemy
-  bPiercingBullet: 0
+  bPiercingBullet: 1
 --- !u!136 &7893098663419861594
 CapsuleCollider:
   m_ObjectHideFlags: 0
