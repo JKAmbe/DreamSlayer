@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Prompt : MonoBehaviour
 {
@@ -45,29 +44,16 @@ public class Prompt : MonoBehaviour
         "The shield has a time limit, so keep that in mind", //35
         "Now lets check out white's ability\nChange to white with right-click", //36
         " ", //37
-        "White has the ability to parry enemy bullets\nSee if you can time the enemy bullets", //38
-        " ", //39
-        "The player has a health bar that we can see on the bottom right hand corner", //40
-        "If this bar goes down to zero, you will lose", //41
-        "Let's take a closer look at enemies", //42
-        "Each enemy will have a health-bar and will shoot at the player", //43
-        "These bullets will hurt the player, so make sure you avoid being hit", //44
-        "Wipe out the enemies to progress further!", //45
-        " ", //46
-        "Now let's go over the buffs/drops you may encounter in your playthrough", //47
-        "There are two notable drops", //48
-        "First is a power buff that allows the player's projectile to deal more damage", //49
-        "Second is a health drop\nThis lets you recover any lost health points", //50
-        "Move into them to obtain these boosts!", //51
-        "Now lets go into obstacles", //52
-        "There are two types of obstacles\nDestructible and Non-Destructible", //53
-        "As you can see, they both have different colours\nTry to remember this distinction", //54
-        "Another distinction is that moving obstacles,\nsuch as these", //55
-        "...are non-destructible, so try to maneuver around them!", //56
-        "Let's test your memory and eliminate the destructible obstacle!", //57
-        "Well done!", //58
-        "This is the end of the tutorial\nHopefully you have learnt how to play Nightmare Slayers...", //59
-        "...because this game is not easy" //60
+        "White has the ability to parry enemy bullets\nSee if you can time the enemy bullets", //39 - 1
+        " ", //40
+        "The player has a health bar that we can see on the bottom right hand corner", //41
+        "If this bar goes down to zero, you will lose", //42
+        "Let's take a closer look at enemies", //43
+        "Each enemy will have a health-bar and will shoot at the player", //44
+        "These bullets will hurt the player, so make sure you avoid being hit", //45
+        "Wipe out the enemies to progress further!", //46
+        " ",
+        "Throughout the levels, you will encounter obstacles" //47
     };
     public TextMeshProUGUI textMesh;
     public float updateInterval = 1f;
@@ -110,17 +96,6 @@ public class Prompt : MonoBehaviour
     public EnemyHealthBarTut enemyHealthBarTut6a;
     public EnemyHealthBarTut enemyHealthBarTut6b;
     public EnemyHealthBarTut enemyHealthBarTut6c;
-    
-    public GameObject power;
-    public GameObject hp;
-
-    public GameObject dest;
-    public GameObject nDest;
-    public GameObject moving;
-    public GameObject testObstacle;
-    public GameObject fakeObstacle;
-
-    public ObstacleCollision OC;
     public void StopUpdating()
     {
         shouldContinueUpdating = false;
@@ -249,19 +224,6 @@ public class Prompt : MonoBehaviour
                 UpdateTextMesh();
             }
         }
-        else if (currentIndex == 57)
-        {
-            moving.SetActive(false);
-            testObstacle.SetActive(true);
-            fakeObstacle.SetActive(true);
-            if (OC.destroyed)
-            {
-                testObstacle.SetActive(false);
-                fakeObstacle.SetActive(false);
-                shouldContinueUpdating = true;
-                UpdateTextMesh();
-            }
-        }
         
     }
 
@@ -275,7 +237,7 @@ public class Prompt : MonoBehaviour
 
             if (currentIndex == 5 || currentIndex == 9 || currentIndex == 14 || currentIndex == 16 || currentIndex == 18 ||
                 currentIndex == 21 || currentIndex == 27 || currentIndex == 29 || currentIndex == 31 || currentIndex == 33 ||
-                currentIndex == 36 || currentIndex == 38 || currentIndex == 46 || currentIndex == 57)
+                currentIndex == 36 || currentIndex == 38 || currentIndex == 46)
             {
                 StopUpdating();
             }
@@ -291,13 +253,6 @@ public class Prompt : MonoBehaviour
         target4.SetActive(false);
         target5.SetActive(false);
         target6.SetActive(false);
-        power.SetActive(false);
-        hp.SetActive(false);
-        dest.SetActive(false);
-        nDest.SetActive(false);
-        moving.SetActive(false);
-        testObstacle.SetActive(false);
-        fakeObstacle.SetActive(false);
         UpdateTextMesh();
     }
 
@@ -309,57 +264,7 @@ public class Prompt : MonoBehaviour
             timeSinceLastUpdate += Time.deltaTime;
             if (timeSinceLastUpdate >= updateInterval)
             {
-                if (currentIndex == 47)
-                {
-                    power.SetActive(true);
-                    hp.SetActive(true);
-                    UpdateTextMesh();
-                }
-                else if (currentIndex == 48)
-                {
-                    hp.SetActive(false);
-                    UpdateTextMesh();
-                }
-                else if (currentIndex == 49)
-                {
-                    power.SetActive(false);
-                    hp.SetActive(true);
-                    UpdateTextMesh();
-                }
-                else if (currentIndex == 50)
-                {
-                    power.SetActive(true);
-                    hp.SetActive(true);
-                    UpdateTextMesh();
-                }
-                else if (currentIndex == 52 || currentIndex == 53)
-                {
-                    dest.SetActive(true);
-                    nDest.SetActive(true);
-                    UpdateTextMesh();
-                }
-                else if (currentIndex == 54 || currentIndex == 55)
-                {
-                    dest.SetActive(false);
-                    nDest.SetActive(false);
-                    moving.SetActive(true);
-                    UpdateTextMesh();
-                }
-                // else if (currentIndex == 57)
-                // {
-                //     moving.SetActive(false);
-                // }
-                else if (currentIndex == 60)
-                {
-                    SceneManager.LoadScene("MainMenu");
-                }
-                else
-                {
-                    moving.SetActive(false);
-                    power.SetActive(false);
-                    hp.SetActive(false);
-                    UpdateTextMesh();    
-                }
+                UpdateTextMesh();
             }
         }
         else if (!shouldContinueUpdating)

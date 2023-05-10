@@ -9,7 +9,7 @@ public class ObstacleCollision : MonoBehaviour
     public float[] alpha;
     
     public int count = 0;
-    public bool destroyed = false;
+    
     private Material objectMaterial;
 
     private void Start()
@@ -32,6 +32,7 @@ public class ObstacleCollision : MonoBehaviour
             count++;
             if (count >= alpha.Length)
             {
+<<<<<<< HEAD
                 Destroy(other.gameObject);
                 Debug.Log("Other Object: " + other.gameObject);
                 Color color = objectMaterial.color;
@@ -72,8 +73,9 @@ public class ObstacleCollision : MonoBehaviour
             }
             else
             {
-                destroyed = true;
                 Destroy(other.gameObject);
+=======
+>>>>>>> parent of b50d6e3 (Merge pull request #10 from JKAmbe/Tommy)
                 Destroy(gameObject);
             }
         }

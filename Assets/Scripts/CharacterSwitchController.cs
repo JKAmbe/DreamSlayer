@@ -12,7 +12,6 @@ public class CharacterSwitchController : MonoBehaviour
     public CameraFollow MainCamera;
     public AimingReticle Reticle;
 
-    public int index;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,13 +49,12 @@ public class CharacterSwitchController : MonoBehaviour
     }
 
     // Cycle through and switch to different characters
-    public void SwitchCharacters()
+    void SwitchCharacters()
     {
         // Get the index of the currently active character
-        index = Array.IndexOf(CharacterPrefabs, currentCharacter);
+        int index = Array.IndexOf(CharacterPrefabs, currentCharacter);
         // update index by 1, wrap back to 0 if needed
         index += 1;
-        Debug.Log("Index is: " + index);
         if (index >= CharacterPrefabs.Length) { index = 0; }
         // activate the character
         ActivateCharacter(index);
