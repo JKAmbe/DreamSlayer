@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CheckRed : MonoBehaviour
+public class CheckRed1 : MonoBehaviour
 {
     public GameObject enableObject;
     public GameObject disableObject;
@@ -19,10 +19,9 @@ public class CheckRed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CSA.count == 0 && CSC.index == 0 && Input.GetMouseButtonDown(1))
+        if (CSA.count == 1 && CSC.index == 0 && Input.GetMouseButtonDown(1))
         {
             Invoke("ChangePrompt", delay);
-            CSA.count = 1;
         }
     }
 

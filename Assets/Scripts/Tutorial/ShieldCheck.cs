@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetCheck : MonoBehaviour
+public class ShieldCheck : MonoBehaviour
 {
     public GameObject targetTrack;
     public EnemyHealthBarTut enemyHealthBarTut;
