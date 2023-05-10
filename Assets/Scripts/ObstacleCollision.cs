@@ -9,7 +9,7 @@ public class ObstacleCollision : MonoBehaviour
     public float[] alpha;
     
     public int count = 0;
-    
+    public bool destroyed = false;
     private Material objectMaterial;
 
     private void Start()
@@ -32,6 +32,48 @@ public class ObstacleCollision : MonoBehaviour
             count++;
             if (count >= alpha.Length)
             {
+                Destroy(other.gameObject);
+                Debug.Log("Other Object: " + other.gameObject);
+                Color color = objectMaterial.color;
+                color.a = alpha1;
+                objectMaterial.color = color;
+                count++;
+                Debug.Log("Count: " + count);
+            }
+            else if (count == 1)
+            {
+                Destroy(other.gameObject);
+                Debug.Log("Other Object: " + other.gameObject);
+                Color color = objectMaterial.color;
+                color.a = alpha2;
+                objectMaterial.color = color;
+                count++;
+                Debug.Log("Count: " + count);
+            }
+            else if (count == 2)
+            {
+                Destroy(other.gameObject);
+                Debug.Log("Other Object: " + other.gameObject);
+                Color color = objectMaterial.color;
+                color.a = alpha3;
+                objectMaterial.color = color;
+                count++;
+                Debug.Log("Count: " + count);
+            }
+            else if (count == 3)
+            {
+                Destroy(other.gameObject);
+                Debug.Log("Other Object: " + other.gameObject);
+                Color color = objectMaterial.color;
+                color.a = alpha4;
+                objectMaterial.color = color;
+                count++;
+                Debug.Log("Count: " + count);
+            }
+            else
+            {
+                destroyed = true;
+                Destroy(other.gameObject);
                 Destroy(gameObject);
             }
         }
