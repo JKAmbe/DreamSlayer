@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4457783, g: 0.49007368, b: 0.54509795, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457786, g: 0.49007392, b: 0.54509884, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -561,10 +561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &604907576
 Rigidbody:
@@ -1271,10 +1271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &801730445
 Rigidbody:
@@ -1540,10 +1540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &897196281
 Rigidbody:
@@ -1743,7 +1743,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.020425422, g: 0.11053757, b: 0.254717, a: 0}
+  m_BackGroundColor: {r: 0.06666667, g: 0, b: 0.24705882, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2045,10 +2045,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1088404126
 Rigidbody:
@@ -2328,10 +2328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1097912630
 Rigidbody:
@@ -2909,10 +2909,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1204900725
 Rigidbody:
@@ -3192,10 +3192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1384388002
 Rigidbody:
@@ -3419,10 +3419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1502384337
 Rigidbody:
@@ -3940,10 +3940,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1679028184
 Rigidbody:
@@ -4415,10 +4415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1804510097
 Rigidbody:
@@ -4566,10 +4566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1925482022
 Rigidbody:
@@ -4722,10 +4722,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1953276222
 Rigidbody:
@@ -4922,10 +4922,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha1: 0.8
-  alpha2: 0.6
-  alpha3: 0.4
-  alpha4: 0.2
+  alpha:
+  - 0.1
+  - 0.05
+  - 0.01
   count: 0
 --- !u!54 &1983921259
 Rigidbody:
@@ -5419,6 +5419,14 @@ PrefabInstance:
     - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: bombDamagePerTick
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736372981956140369, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: binvulnerable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441574467185562126, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder

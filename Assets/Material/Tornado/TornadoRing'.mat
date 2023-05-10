@@ -48,6 +48,7 @@ Material:
     - _WobbleFrequency: 2
     - _WobbleIntensity: 2
     - _WobbleSPeed: 2
+    - _transparency: 1
     m_Colors:
     - _Color: {r: 54.91774, g: 32.98903, b: 140.02011, a: 1}
     - _TwirlCenter: {r: 0, g: 0, b: 0, a: 0}
