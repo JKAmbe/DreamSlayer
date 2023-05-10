@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedProjectile Fullcharge
       objectReference: {fileID: 0}
+    - target: {fileID: 8480750803362506195, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8820846931143959722, guid: 5f9f5ba244bb6734db039a4e799342e2, type: 3}
       propertyPath: m_Size.x
       value: 2.3511636
