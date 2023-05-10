@@ -1,4 +1,4 @@
-using Palmmedia.ReportGenerator.Core.Reporting.Builders;
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -75,6 +75,7 @@ public class AbilityShield : SpecialAbility
     {
         // turn shieldsphere on or off
         ShieldSphere.enabled = bOn;
+        Debug.Log(ShieldSphere.enabled);
         
         if (bOn)
         {

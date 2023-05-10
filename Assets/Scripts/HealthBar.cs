@@ -8,10 +8,9 @@ public class HealthBar : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
-    [SerializeField]
     Image maskingBar;
-    [SerializeField]
     Image healthBar;
+    Image InvisBar;
     public bool binvulnerable = false;
 
     Vector2 baseSize;
@@ -20,11 +19,18 @@ public class HealthBar : MonoBehaviour
     {
         maskingBar = GetComponentsInChildren<Image>()[0];
         healthBar = GetComponentsInChildren<Image>()[1];
+        InvisBar = GetComponentsInChildren<Image>()[2];
         baseSize = maskingBar.rectTransform.sizeDelta;
         currentHealth = maxHealth;
         healthBar.pixelsPerUnitMultiplier = maxHealth / 400.0f;
+        InvisBar.pixelsPerUnitMultiplier = maxHealth / 400.0f;
+        InvisBar.enabled = binvulnerable;
     }
 
+    private void Update()
+    {
+        InvisBar.enabled = binvulnerable;
+    }
     virtual public void TakeDamage(float amount)
     {
         if (!binvulnerable)

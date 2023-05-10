@@ -52,8 +52,8 @@ MonoBehaviour:
   bombMaxSpeed: 50
   bombFuse: 1
   bombDamagePerTick: 3
-  bombDamageTicks: 100
-  explosionRadius: 5
+  bombDamageTicks: 300
+  explosionRadius: 15
   bomberCooldown: 2
 --- !u!1001 &46668428151679281
 PrefabInstance:
@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ef67851fd7e4714408badaf8e8626189, type: 2}
+    - target: {fileID: 7476654395205215049, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: shotsPerSecond
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130617, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -156,20 +160,52 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: CharacterWeapon
+      value: 
+      objectReference: {fileID: 9096556224443277900}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: CharacterSpecialAbility
       value: 
       objectReference: {fileID: 2611798327918277600}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 1666040130542888932, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+    - {fileID: 6960626937255802231, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6688554027865377783, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+    - {fileID: 1147088499938597205, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5199897229779666577}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9096556224443277900}
   m_SourcePrefab: {fileID: 100100000, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+--- !u!1 &6684103306531301305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+  m_PrefabInstance: {fileID: 46668428151679281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9096556224443277900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684103306531301305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d954f4dbb15276c45b515d418ff0fa4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bAllowWeaponFire: 1
+  WeaponProjectile: {fileID: 6083890636195533273, guid: 957a0127372bbfb4f8ebf9afd57d8bee, type: 3}
+  WeaponAimingMode: 0
+  damage: 10
+  aimSpread: 0
+  shotsPerSecond: 4
 --- !u!4 &8328457866238544012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}

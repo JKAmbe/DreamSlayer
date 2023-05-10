@@ -156,7 +156,6 @@ MonoBehaviour:
   ParryCheckHitbox: {fileID: 846404231532351019}
   parryCooldown: 3
   parryWindow: 0.5
-  cParryWindow: -1
   parryDamage: 30
   parrySpeed: 3
 --- !u!1001 &46668428151679281
@@ -171,6 +170,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2499911f714cf95488dfe4203fd406ca, type: 2}
+    - target: {fileID: 7476654395205215049, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476654395205215049, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: aimSpread
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476654395205215049, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: shotsPerSecond
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7476654395205215049, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: WeaponAimingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130617, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -265,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxRateOfFire
-      value: 0.08
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: ReticleColor.b
@@ -279,6 +294,10 @@ PrefabInstance:
       propertyPath: ReticleColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: CharacterWeapon
+      value: 
+      objectReference: {fileID: 6792632941670543216}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: directionRange.x
       value: 90
@@ -295,15 +314,43 @@ PrefabInstance:
       propertyPath: CharacterSpecialAbility
       value: 
       objectReference: {fileID: 351129708465379793}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6960626937255802231, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6688554027865377783, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+    - {fileID: 1147088499938597205, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6009462860496030613}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6792632941670543216}
   m_SourcePrefab: {fileID: 100100000, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+--- !u!1 &6684103306531301305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+  m_PrefabInstance: {fileID: 46668428151679281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6792632941670543216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684103306531301305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d954f4dbb15276c45b515d418ff0fa4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bAllowWeaponFire: 1
+  WeaponProjectile: {fileID: 7294019108394446299, guid: 9c2a6e21d8cd0894ab5f3e211d7ea8aa, type: 3}
+  WeaponAimingMode: 1
+  damage: 3
+  aimSpread: 5
+  shotsPerSecond: 20
 --- !u!4 &8328457866238544012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
