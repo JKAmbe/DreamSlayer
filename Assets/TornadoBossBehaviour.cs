@@ -5,103 +5,66 @@ using UnityEngine.SceneManagement;
 
 public class TornadoBossBehaviour : MonoBehaviour
 {
-    bool bAttacking = true;
     int currentAttack = 0;
-    float attackDuration = 5;
-    HealthBar health;
+    float attackDuration = 10;
     Animator anim;
+    //TornadoHealthBar health;
     public GameObject EnemySpawnPrefab;
+    public GameObject TornadoSpawnPrefab;
     public Transform[] SpawnLocation;
 
     // Start is called before the first frame update
     void Start()
     {
-        health =  GetComponentInChildren<HealthBar>();
+        //health = GetComponent<TornadoHealthBar>();
         anim = GetComponentInChildren<Animator>();
+        anim.SetTrigger("Suck");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (!bAttacking)
-            ResetAttack();
-        else
+        if (attackDuration > 0)
         {
-            switch (currentAttack)
-            {
-                case 0:
-                    ReplenishEnemies();
-                    break;
-                case 1:
-                    SuckAttack();
-                    break;
-                case 2:
-                    SuckAttack();
-                    break;
-                case 3:
-                    ReplenishEnemies();
-                    break;
-            }
+            Debug.Log(attackDuration);
             attackDuration -= Time.deltaTime;
-            if (attackDuration <= 0)
-                bAttacking = false;
         }
-            
-
+        else
+            ResetAttack();
     }
 
     void ResetAttack()
     {
-        int newAttack = Random.Range(0, 4);
-        if (currentAttack != newAttack)
-            currentAttack = newAttack;
+        anim.SetTrigger("Reset");
+        int oldAttack = currentAttack;
+        while (currentAttack == oldAttack)
+            currentAttack = Random.Range(0, 3);
         switch (currentAttack)
         {
             case 0:
+                anim.SetTrigger("Suck");
                 attackDuration = 5;
                 break;
             case 1:
-                attackDuration = 5;
+                anim.SetTrigger("SpawnMinion");
+                attackDuration = 3;
                 break;
             case 2:
-                attackDuration = 5;
-                break;
-            case 3:
-                attackDuration = 5;
+                anim.SetTrigger("SpawnTornado");
+                attackDuration = 10;
                 break;
         }
-        attackDuration = Random.Range(5, 10);
-        bAttacking = true;
-        anim.SetTrigger("Reset");
-        anim.SetBool("Suck", false);
-        anim.SetBool("Spawn", false);
-    }
-    void SuckAttack()
-    {
-        anim.SetBool("Suck", true);
-    }
-
-    void TornadoPillars()
-    {
-
-    }
-
-    void ReplenishEnemies()
-    {
-        anim.SetBool("Spawn", true);
-    }
-
-    void MathAttack()
-    {
-
+        
     }
 
     public void SpawnEnemy()
     {
-        
         Instantiate(EnemySpawnPrefab, SpawnLocation[Random.Range(0, SpawnLocation.Length)].position, Quaternion.identity, null);
+    }
+
+    public void SpawnTornado()
+    {
+        Instantiate(TornadoSpawnPrefab, SpawnLocation[Random.Range(0, SpawnLocation.Length)].position, Quaternion.Euler(0,0,Random.Range(0.0f,360.0f)), null);
     }
     private void OnDestroy()
     {
