@@ -4962,7 +4962,7 @@ MonoBehaviour:
   WeaponAimingMode: 0
   damage: 1
   aimSpread: 0
-  shotsPerSecond: 2
+  shotsPerSecond: 1
   WeaponProjectileFullCharge: {fileID: 6358052880035240655, guid: 1262ead2b88aae24fa283a1d6b37fbcc, type: 3}
   damageFullCharge: 40
   secondsToFullCharge: 2

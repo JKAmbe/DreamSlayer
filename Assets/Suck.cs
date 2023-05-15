@@ -14,6 +14,6 @@ public class Suck : MonoBehaviour
         if (other.GetComponent<CharacterController>())
             other.GetComponent<CharacterController>().Move (pullForce);
         if (other.GetComponent<Rigidbody>())
-            other.GetComponent<Rigidbody>().AddForce(pullForce);
+            other.GetComponent<Rigidbody>().AddForce(pullForce*5);
     }
 }
