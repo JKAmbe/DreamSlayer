@@ -39,7 +39,7 @@ Transform:
   - {fileID: 1014265911728402022}
   - {fileID: 1675842242731741496}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1346151038750802718
 MeshFilter:
@@ -265,7 +265,7 @@ MonoBehaviour:
   laser: {fileID: 0}
   speed: 5
   stopDuration: 5
-  lockOnDuration: 5
+  lockOnDuration: 2
 --- !u!1 &8704659773362709155
 GameObject:
   m_ObjectHideFlags: 0

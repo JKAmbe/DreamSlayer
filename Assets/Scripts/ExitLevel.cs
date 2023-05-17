@@ -10,9 +10,10 @@ public class ExitLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                if (enemy.GetComponentInChildren<Detection>().target)
+                if (enemy.GetComponentInChildren<Detection>().target != null)
                     return;
                 else
                     continue;

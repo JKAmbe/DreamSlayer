@@ -20,6 +20,10 @@ public class EnemyShield : MonoBehaviour
         CurrentScale.x = Mathf.Clamp(CurrentScale.x - Time.deltaTime*reductionSpeed, 0, OriginalScale.x);
         CurrentScale.z = Mathf.Clamp(CurrentScale.z - Time.deltaTime * reductionSpeed, 0, OriginalScale.x);
         shieldArea.transform.localScale = CurrentScale;
+        if (CurrentScale.x <= 0)
+            shieldArea.GetComponent<Collider>().enabled = false;
+        else
+            shieldArea.GetComponent<Collider>().enabled = true;
     }
     private void OnTriggerEnter(Collider other)
     {     
