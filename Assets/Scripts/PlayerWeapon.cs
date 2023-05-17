@@ -16,6 +16,7 @@ public class PlayerWeapon : MonoBehaviour
     protected float duration = 2.0f;
     public bool bAllowWeaponFire = true;
     public GameObject WeaponProjectile;
+    public Animator animator;
     protected float totalDamage = 0.0f;
     [Header("Weapon stats")]
     public EAimMode WeaponAimingMode;
@@ -87,14 +88,15 @@ public class PlayerWeapon : MonoBehaviour
 
                 // call the reticle shooting animation from the player and to PlayerManager
                 player.switchController.Reticle.PlayCrosshairAnimation();
-                player.animator.SetBool("bShoot", true);    
+                animator.SetTrigger("trigShoot");
+                animator.Play("Base Layer.Blue|BlueShoot", 0, 0.0f);
             }
         }
     }
 
     virtual public void WeaponRelease()
     {
-        player.animator.SetBool("bShoot", false);
+
     }
 
     // buff/debuff weapon damage, pass no argument to reset damage

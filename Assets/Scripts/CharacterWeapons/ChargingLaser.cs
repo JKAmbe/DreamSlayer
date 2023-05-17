@@ -81,6 +81,8 @@ public class ChargingLaser : PlayerWeapon
         player.switchController.Reticle.PlayCrosshairAnimation();
         ChargeParticle.Stop();
         FullchargeParticle.Stop();
+        animator.SetTrigger("trigShoot");
+        animator.Play("Base Layer.Blue|BlueShoot", 0, 0.0f);
     }
 
     override public void MultiplyDamage(float multiplyDamageBy = 1.0f)

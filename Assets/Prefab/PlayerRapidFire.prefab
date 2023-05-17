@@ -71,6 +71,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3034333073194832978, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034333073194832978, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6922793697723135513, guid: b8ec2546c1cf26847a701e2391b36030, type: 3}
     - target: {fileID: 7119320772284147482, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -187,6 +195,7 @@ PrefabInstance:
     - {fileID: 6688554027865377783, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     - {fileID: 1147088499938597205, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     - {fileID: 3625950736084036832, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+    - {fileID: 4501896726246082525, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       insertIndex: -1
@@ -196,6 +205,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 9096556224443277900}
   m_SourcePrefab: {fileID: 100100000, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+--- !u!95 &761038747932808050 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 732411107916069443, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+  m_PrefabInstance: {fileID: 46668428151679281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6684103306531301305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6658422769727508104, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
@@ -215,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bAllowWeaponFire: 1
   WeaponProjectile: {fileID: 6083890636195533273, guid: 957a0127372bbfb4f8ebf9afd57d8bee, type: 3}
+  animator: {fileID: 761038747932808050}
   WeaponAimingMode: 0
   damage: 10
   aimSpread: 0
