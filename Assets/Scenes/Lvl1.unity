@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 991824465}
   MainCamera: {fileID: 963194229}
   Reticle: {fileID: 479747676}
+  index: 0
 --- !u!4 &56176
 Transform:
   m_ObjectHideFlags: 0
@@ -181,55 +182,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3647081395446181920, guid: 09dbdbdace258f747aa4dc8356a1ff7e, type: 3}
   m_PrefabInstance: {fileID: 325629582}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &113944352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 113944354}
-  - component: {fileID: 113944355}
-  m_Layer: 0
-  m_Name: Post Processing Global
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &113944354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113944352}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -300.23853, y: 70.28631, z: 2189.8574}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &113944355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113944352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: a869117ad4d53f74dbd1a24b990a3855, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1001 &323118186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -561,11 +513,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &604907576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1271,11 +1224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &801730445
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1540,11 +1494,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &897196281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1717,7 +1672,6 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1859,66 +1813,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &963194231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 963194228}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &991824465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8328457866238544013, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
@@ -2045,11 +1939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1088404126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2328,11 +2223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1097912630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2909,11 +2805,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1204900725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3192,11 +3089,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1384388002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3419,11 +3317,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1502384337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3940,11 +3839,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1679028184
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4415,11 +4315,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1804510097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4566,11 +4467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1925482022
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4722,11 +4624,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1953276222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4872,7 +4775,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983921256
 GameObject:
@@ -4922,11 +4825,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bb3138245af634e99cb94894b1feea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha:
-  - 0.1
-  - 0.05
-  - 0.01
+  alpha1: 0.8
+  alpha2: 0.6
+  alpha3: 0.4
+  alpha4: 0.2
   count: 0
+  destroyed: 0
 --- !u!54 &1983921259
 Rigidbody:
   m_ObjectHideFlags: 0

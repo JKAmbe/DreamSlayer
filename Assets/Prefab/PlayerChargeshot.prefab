@@ -10363,10 +10363,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1972690881437947003, guid: 8c6f03b26d689c246b3808fbc3995e56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8c6f03b26d689c246b3808fbc3995e56, type: 3}
       propertyPath: m_Name
       value: BlueMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c6f03b26d689c246b3808fbc3995e56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831018558786363571, guid: 8c6f03b26d689c246b3808fbc3995e56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797384429611982230, guid: 8c6f03b26d689c246b3808fbc3995e56, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b7fe876483cd084e845513bf7f40e4f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 8c6f03b26d689c246b3808fbc3995e56, type: 3}

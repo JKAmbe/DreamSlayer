@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 991824465}
   MainCamera: {fileID: 963194229}
   Reticle: {fileID: 479747676}
+  index: 0
 --- !u!4 &56176
 Transform:
   m_ObjectHideFlags: 0
@@ -991,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4051925906904094246, guid: ef06690eefd702443814ed55be991e0c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4051925906904094246, guid: ef06690eefd702443814ed55be991e0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1706,7 +1707,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2018141095
 GameObject:
