@@ -16,14 +16,17 @@ public class Enemyhealthbar : HealthBar
     {
         //Debug.Log(currentHealth);
         // trigger take damage animation
-        animator.SetTrigger("takeDamage");
-        takeDamageParticle.Play();
-        audiosource.pitch = 1.0f + Random.Range(-0.25f, 0.25f);
-        audiosource.Play();
-        if (currentHealth-amount <= 0)
+        if (!binvulnerable)
         {
-            GameObject deadParticleInstance = Instantiate(deadParticleObject, transform.position, transform.rotation);
-            Debug.Log("Destoryed");
+            animator.SetTrigger("takeDamage");
+            takeDamageParticle.Play();
+            audiosource.pitch = 1.0f + Random.Range(-0.25f, 0.25f);
+            audiosource.Play();
+            if (currentHealth - amount <= 0)
+            {
+                GameObject deadParticleInstance = Instantiate(deadParticleObject, transform.position, transform.rotation);
+                //Debug.Log("Destoryed");
+            }
         }
         base.TakeDamage(amount);
     }

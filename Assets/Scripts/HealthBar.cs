@@ -35,8 +35,10 @@ public class HealthBar : MonoBehaviour
     {
         if (!binvulnerable)
         {
+            
+            StartCoroutine(HealthLerp(0.5f, currentHealth, currentHealth-amount));
             currentHealth -= amount;
-            maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
+            //maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
             // call to play the TakeDamage effect on the parent object, this class should be only handling the health mechanics
             if (GetComponentInParent<PlayerBase>() != null)
             {
@@ -51,10 +53,24 @@ public class HealthBar : MonoBehaviour
         }
 
     }
+    IEnumerator HealthLerp(float lerpDuration, float startValue, float endValue)
+    {
+
+        float timeElapsed = 0;
+        while (timeElapsed < lerpDuration)
+        {
+            maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration) / maxHealth)), baseSize.y);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (endValue / maxHealth)), baseSize.y);
+    }
+
     public void Heal (float amount)
     {
-        currentHealth  = Mathf.Clamp(currentHealth +  amount,0, maxHealth);
-        maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
+        StartCoroutine(HealthLerp(0.5f, currentHealth, Mathf.Clamp(currentHealth + amount, 0, maxHealth)));
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        //maskingBar.rectTransform.sizeDelta = new Vector2((baseSize.x * (currentHealth / maxHealth)), baseSize.y);
     }
 
 }

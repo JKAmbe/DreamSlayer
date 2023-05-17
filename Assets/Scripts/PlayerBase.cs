@@ -182,9 +182,12 @@ public class PlayerBase : MonoBehaviour
     {
         bIframeOn = true;
         healthBar.binvulnerable = true;
+        Debug.Log("test");
+        //PlayerMesh.GetComponent<Renderer>().material.SetFloat("_bTakeDamage", 1.0f);
         yield return new WaitForSeconds(iFrameTime);
         bIframeOn = false;
         healthBar.binvulnerable = false;
+        //PlayerMesh.GetComponent<Renderer>().material.SetFloat("_bTakeDamage", 0.0f);
         animator.SetBool("bTakeDamage", false);
         yield return null;
     }
