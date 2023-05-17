@@ -59,6 +59,7 @@ public class AimingReticle : MonoBehaviour
 
     public void PlayCrosshairAnimation()
     {
+        GetComponent<Animator>().Play("Base Layer.ReticleShoot", 0, 0.0f);
         GetComponent<Animator>().SetTrigger("Shoot");
     }
 }

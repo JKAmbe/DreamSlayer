@@ -157,6 +157,7 @@ public class PlayerBase : MonoBehaviour
     //    beamSize += Time.deltaTime;
     //    beamSize = Mathf.Clamp(beamSize, 0, maxBeamSize);
     //}
+
     public void BuffDamage(float multiplier, float buffDuration)
     {
         CharacterWeapon.MultiplyDamage(multiplier);
@@ -175,6 +176,7 @@ public class PlayerBase : MonoBehaviour
         // start iframe
         Debug.Log("Start iframe");
         animator.SetBool("bTakeDamage", true);
+        Debug.Log("set trigger");
         StartCoroutine(useiFrame());
     }
 

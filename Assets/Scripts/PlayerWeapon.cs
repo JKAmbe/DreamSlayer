@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -16,12 +17,15 @@ public class PlayerWeapon : MonoBehaviour
     protected float duration = 2.0f;
     public bool bAllowWeaponFire = true;
     public GameObject WeaponProjectile;
+    public Animator animator;
     protected float totalDamage = 0.0f;
     [Header("Weapon stats")]
     public EAimMode WeaponAimingMode;
     public float damage = 10.0f;
     public float aimSpread = 0.0f;
     public float shotsPerSecond = 12.0f;
+    public int multishots = 3;
+    public float projectileSpeedMultiplier = 1.0f;
    
     protected float refireTimer = 0.0f;
 
@@ -69,6 +73,28 @@ public class PlayerWeapon : MonoBehaviour
         return Direction;
     }
 
+
+    virtual public void FireProjectile()
+    {
+        // shoot bullets multishots per shot (basically shotgun)
+        for (int i = 0; i < multishots; i++)
+        {
+            // create new instance and start firing timer
+            GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
+            projectileInstance.GetComponent<Projectile>().damage = totalDamage;
+            projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
+            projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection() * projectileSpeedMultiplier);
+            Destroy(projectileInstance, duration);
+        }
+
+        refireTimer = 1.0f / shotsPerSecond;
+
+        // call the reticle shooting animation from the player and to PlayerManager
+        player.switchController.Reticle.PlayCrosshairAnimation();
+        animator.SetTrigger("trigShoot");
+        animator.Play("Base Layer.Blue|BlueShoot", 0, 0.0f);
+    }
+
     virtual public void WeaponFire()
     {
 
@@ -77,19 +103,11 @@ public class PlayerWeapon : MonoBehaviour
             // can fire, start timer
             if (refireTimer <= 0.0f)
             {
-                // create new instance and start firing timer
-                GameObject projectileInstance = Instantiate(WeaponProjectile, transform.position, Quaternion.identity, transform.parent.parent);
-                projectileInstance.GetComponent<Projectile>().damage = totalDamage;
-                projectileInstance.transform.rotation = Quaternion.LookRotation(GetProjectileDirection());
-                projectileInstance.GetComponent<Rigidbody>().AddForce(GetProjectileDirection());
-                Destroy(projectileInstance, duration);
-                refireTimer = 1.0f / shotsPerSecond;
-
-                // call the reticle shooting animation from the player and to PlayerManager
-                player.switchController.Reticle.PlayCrosshairAnimation();
+                FireProjectile();
             }
         }
     }
+
 
     virtual public void WeaponRelease()
     {
