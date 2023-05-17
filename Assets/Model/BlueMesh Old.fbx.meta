@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24c86dc3d94942247b1b2a8c224b5395
+guid: 8c6f03b26d689c246b3808fbc3995e56
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -44,7 +44,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -66,7 +66,7 @@ ModelImporter:
       takeName: Blue|BlueShoot
       internalID: -4315398455037081009
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -129,7 +129,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 2
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1

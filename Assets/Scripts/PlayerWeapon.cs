@@ -87,13 +87,14 @@ public class PlayerWeapon : MonoBehaviour
 
                 // call the reticle shooting animation from the player and to PlayerManager
                 player.switchController.Reticle.PlayCrosshairAnimation();
+                player.animator.SetBool("bShoot", true);    
             }
         }
     }
 
     virtual public void WeaponRelease()
     {
-
+        player.animator.SetBool("bShoot", false);
     }
 
     // buff/debuff weapon damage, pass no argument to reset damage
