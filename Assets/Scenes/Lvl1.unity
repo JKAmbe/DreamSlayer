@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4457786, g: 0.49007392, b: 0.54509884, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457783, g: 0.49007368, b: 0.54509795, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2677,8 +2677,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: aimSpread
-      value: 6
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: multishots
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: shotsPerSecond
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: projectileSpeedMultiplier
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: m_RootOrder
@@ -3954,6 +3970,10 @@ PrefabInstance:
     - target: {fileID: 1666040130542888932, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxHealth
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960626937255802231, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
+      propertyPath: multishots
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130620, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Name
@@ -5403,6 +5423,26 @@ PrefabInstance:
     - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: ReticleColor.g
       value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: damage
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: burstDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: burstshots
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: multishots
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: shotsPerSecond
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
