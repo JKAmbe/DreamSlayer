@@ -26,43 +26,49 @@ public class LaserBlocker : Detection
         basecolor = renderer.material.color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     protected override void fixedUpdateCall()
     {
         base.fixedUpdateCall();
         if (target && !firing)
         {
-            Vector3 targetPosition = target.transform.position;
-            targetPosition.z = transform.position.z;
-
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime*speed);
-        }
-        if (!firing)
-        {
-            GetComponentInChildren<Enemyhealthbar>().binvulnerable = false;
-            lockOnTimer -= Time.deltaTime;
-            renderer.material.color = Color.Lerp(Color.red, basecolor, lockOnTimer / lockOnDuration);
-            if (lockOnTimer <= 0)
-            {
-                laser.SetActive(true);
-                firing = true;
-                lockOnTimer = lockOnDuration;
-            }
+            MoveToTarget();
+            Locking();
         }
         if (firing)
         {
             GetComponentInChildren<Enemyhealthbar>().binvulnerable = true;
-            stopTimer -= Time.deltaTime;
-            if (stopTimer <= 0)
-            {
-                laser.SetActive(false);
-                firing = false;
-                stopTimer = stopDuration;
-            }
+            Firing();
         }
+    }
+
+    private void Firing()
+    {
+        stopTimer -= Time.deltaTime;
+        if (stopTimer <= 0)
+        {
+            laser.SetActive(false);
+            firing = false;
+            stopTimer = stopDuration;
+        }
+    }
+
+    private void Locking()
+    {
+        GetComponentInChildren<Enemyhealthbar>().binvulnerable = false;
+        lockOnTimer -= Time.deltaTime;
+        renderer.material.color = Color.Lerp(Color.red, basecolor, lockOnTimer / lockOnDuration);
+        if (lockOnTimer <= 0)
+        {
+            laser.SetActive(true);
+            firing = true;
+            lockOnTimer = lockOnDuration;
+        }
+    }
+
+    private void MoveToTarget()
+    {
+        Vector3 targetPosition = target.transform.position;
+        targetPosition.z = transform.position.z;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
     }
 }
