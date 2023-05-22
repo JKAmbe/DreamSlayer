@@ -194,4 +194,10 @@ public class PlayerBase : MonoBehaviour
         yield return null;
     }
 
+    public void playerGameover()
+    {
+        switchController.gameObject.SetActive(false);
+        switchController.gameoverUI.showGameoverUI(false);
+    }
+
 }

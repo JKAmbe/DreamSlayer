@@ -11,6 +11,7 @@ public class CharacterSwitchController : MonoBehaviour
     Vector3 charPosition;
     public CameraFollow MainCamera;
     public AimingReticle Reticle;
+    public GameoverUI gameoverUI;
 
     public int index;
 

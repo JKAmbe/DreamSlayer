@@ -49,7 +49,16 @@ public class HealthBar : MonoBehaviour
             }
 
             if (currentHealth <= 0)
-                Destroy(transform.parent.gameObject);
+            {
+                if (transform.parent.tag == "Player")
+                {
+                    transform.parent.GetComponent<PlayerBase>().playerGameover();
+                }
+                else
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+            }
         }
 
     }
