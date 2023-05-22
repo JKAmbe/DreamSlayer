@@ -168,15 +168,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 619684459835590879, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.012
+      value: 0.359
       objectReference: {fileID: 0}
     - target: {fileID: 619684459835590879, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.859
+      value: -0.347
       objectReference: {fileID: 0}
     - target: {fileID: 619684459835590879, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.644
+      value: 0.837
       objectReference: {fileID: 0}
     - target: {fileID: 1693939565687614202, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -372,10 +372,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bAllowWeaponFire: 1
   WeaponProjectile: {fileID: 7294019108394446299, guid: 9c2a6e21d8cd0894ab5f3e211d7ea8aa, type: 3}
+  animator: {fileID: 0}
   WeaponAimingMode: 1
   damage: 10
   aimSpread: 5
   shotsPerSecond: 10
+  multishots: 3
+  projectileSpeedMultiplier: 1
 --- !u!4 &8328457866238544012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
@@ -452,11 +455,11 @@ PrefabInstance:
     - target: {fileID: -5891652139597114617, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9701934bf3596e74986df91a5546aa59, type: 2}
+      objectReference: {fileID: 4874126678125670354, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
     - target: {fileID: -3968575844344848937, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3cc2e4bfe9022874fadbacd44d61bf73, type: 2}
+      objectReference: {fileID: 4874126678125670354, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
     - target: {fileID: 919132149155446097, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
       propertyPath: m_Name
       value: WeddingGurl
@@ -464,7 +467,7 @@ PrefabInstance:
     - target: {fileID: 4112984690662791721, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9701934bf3596e74986df91a5546aa59, type: 2}
+      objectReference: {fileID: 4874126678125670354, guid: 69da6a9c618a6e04fbf06d841a5b4b91, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
