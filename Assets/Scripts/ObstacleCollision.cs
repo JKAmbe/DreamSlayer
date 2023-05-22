@@ -18,7 +18,7 @@ public class ObstacleCollision : MonoBehaviour
     private void Start()
     {
         objectMaterial = GetComponent<MeshRenderer>().material;
-        Debug.Log("Count: " + count);
+        //Debug.Log("Count: " + count);
     }
 
     void OnTriggerEnter(Collider other)

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ExitLevel : MonoBehaviour
 {
+    public GameoverUI gameoverUI;
+
     // Start is called before the first frame update
     private void OnTriggerStay(Collider other)
     {
@@ -18,8 +20,7 @@ public class ExitLevel : MonoBehaviour
                 else
                     continue;
             }
-            SceneManager.LoadScene("MainMenu");
+            gameoverUI.showGameoverUI(true);
         }
-
     }
 }
