@@ -2818,42 +2818,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
-    - target: {fileID: 351129708465379793, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: parryDamage
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 351129708465379793, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: parryWindow
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 351129708465379793, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: parryCooldown
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710024374791769813, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: maxHealth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: aimSpread
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: multishots
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: shotsPerSecond
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6792632941670543216, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: projectileSpeedMultiplier
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2901,30 +2865,6 @@ PrefabInstance:
     - target: {fileID: 8328457866238544013, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: m_Name
       value: PlayerRapidFire2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544013, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: reticle
-      value: 
-      objectReference: {fileID: 479747679}
-    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: aimSpread
-      value: 3.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: playerSpeed
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
-      propertyPath: RotationSpeed
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5773,42 +5713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
-    - target: {fileID: 1710024374791769813, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: maxHealth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: bombMaxSpeed
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: bombMinSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: bomberCooldown
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: bombDamageTicks
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: explosionRadius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611798327918277600, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: bombDamagePerTick
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736372981956140369, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: binvulnerable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7441574467185562126, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5856,50 +5760,6 @@ PrefabInstance:
     - target: {fileID: 8328457866238544013, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: damage
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: reticle
-      value: 
-      objectReference: {fileID: 479747679}
-    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: iFrameTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: playerSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: ReticleColor.b
-      value: 0.64200425
-      objectReference: {fileID: 0}
-    - target: {fileID: 8328457866238544118, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: ReticleColor.g
-      value: 0.7372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: damage
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: burstDelay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: burstshots
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: multishots
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096556224443277900, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
-      propertyPath: shotsPerSecond
-      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -48,13 +48,13 @@ MonoBehaviour:
   bAllowAbilityOn: 1
   parent: {fileID: 0}
   BombPrefab: {fileID: 8367730289850961703, guid: b4ef4f2d0b0281b4b866c09ea62f6ef1, type: 3}
-  bombMinSpeed: 10
-  bombMaxSpeed: 50
+  bombMinSpeed: 20
+  bombMaxSpeed: 75
   bombFuse: 1
-  bombDamagePerTick: 3
-  bombDamageTicks: 300
-  explosionRadius: 15
-  bomberCooldown: 2
+  bombDamagePerTick: 0.3
+  bombDamageTicks: 600
+  explosionRadius: 10
+  bomberCooldown: 8
 --- !u!1001 &46668428151679281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ef67851fd7e4714408badaf8e8626189, type: 2}
     - target: {fileID: 8300535424414130620, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_Name
-      value: PlayerRapidFire
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130620, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_TagString
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130621, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: playerSpeed
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxRateOfFire
@@ -201,11 +201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: ReticleColor.b
-      value: 0.735849
+      value: 0.64200425
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: ReticleColor.g
-      value: 0.15863046
+      value: 0.7372549
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: ReticleColor.r
@@ -267,9 +267,9 @@ MonoBehaviour:
   WeaponProjectile: {fileID: 6083890636195533273, guid: 957a0127372bbfb4f8ebf9afd57d8bee, type: 3}
   animator: {fileID: 1801128064127198400}
   WeaponAimingMode: 0
-  damage: 10
+  damage: 7
   aimSpread: 0
-  shotsPerSecond: 4
+  shotsPerSecond: 4.5
   multishots: 1
   projectileSpeedMultiplier: 1
 --- !u!4 &8328457866238544012 stripped
