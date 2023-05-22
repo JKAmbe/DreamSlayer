@@ -10,6 +10,4 @@ public class TornadoHealthBar : HealthBar
     {
         base.TakeDamage(amount*ArmorMultiplier);
     }
-
-
 }
