@@ -92,7 +92,7 @@ public class PlayerWeapon : MonoBehaviour
         // call the reticle shooting animation from the player and to PlayerManager
         player.switchController.Reticle.PlayCrosshairAnimation();
         animator.SetTrigger("trigShoot");
-        animator.Play("Base Layer.Blue|BlueShoot", 0, 0.0f);
+        animator.Play("Base Layer.Shoot", 0, 0.0f);
     }
 
     virtual public void WeaponFire()

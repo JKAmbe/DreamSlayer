@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TornadoBossBehaviour : MonoBehaviour
 {
+    public GameoverUI gameoverUI;
     int currentAttack = 0;
     float attackDuration = 3;
     Animator anim;
@@ -12,6 +15,8 @@ public class TornadoBossBehaviour : MonoBehaviour
     public GameObject EnemySpawnPrefab;
     public GameObject TornadoSpawnPrefab;
     public Transform[] SpawnLocation;
+
+    List<GameObject> minions = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +64,7 @@ public class TornadoBossBehaviour : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        Instantiate(EnemySpawnPrefab, SpawnLocation[Random.Range(0, SpawnLocation.Length)].position, Quaternion.identity, null);
+        minions.Add(Instantiate(EnemySpawnPrefab, SpawnLocation[Random.Range(0, SpawnLocation.Length)].position, Quaternion.identity, null));
     }
 
     public void SpawnTornado()
@@ -68,6 +73,21 @@ public class TornadoBossBehaviour : MonoBehaviour
     }
     private void OnDestroy()
     {
-        SceneManager.LoadScene("MainMenu");
+        gameoverUI.showGameoverUI(true);
+        //foreach (GameObject e in minions)
+        //{
+        //    if (e) { e.GetComponent<Enemyhealthbar>().TakeDamage(1000.0f); }
+        //}
+        Destroy(gameObject);
     }
+
+    //public void DestroyBoss()
+    //{
+    //    gameoverUI.showGameoverUI(true);
+    //    //foreach (GameObject e in minions)
+    //    //{
+    //    //    if (e) { e.GetComponent<Enemyhealthbar>().TakeDamage(1000.0f); }
+    //    //}
+    //    Destroy(gameObject);
+    //}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class HealthBar : MonoBehaviour
 {
@@ -49,7 +50,20 @@ public class HealthBar : MonoBehaviour
             }
 
             if (currentHealth <= 0)
-                Destroy(transform.parent.gameObject);
+            {
+                if (transform.parent.tag == "Player")
+                {
+                    transform.parent.GetComponent<PlayerBase>().playerGameover();
+                }
+                //else if (transform.parent.GetType() == typeof(TornadoBossBehaviour))
+                //{
+                //    transform.parent.GetComponent<TornadoBossBehaviour>().DestroyBoss();
+                //}
+                else
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+            }
         }
 
     }

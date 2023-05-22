@@ -82,7 +82,7 @@ public class ChargingLaser : PlayerWeapon
         ChargeParticle.Stop();
         FullchargeParticle.Stop();
         animator.SetTrigger("trigShoot");
-        animator.Play("Base Layer.Blue|BlueShoot", 0, 0.0f);
+        animator.Play("Base Layer.Shoot", 0, 0.0f);
     }
 
     override public void MultiplyDamage(float multiplyDamageBy = 1.0f)
