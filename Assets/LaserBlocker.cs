@@ -13,12 +13,14 @@ public class LaserBlocker : Detection
     float lockOnTimer;
     bool firing = false;
     bool locking = false;
+    HealthBar health;
     MeshRenderer renderer;
     Color basecolor;
 
 
     void Start()
     {
+        health = GetComponentInChildren<Enemyhealthbar>();
         stopTimer = stopDuration;
         lockOnTimer = lockOnDuration;
         laser = transform.Find("Beam").gameObject;
@@ -36,7 +38,7 @@ public class LaserBlocker : Detection
         }
         if (firing)
         {
-            GetComponentInChildren<Enemyhealthbar>().binvulnerable = true;
+            
             Firing();
         }
     }
@@ -46,6 +48,7 @@ public class LaserBlocker : Detection
         stopTimer -= Time.deltaTime;
         if (stopTimer <= 0)
         {
+            health.binvulnerable = false;
             laser.SetActive(false);
             firing = false;
             stopTimer = stopDuration;
@@ -54,11 +57,11 @@ public class LaserBlocker : Detection
 
     private void Locking()
     {
-        GetComponentInChildren<Enemyhealthbar>().binvulnerable = false;
         lockOnTimer -= Time.deltaTime;
         renderer.material.color = Color.Lerp(Color.red, basecolor, lockOnTimer / lockOnDuration);
         if (lockOnTimer <= 0)
         {
+            health.binvulnerable = true;
             laser.SetActive(true);
             firing = true;
             lockOnTimer = lockOnDuration;
