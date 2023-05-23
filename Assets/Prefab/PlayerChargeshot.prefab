@@ -4964,10 +4964,10 @@ MonoBehaviour:
   damage: 1
   aimSpread: 0
   shotsPerSecond: 1
-  multishots: 3
+  multishots: 0
   projectileSpeedMultiplier: 1
   WeaponProjectileFullCharge: {fileID: 6358052880035240655, guid: 1262ead2b88aae24fa283a1d6b37fbcc, type: 3}
-  damageFullCharge: 40
+  damageFullCharge: 50
   secondsToFullCharge: 2
   ChargeParticle: {fileID: 404770351041862}
   FullchargeParticle: {fileID: 1718888809362937078}
@@ -5143,7 +5143,7 @@ Transform:
   - {fileID: 2507846925731994149}
   - {fileID: 619684459835590879}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &8300535424414130618
 CharacterController:
