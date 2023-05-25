@@ -33,6 +33,7 @@ public class AbilityParry : SpecialAbility
     void FixedUpdate()
     {
         UpdateParry();
+        abilityUI.updateCooldownBar(getCooldownRate());
     }
     
     void UpdateParry()
@@ -101,5 +102,10 @@ public class AbilityParry : SpecialAbility
     {
         // turn on player weapon use if its already not on
         if (!parent.CharacterWeapon.bAllowWeaponFire) { parent.CharacterWeapon.bAllowWeaponFire = true; }
+    }
+    public float getCooldownRate()
+    {
+        if (cParryState == ParryState.Usable) { return 1; }
+        return cParryCooldown / parryCooldown;
     }
 }

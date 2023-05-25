@@ -10,6 +10,8 @@ public abstract class SpecialAbility : MonoBehaviour
     public bool bAllowAbilityOn = true;
     // the playerbase this ability belongs to
     public PlayerBase parent = null;
+    // gameobject containing the cooldown bar
+    public AbilityUI abilityUI;
 
     // Start is called before the first frame update
     void Start()

@@ -200,4 +200,9 @@ public class PlayerBase : MonoBehaviour
         switchController.gameoverUI.showGameoverUI(false);
     }
 
+    virtual public float getCooldownRate()
+    {
+        return 0.0f;
+    }
+
 }
