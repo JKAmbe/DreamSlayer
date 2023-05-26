@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Lvl2");
     }
 
-    public void playButton()
+    public void Play()
     {
         audio1.Play();
     }
