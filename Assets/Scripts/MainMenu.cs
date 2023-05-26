@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioSource audio1;
     public void goToTutorial()
     {
         SceneManager.LoadScene("Tutorial");
@@ -16,5 +17,10 @@ public class MainMenu : MonoBehaviour
     public void goToLvl2()
     {
         SceneManager.LoadScene("Lvl2");
+    }
+
+    public void playButton()
+    {
+        audio1.Play();
     }
 }
