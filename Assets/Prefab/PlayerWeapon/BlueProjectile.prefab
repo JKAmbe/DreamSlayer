@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d0fe901a04553ac418b5932b678628da, type: 2}
+    - target: {fileID: 1471193139439809779, guid: 96347a7f0488de441a29b24e4e47456a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1630309230217643898, guid: 96347a7f0488de441a29b24e4e47456a, type: 3}
       propertyPath: m_Name
       value: BlueProjectile
