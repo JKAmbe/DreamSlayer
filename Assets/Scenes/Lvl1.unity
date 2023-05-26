@@ -2818,6 +2818,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
+    - target: {fileID: 5929285311626049670, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38150668
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929285311626049670, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.2994642
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929285311626049670, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7900833
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929285311626049670, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.37488973
+      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2865,6 +2881,10 @@ PrefabInstance:
     - target: {fileID: 8328457866238544013, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
       propertyPath: m_Name
       value: PlayerRapidFire2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328457866238544013, guid: 4607bf3c165372143bbfb30c4d7fed6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5713,6 +5733,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 56176}
     m_Modifications:
+    - target: {fileID: 1547310892778246565, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736372981956140369, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108239986609321043, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574866808235082977, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047926252850619666, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441574467185562126, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8328457866238544012, guid: 74d2457b326d13c45bfea2d8924b4865, type: 3}
       propertyPath: m_RootOrder
       value: -1

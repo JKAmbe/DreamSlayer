@@ -31,6 +31,7 @@ public class AbilityShield : SpecialAbility
     void FixedUpdate()
     {
         UpdateShield();
+        abilityUI.updateCooldownBar(getCooldownRate());
     }
     override public void Init(PlayerBase player)
     {
@@ -119,5 +120,10 @@ public class AbilityShield : SpecialAbility
             parent.healthBar.binvulnerable = false;
             parent.playerSpeed = originalMovementSpeed;
         }
+    }
+
+    public float getCooldownRate()
+    {
+        return cDuration / MaxDuration;
     }
 }

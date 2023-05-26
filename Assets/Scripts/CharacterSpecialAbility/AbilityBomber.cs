@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AbilityBomber : SpecialAbility
 {
+
     [Header("Bomb stats")]
     public PlayerBomb BombPrefab;
     public float bombMinSpeed;
@@ -29,6 +30,7 @@ public class AbilityBomber : SpecialAbility
     void FixedUpdate()
     {
         UpdateBomber();
+        abilityUI.updateCooldownBar(getCooldownRate());
     }
 
     void UpdateBomber()
@@ -81,5 +83,11 @@ public class AbilityBomber : SpecialAbility
         PlayerBomb bombInstance = Instantiate(BombPrefab, transform.position, Quaternion.identity);
         bombInstance.init(parent.GetPlayerToMouseAim(), bombSpeed, bombFuse, bombDamagePerTick, bombDamageTicks, explosionRadius );
         bAbilityOn = false;
+    }
+
+    public float getCooldownRate()
+    {
+        if (cBomberCooldown == 0.0f) { return 1; }
+        return cBomberCooldown / bomberCooldown;
     }
 }
