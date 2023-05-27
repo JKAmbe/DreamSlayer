@@ -40,7 +40,7 @@ public class Prompt : MonoBehaviour
         " ", //30
         "Lets switch over to red and see their ability!", //31
         " ", //32
-        "Red ability is a shield, try timing it with enemy projectiles\nUse it to help you beat the enemies", //33
+        "Red ability is a shield, try timing it with enemy projectiles\nUse it to help you beat the enemy", //33
         " ", //34
         "The shield has a time limit, so keep that in mind", //35
         "Now lets check out white's ability\nChange to white with right-click", //36
@@ -54,20 +54,25 @@ public class Prompt : MonoBehaviour
         "These bullets will hurt the player, so make sure you avoid being hit", //44
         "Wipe out the enemies to progress further!", //45
         " ", //46
-        "Now let's go over the buffs/drops you may encounter in your playthrough", //47
-        "There are two notable drops", //48
-        "First is a power buff that allows the player's projectile to deal more damage", //49
-        "Second is a health drop\nThis lets you recover any lost health points", //50
-        "Move into them to obtain these boosts!", //51
-        "Now lets go into obstacles", //52
-        "There are two types of obstacles\nDestructible and Non-Destructible", //53
-        "As you can see, they both have different colours\nTry to remember this distinction", //54
-        "Another distinction is that moving obstacles,\nsuch as these", //55
-        "...are non-destructible, so try to maneuver around them!", //56
-        "Let's test your memory and eliminate the destructible obstacle!", //57
-        "Well done!", //58
-        "This is the end of the tutorial\nHopefully you have learnt how to play Nightmare Slayers...", //59
-        "...because this game is not easy" //60
+        "Let's go over the different type of enemies you may encounter", //47
+        "There are the basic shooter which you have just experienced,", //48
+        "But now we have two new types!", //49
+        "The Laser and the Shield", //50
+        "We don't want to give everything away so hopefully you'll be able to figure out\nhow they work and how to defeat them", //51
+        "Now let's go over the buffs/drops you may encounter in your playthrough", //52
+        "There are two notable drops", //53
+        "First is a power buff that allows the player's projectile to deal more damage", //54
+        "Second is a health drop\nThis lets you recover any lost health points", //55
+        "Move into them to obtain these boosts!", //56
+        "Now lets go into obstacles", //57
+        "There are two types of obstacles\nDestructible (Right) and Non-Destructible (Left)", //58
+        "As you can see, they both have different colours\nTry to remember this distinction", //59
+        "Another distinction is that moving obstacles,\nsuch as these", //60
+        "...are non-destructible, so try to maneuver around them!", //61
+        "Let's test your memory and eliminate the destructible obstacle!", //62
+        "Well done!", //63
+        "This is the end of the tutorial\nHopefully you have learnt how to play Nightmare Slayers...", //64
+        "...because this game is not easy" //65
     };
     public TextMeshProUGUI textMesh;
     public float updateInterval = 1f;
@@ -97,19 +102,18 @@ public class Prompt : MonoBehaviour
     public EnemyHealthBarTut enemyHealthBarTut3c;
     
     public GameObject target4;
-    public EnemyHealthBarTut enemyHealthBarTut4a;
-    public EnemyHealthBarTut enemyHealthBarTut4b;
-    public EnemyHealthBarTut enemyHealthBarTut4c;
-    
+    public EnemyHealthBarTut enemyHealthBarTut4;
+
     public GameObject target5;
-    public EnemyHealthBarTut enemyHealthBarTut5a;
-    public EnemyHealthBarTut enemyHealthBarTut5b;
-    public EnemyHealthBarTut enemyHealthBarTut5c;
-    
+    public EnemyHealthBarTut enemyHealthBarTut5;
+
     public GameObject target6;
     public EnemyHealthBarTut enemyHealthBarTut6a;
     public EnemyHealthBarTut enemyHealthBarTut6b;
     public EnemyHealthBarTut enemyHealthBarTut6c;
+
+    public GameObject laser;
+    public GameObject shield;
     
     public GameObject power;
     public GameObject hp;
@@ -214,7 +218,7 @@ public class Prompt : MonoBehaviour
         else if (currentIndex == 33)
         {
             target4.SetActive(true);
-            if (enemyHealthBarTut4a.targetCheck && enemyHealthBarTut4b.targetCheck && enemyHealthBarTut4c.targetCheck)
+            if (enemyHealthBarTut4.targetCheck)
             {
                 target4.SetActive(false);
                 shouldContinueUpdating = true;
@@ -232,7 +236,7 @@ public class Prompt : MonoBehaviour
         else if (currentIndex == 38)
         {
             target5.SetActive(true);
-            if (enemyHealthBarTut5a.targetCheck && enemyHealthBarTut5b.targetCheck && enemyHealthBarTut5c.targetCheck)
+            if (enemyHealthBarTut5.targetCheck)
             {
                 target5.SetActive(false);
                 shouldContinueUpdating = true;
@@ -249,7 +253,7 @@ public class Prompt : MonoBehaviour
                 UpdateTextMesh();
             }
         }
-        else if (currentIndex == 57)
+        else if (currentIndex == 62)
         {
             moving.SetActive(false);
             testObstacle.SetActive(true);
@@ -275,7 +279,7 @@ public class Prompt : MonoBehaviour
 
             if (currentIndex == 5 || currentIndex == 9 || currentIndex == 14 || currentIndex == 16 || currentIndex == 18 ||
                 currentIndex == 21 || currentIndex == 27 || currentIndex == 29 || currentIndex == 31 || currentIndex == 33 ||
-                currentIndex == 36 || currentIndex == 38 || currentIndex == 46 || currentIndex == 57)
+                currentIndex == 36 || currentIndex == 38 || currentIndex == 46 || currentIndex == 62)
             {
                 StopUpdating();
             }
@@ -291,6 +295,8 @@ public class Prompt : MonoBehaviour
         target4.SetActive(false);
         target5.SetActive(false);
         target6.SetActive(false);
+        laser.SetActive(false);
+        shield.SetActive(false);
         power.SetActive(false);
         hp.SetActive(false);
         dest.SetActive(false);
@@ -309,36 +315,47 @@ public class Prompt : MonoBehaviour
             timeSinceLastUpdate += Time.deltaTime;
             if (timeSinceLastUpdate >= updateInterval)
             {
-                if (currentIndex == 47)
+                if (currentIndex == 50)
+                {
+                    laser.SetActive(true);
+                    shield.SetActive(true);
+                }
+
+                if (currentIndex == 51)
+                {
+                    laser.SetActive(false);
+                    shield.SetActive(false);
+                }
+                if (currentIndex == 52)
                 {
                     power.SetActive(true);
                     hp.SetActive(true);
                     UpdateTextMesh();
                 }
-                else if (currentIndex == 48)
+                else if (currentIndex == 53)
                 {
                     hp.SetActive(false);
                     UpdateTextMesh();
                 }
-                else if (currentIndex == 49)
+                else if (currentIndex == 54)
                 {
                     power.SetActive(false);
                     hp.SetActive(true);
                     UpdateTextMesh();
                 }
-                else if (currentIndex == 50)
+                else if (currentIndex == 55)
                 {
                     power.SetActive(true);
                     hp.SetActive(true);
                     UpdateTextMesh();
                 }
-                else if (currentIndex == 52 || currentIndex == 53)
+                else if (currentIndex == 57 || currentIndex == 58)
                 {
                     dest.SetActive(true);
                     nDest.SetActive(true);
                     UpdateTextMesh();
                 }
-                else if (currentIndex == 54 || currentIndex == 55)
+                else if (currentIndex == 59 || currentIndex == 60)
                 {
                     dest.SetActive(false);
                     nDest.SetActive(false);
@@ -349,7 +366,7 @@ public class Prompt : MonoBehaviour
                 // {
                 //     moving.SetActive(false);
                 // }
-                else if (currentIndex == 60)
+                else if (currentIndex == 65)
                 {
                     SceneManager.LoadScene("MainMenu");
                 }
