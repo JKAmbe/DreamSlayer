@@ -165,7 +165,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3639bea51f96ff94a84f286ccd0ac532, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -387,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reductionSpeed: 0.5
-  deflectEffect: {fileID: 7891488296059245934, guid: ead0db83b51af66499d33ffbdf29bb30, type: 3}
 --- !u!199 &2755179330578685694
 ParticleSystemRenderer:
   serializedVersion: 6
