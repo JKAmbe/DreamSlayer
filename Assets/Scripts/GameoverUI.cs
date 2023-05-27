@@ -35,6 +35,8 @@ public class GameoverUI : MonoBehaviour
     public void showGameoverUI(bool bWin)
     {
         this.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
         if (bWin)
         {
             GameoverText.text = "You Win!";
@@ -49,11 +51,15 @@ public class GameoverUI : MonoBehaviour
 
     public void RetryGame()
     {
+        AudioListener.pause = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ReturnToMenu()
     {
+        AudioListener.pause = false;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }
