@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Lvl2");
     }
 
+    public void quitButton()
+    {
+        Application.Quit();
+    }
+
     public void PlayAudio()
     {
         audio1.Play();
