@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4457786, g: 0.49007392, b: 0.54509884, a: 1}
+  m_IndirectSpecularColor: {r: 0.44577783, g: 0.49007332, b: 0.5450968, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 991824465}
   MainCamera: {fileID: 963194229}
   Reticle: {fileID: 479747676}
+  gameoverUI: {fileID: 0}
   index: 0
 --- !u!4 &56176
 Transform:
@@ -1159,6 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b07a5f9589111c4e9b147e594d5aaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameoverUI: {fileID: 0}
 --- !u!65 &895100517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2372,6 +2374,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2870327786491014340, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327786525194729, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327786845632463, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327786870980316, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
     - target: {fileID: 2870327786967894026, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2428,6 +2446,38 @@ PrefabInstance:
       propertyPath: updateInterval
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2870327787181614690, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327787216568963, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327787236441697, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327787763616837, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327787910638974, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327788107736267, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327788164855339, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
+    - target: {fileID: 2870327788336781946, guid: 56aa2de45d3a740b98aa1441a0c6507b, type: 3}
+      propertyPath: green
+      value: 
+      objectReference: {fileID: 2100000, guid: 169671f2434a14b07a3793841c1c0207, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
