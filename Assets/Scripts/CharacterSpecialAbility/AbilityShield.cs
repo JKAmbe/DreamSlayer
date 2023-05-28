@@ -63,7 +63,8 @@ public class AbilityShield : SpecialAbility
         {
             if (!bForceCooldownOn && cDuration > 0.0f)
             {
-                audioShield.Play();
+                audioShield.enabled = true;
+                Debug.Log("shield up");
                 bAbilityOn = true;
             }
         }
@@ -71,7 +72,7 @@ public class AbilityShield : SpecialAbility
 
     public override void unuseSpecialAbility()
     {
-        audioShield.Stop();
+        audioShield.enabled = false;
         bAbilityOn = false;
     }
 
