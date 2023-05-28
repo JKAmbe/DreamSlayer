@@ -387,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reductionSpeed: 0.5
-  deflectEffect: {fileID: 7891488296059245934, guid: ead0db83b51af66499d33ffbdf29bb30, type: 3}
 --- !u!199 &2755179330578685694
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -650,7 +649,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.12549017, g: 0.27778637, b: 0.5176471, a: 1}
+      maxColor: {r: 0.7999997, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

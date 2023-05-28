@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Enemyhealthbar : HealthBar
 {
-    
-    public Animator animator;
     public ParticleSystem takeDamageParticle;
     public GameObject deadParticleObject;
     public AudioSource audiosource;
@@ -18,7 +16,6 @@ public class Enemyhealthbar : HealthBar
         // trigger take damage animation
         if (!binvulnerable)
         {
-            animator.SetTrigger("takeDamage");
             takeDamageParticle.Play();
             audiosource.pitch = 1.0f + Random.Range(-0.25f, 0.25f);
             audiosource.Play();

@@ -30,23 +30,26 @@ public class LaserBlocker : Detection
 
     protected override void fixedUpdateCall()
     {
-        base.fixedUpdateCall();
-        if (target && !firing)
+        //base.fixedUpdateCall();
+
+        if (!firing)
         {
             MoveToTarget();
             Locking();
         }
-        if (firing)
+        else
         {
-            
             Firing();
         }
     }
 
     private void Firing()
     {
-        stopTimer -= Time.deltaTime;
-        if (stopTimer <= 0)
+        if (stopTimer >= 0)
+        {
+            stopTimer -= Time.deltaTime;
+        }
+        else
         {
             health.binvulnerable = false;
             laser.SetActive(false);
@@ -57,9 +60,12 @@ public class LaserBlocker : Detection
 
     private void Locking()
     {
-        lockOnTimer -= Time.deltaTime;
-        renderer.material.color = Color.Lerp(Color.red, basecolor, lockOnTimer / lockOnDuration);
-        if (lockOnTimer <= 0)
+        if (lockOnTimer >= 0)
+        {
+            lockOnTimer -= Time.deltaTime;
+            renderer.material.color = Color.Lerp(Color.red, basecolor, lockOnTimer / lockOnDuration);
+        }
+        else
         {
             health.binvulnerable = true;
             laser.SetActive(true);

@@ -7,9 +7,10 @@ public class Detection : MonoBehaviour
     public GameObject target;
 
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
-        fixedUpdateCall();
+        if (target)
+            fixedUpdateCall();
     }
 
     private void OnTriggerEnter(Collider other)

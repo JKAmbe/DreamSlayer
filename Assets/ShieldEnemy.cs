@@ -11,18 +11,15 @@ public class ShieldEnemy : Detection
 
     private void Start()
     {
+        nextPosition = Vector3.zero;
         shield = GetComponentInChildren<EnemyShield>().gameObject;
     }
 
     protected override void fixedUpdateCall()
     {
-        base.fixedUpdateCall();
-        if (target)
+        if (nextPosition != Vector3.zero)
         {
-            if (nextPosition != Vector3.zero)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * speed);
-            }
+            transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * speed);
         }
     }
    

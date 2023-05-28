@@ -31,7 +31,6 @@ public class SuckDamage : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
         {
             Destroy(other);
-        }
-            
+        }  
     }
 }
