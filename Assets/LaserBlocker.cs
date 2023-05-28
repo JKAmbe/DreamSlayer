@@ -63,7 +63,7 @@ public class LaserBlocker : Detection
         if (lockOnTimer >= 0)
         {
             lockOnTimer -= Time.deltaTime;
-            renderer.material.color = Color.Lerp(Color.red, basecolor, lockOnTimer / lockOnDuration);
+            renderer.material.color = Color.Lerp(Color.magenta, basecolor, lockOnTimer / lockOnDuration);
         }
         else
         {

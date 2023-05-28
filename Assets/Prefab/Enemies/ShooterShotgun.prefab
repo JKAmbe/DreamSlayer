@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 9220155042656547595}
   - component: {fileID: 1663627353583410888}
   - component: {fileID: 7949039940669699465}
+  - component: {fileID: 967813179883215074}
   m_Layer: 6
-  m_Name: Shooter
+  m_Name: ShooterShotgun
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3647081395446181924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 409b7a89b94eeb842b9d57d47e412302, type: 3}
   m_Name: 
@@ -266,6 +267,24 @@ MonoBehaviour:
   shootPoint: {fileID: 3647081395664579085}
   projectileSpeed: 30
   rateOfFire: 0.325
+--- !u!114 &967813179883215074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647081395446181924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8bba7787729c714bb8ad8d6de49e1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  bullet: {fileID: 7270365283419375815, guid: 86be5507841cbec4c8e37ea30ecf227c, type: 3}
+  shootPoint: {fileID: 3647081395664579085}
+  projectileSpeed: 40
+  rateOfFire: 1.5
+  shotgunAmount: 5
 --- !u!1 &3647081395664579084
 GameObject:
   m_ObjectHideFlags: 0
