@@ -45,7 +45,8 @@ public class GameoverUI : MonoBehaviour
 
     public void showGameoverUI(bool bWin)
     {
-        this.gameObject.SetActive(true);
+        if(this.gameObject) 
+            this.gameObject.SetActive(true);
         //Time.timeScale = 0f;
         //AudioListener.pause = true;
         if (bWin)
