@@ -20,7 +20,10 @@ public class ExitLevel : MonoBehaviour
                 else
                     continue;
             }
-            gameoverUI.showGameoverUI(true);
+            if (!gameoverUI.bGameover)
+            {
+                gameoverUI.showGameoverUI(true);
+            }
         }
     }
 }

@@ -18,7 +18,8 @@ public class ShieldEnemy : Detection
     protected override void fixedUpdateCall()
     {
         if (nextPosition != Vector3.zero)
-        {
+        { 
+            nextPosition.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * speed);
         }
     }
