@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 120
-  destoryPosition: 210
+  destoryPosition: -10000000
 --- !u!64 &1163898876
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4430,6 +4430,18 @@ PrefabInstance:
     - target: {fileID: 981002261636922521, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_Name
       value: GameoverUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 981002262120570329, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 981002262120570329, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 981002262120570329, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
