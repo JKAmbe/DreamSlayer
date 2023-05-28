@@ -467,7 +467,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6075268147488352807}
   serializedVersion: 8
-  lengthInSec: 3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5486,7 +5486,6 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 20
   binvulnerable: 0
-  animator: {fileID: 5061629968056101597}
   takeDamageParticle: {fileID: 1715380014831330700}
   deadParticleObject: {fileID: 5496036196371738794, guid: 9afdbd6e7823f934a93768f0b0e5b97d, type: 3}
   audiosource: {fileID: 3376701131053008670}
