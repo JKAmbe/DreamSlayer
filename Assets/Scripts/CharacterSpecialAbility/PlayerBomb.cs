@@ -85,7 +85,8 @@ public class PlayerBomb : MonoBehaviour
         {
             // enemy layer
             case 6:
-                other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
+                if (other.GetComponentInChildren<HealthBar>())
+                    other.GetComponentInChildren<HealthBar>().TakeDamage(damage);
                 break;
             // enemy projectile layer
             case 8:
