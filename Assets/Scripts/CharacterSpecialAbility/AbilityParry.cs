@@ -73,6 +73,7 @@ public class AbilityParry : SpecialAbility
             if (cParryState == ParryState.Usable)
             {
                 cParryState = ParryState.InUse;
+                GetComponent<AudioSource>().Play();
                 cParryWindow = parryWindow;
             }
         }

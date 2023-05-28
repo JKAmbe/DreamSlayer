@@ -297,7 +297,7 @@ MonoBehaviour:
   bombMaxSpeed: 75
   bombFuse: 1
   bombDamagePerTick: 0.3
-  bombDamageTicks: 600
+  bombDamageTicks: 120
   explosionRadius: 10
   bomberCooldown: 8
 --- !u!1 &8471494208868718502

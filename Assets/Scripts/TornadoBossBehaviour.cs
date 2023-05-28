@@ -15,7 +15,6 @@ public class TornadoBossBehaviour : MonoBehaviour
     public GameObject EnemySpawnPrefab;
     public GameObject TornadoSpawnPrefab;
     public Transform[] SpawnLocation;
-    public AudioSource suckAudio;
     public AudioSource swooshAudio;
 
     List<GameObject> minions = new List<GameObject>();
@@ -33,9 +32,7 @@ public class TornadoBossBehaviour : MonoBehaviour
     {
         if (attackDuration > 0)
         {
-            Debug.Log(attackDuration);
             attackDuration -= Time.deltaTime;
-            suckAudio.Play();
         }
         else
             ResetAttack();

@@ -36,7 +36,8 @@ public class ChargingLaser : PlayerWeapon
             if (refireTimer <= 0.0f)
             {
                 if (!ChargeParticle.isPlaying) 
-                { 
+                {
+                    GetComponent<AudioSource>().Play();
                     ChargeParticle.Play();
                 }
                 if (ChargeParticle.isPlaying)
