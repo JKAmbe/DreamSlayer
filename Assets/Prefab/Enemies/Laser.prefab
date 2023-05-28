@@ -5349,7 +5349,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2fad2fb1109ddc142b1233d998ae10f8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5658,7 +5658,6 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 50
   binvulnerable: 0
-  animator: {fileID: 6901737984045039670}
   takeDamageParticle: {fileID: 1024325419428777831}
   deadParticleObject: {fileID: 5496036196371738794, guid: 9afdbd6e7823f934a93768f0b0e5b97d, type: 3}
   audiosource: {fileID: 3973600162759372277}
