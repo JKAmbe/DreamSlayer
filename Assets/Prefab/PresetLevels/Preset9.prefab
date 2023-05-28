@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 120
-  destoryPosition: 210
+  destoryPosition: -750
 --- !u!1 &8269458163770249096
 GameObject:
   m_ObjectHideFlags: 0

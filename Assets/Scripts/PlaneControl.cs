@@ -6,7 +6,7 @@ public class PlaneControl : MonoBehaviour
 {
     public float Speed;
 
-    public float destoryPosition = -1;
+    public float destoryPosition = -750;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,9 @@ public class PlaneControl : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + Vector3.back * Speed * Time.deltaTime;
-        // if (transform.position.z < destoryPosition)
-        // {
-        //     GameObject.Destroy(gameObject);
-        // }
+        if (transform.position.z < destoryPosition)
+        {
+            Destroy(gameObject);
+        }
     }
 }

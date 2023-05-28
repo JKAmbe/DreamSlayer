@@ -50,7 +50,7 @@ Material:
     - _WobbleSPeed: 0.93
     - _transparency: 0.8
     m_Colors:
-    - _Color: {r: 1024, g: 0, b: 45.27246, a: 1}
+    - _Color: {r: 955.42554, g: 0, b: 42.240685, a: 1}
     - _TwirlCenter: {r: 0, g: 0, b: 0, a: 0}
     - _TwirlSpeed: {r: 0, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []

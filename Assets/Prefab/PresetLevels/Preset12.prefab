@@ -286,7 +286,7 @@ Transform:
   m_Children:
   - {fileID: 4575035622196754750}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4575035623432877741
 MeshFilter:
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 120
-  destoryPosition: 210
+  destoryPosition: -750
 --- !u!1 &4575035623563929144
 GameObject:
   m_ObjectHideFlags: 0

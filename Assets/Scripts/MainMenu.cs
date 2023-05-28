@@ -19,6 +19,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Lvl2");
     }
 
+    public void goToEndless()
+    {
+        SceneManager.LoadScene("Endless");
+    }
+
+
     public void quitButton()
     {
         Application.Quit();

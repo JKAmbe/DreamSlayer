@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dps: 10
-  healMult: 0.125
+  healMult: 0.25
   health: {fileID: 3935540402788133539}
 --- !u!23 &1006647134329340235
 MeshRenderer:
