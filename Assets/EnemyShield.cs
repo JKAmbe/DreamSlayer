@@ -16,6 +16,7 @@ public class EnemyShield : MonoBehaviour
     {     
         if (other.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
         {
+            GetComponent<AudioSource>().Play();
             Vector3 projectilePosition = other.transform.position;
             projectilePosition.z = transform.parent.position.z;
             GetComponentInParent<ShieldEnemy>().nextPosition = projectilePosition;
