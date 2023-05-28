@@ -416,6 +416,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c362fac67eff9f740a29119a4f2a42df, type: 2}
+    - target: {fileID: 8123757065405388393, guid: 96347a7f0488de441a29b24e4e47456a, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123757065405388393, guid: 96347a7f0488de441a29b24e4e47456a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 900795f220938fd4bb375accb89d29ac, type: 3}
     - target: {fileID: 8881768619575761634, guid: 96347a7f0488de441a29b24e4e47456a, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

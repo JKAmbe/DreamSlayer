@@ -351,7 +351,7 @@ public class Prompt : MonoBehaviour
                 // }
                 else if (currentIndex == 60)
                 {
-                    SceneManager.LoadScene("MainMenu");
+                    SceneManager.LoadScene("MainMenu2");
                 }
                 else
                 {

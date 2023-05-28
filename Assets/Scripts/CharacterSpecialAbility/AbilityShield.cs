@@ -20,6 +20,8 @@ public class AbilityShield : SpecialAbility
     bool bForceCooldownOn = false;
     public float originalMovementSpeed = 0.0f;
 
+    public AudioSource audioShield;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,7 @@ public class AbilityShield : SpecialAbility
         {
             if (!bForceCooldownOn && cDuration > 0.0f)
             {
+                audioShield.Play();
                 bAbilityOn = true;
             }
         }
@@ -68,6 +71,7 @@ public class AbilityShield : SpecialAbility
 
     public override void unuseSpecialAbility()
     {
+        audioShield.Stop();
         bAbilityOn = false;
     }
 
@@ -80,6 +84,7 @@ public class AbilityShield : SpecialAbility
         
         if (bOn)
         {
+            
             // reduce duration
             cDuration -= Time.deltaTime;
             // force off if duration runs out
@@ -94,7 +99,7 @@ public class AbilityShield : SpecialAbility
         
         if (!bOn)
         {
-
+            
         }
 
         //// apply effects to the player

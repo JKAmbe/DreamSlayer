@@ -10310,7 +10310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a434051ee4ef9048a6857ca6dcae87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameoverUI: {fileID: 0}
+  gameoverUI: {fileID: 981002261636922519, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
   EnemySpawnPrefab: {fileID: 3647081395446181924, guid: 09dbdbdace258f747aa4dc8356a1ff7e, type: 3}
   TornadoSpawnPrefab: {fileID: 7262766477821664618, guid: 25b08601c04e6c1459576fa793c48c76, type: 3}
   SpawnLocation:
@@ -10322,6 +10322,8 @@ MonoBehaviour:
   - {fileID: 5989625387304941162}
   - {fileID: 4745806038600467754}
   - {fileID: 2235954217667960478}
+  suckAudio: {fileID: 3284683056928824635, guid: d06cc6b5ec1d366418734e3e5462cde9, type: 3}
+  swooshAudio: {fileID: -131535462994218143, guid: 25b08601c04e6c1459576fa793c48c76, type: 3}
 --- !u!82 &6566292801216400048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10332,11 +10334,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 22069044ee7d6c647b9568115abc9095, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 0b17dce74249b164f8e2c1b547aa7766, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11045,6 +11047,10 @@ PrefabInstance:
     - target: {fileID: 8002024588103153269, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002024588103153269, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -990
       objectReference: {fileID: 0}
     - target: {fileID: 8002024588103153269, guid: 8d2574425ddd4304da6d6444a691780e, type: 3}
       propertyPath: m_ConstrainProportionsScale
