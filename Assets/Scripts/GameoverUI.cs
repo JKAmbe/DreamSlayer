@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using Unity.VisualScripting;
 
 public class GameoverUI : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameoverUI : MonoBehaviour
     public AudioClip VictorySound;
 
     public Button BossfightButton;
+
+    public bool bGameover = false;
 
     string[] TipTexts =
     {
@@ -55,6 +58,7 @@ public class GameoverUI : MonoBehaviour
 
     public void showGameoverUI(bool bWin)
     {
+        bGameover = true;
         this.gameObject.SetActive(true);
         //Time.timeScale = 0f;
         //AudioListener.pause = true;
