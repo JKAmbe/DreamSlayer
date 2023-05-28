@@ -264,7 +264,7 @@ MonoBehaviour:
   target: {fileID: 0}
   laser: {fileID: 0}
   speed: 3
-  stopDuration: 3
+  stopDuration: 1
   lockOnDuration: 2
 --- !u!1 &8422453112118592594
 GameObject:
@@ -5264,7 +5264,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: -1.2, z: 0}
-  - {x: 0, y: 1.2, z: 0}
+  - {x: 0, y: 2, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 10
@@ -5286,7 +5286,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0.33225727, a: 1}
-      key1: {r: 0.7955427, g: 0, b: 1, a: 1}
+      key1: {r: 1, g: 0, b: 0.70647144, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5661,3 +5661,4 @@ MonoBehaviour:
   takeDamageParticle: {fileID: 1024325419428777831}
   deadParticleObject: {fileID: 5496036196371738794, guid: 9afdbd6e7823f934a93768f0b0e5b97d, type: 3}
   audiosource: {fileID: 3973600162759372277}
+  scoreOnDeath: 200

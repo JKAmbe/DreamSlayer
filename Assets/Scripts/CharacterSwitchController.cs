@@ -59,6 +59,7 @@ public class CharacterSwitchController : MonoBehaviour
         // update index by 1, wrap back to 0 if needed
         index += 1;
         if (index >= CharacterPrefabs.Length) { index = 0; }
+        currentCharacter.GetComponent<PlayerBase>().healthBar.binvulnerable = false;
         // activate the character
         ActivateCharacter(index);
     }

@@ -296,8 +296,8 @@ MonoBehaviour:
   bombMinSpeed: 20
   bombMaxSpeed: 75
   bombFuse: 1
-  bombDamagePerTick: 0.3
-  bombDamageTicks: 120
+  bombDamagePerTick: 2
+  bombDamageTicks: 240
   explosionRadius: 10
   bomberCooldown: 8
 --- !u!1 &8471494208868718502
@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: playerSpeed
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8300535424414130631, guid: b7c5664ecc3fede4bb2fbc95ba1f2e63, type: 3}
       propertyPath: maxRateOfFire

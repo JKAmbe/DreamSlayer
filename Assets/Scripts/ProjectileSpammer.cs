@@ -16,7 +16,7 @@ public class ProjectileSpammer : Detection
         timetoShoot = rateOfFire;
     }
 
-    private void ShootPlayer()
+    protected virtual void ShootPlayer()
     {
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
