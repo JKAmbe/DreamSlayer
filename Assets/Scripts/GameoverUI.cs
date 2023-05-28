@@ -4,11 +4,14 @@ using TMPro;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameoverUI : MonoBehaviour
 {
     public TextMeshProUGUI GameoverText;
     public TextMeshProUGUI TipText;
+    public AudioClip losingSound;
+    public AudioClip VictorySound;
 
     string[] TipTexts =
     {
@@ -35,15 +38,17 @@ public class GameoverUI : MonoBehaviour
     public void showGameoverUI(bool bWin)
     {
         this.gameObject.SetActive(true);
-        Time.timeScale = 0f;
-        AudioListener.pause = true;
+        //Time.timeScale = 0f;
+        //AudioListener.pause = true;
         if (bWin)
         {
+            GetComponent<AudioSource>().PlayOneShot(VictorySound);
             GameoverText.text = "You Win!";
             TipText.text = "";
         }
         if (!bWin)
         {
+            GetComponent<AudioSource>().PlayOneShot(losingSound);
             GameoverText.text = "Game over!";
             TipText.text = TipTexts[Random.Range(0, TipTexts.Length)];
         }
