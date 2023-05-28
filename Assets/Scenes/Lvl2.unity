@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4457786, g: 0.49007392, b: 0.54509884, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457783, g: 0.49007368, b: 0.54509795, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1698,6 +1698,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 981002261636922519, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: BossfightButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 981002261636922521, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_Name
       value: GameoverUI
@@ -1709,6 +1713,18 @@ PrefabInstance:
     - target: {fileID: 981002262648265131, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_text
       value: QUIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543826597097748487, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0629
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543826597097748487, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0627
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637555776121196370, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
