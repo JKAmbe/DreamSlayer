@@ -5461,6 +5461,9 @@ MonoBehaviour:
   secondsToFullCharge: 2
   ChargeParticle: {fileID: 404770351041862}
   FullchargeParticle: {fileID: 1718888809362937078}
+  AudSource: {fileID: 8229571714555108721}
+  maxCharge: {fileID: 8300000, guid: 4fb420e33eb51684f9c85dca6d988e1a, type: 3}
+  charging: {fileID: 8300000, guid: 9f6312f0f46ddb742ae6ad7ed1f083a0, type: 3}
 --- !u!82 &8229571714555108721
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5471,11 +5474,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9f6312f0f46ddb742ae6ad7ed1f083a0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4fb420e33eb51684f9c85dca6d988e1a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: 0.067
+  m_Pitch: 0.79
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5827,7 +5830,7 @@ MonoBehaviour:
   CharacterSpecialAbility: {fileID: 7747904766568243493}
   Reticle: {fileID: 21300000, guid: dd243f8d5b8fcc242b781550ecce8949, type: 3}
   ReticleColor: {r: 1, g: 0, b: 0.079761505, a: 1}
-  playerSpeed: 30
+  playerSpeed: 28
   AxisDamping: {x: 0.5, y: 0.5}
   directionRange: {x: 90, y: 90, z: 60}
   RotationSpeed: 4

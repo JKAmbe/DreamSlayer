@@ -16,11 +16,15 @@ public class ChargingLaser : PlayerWeapon
     [Header("Visuals")]
     public ParticleSystem ChargeParticle;
     public ParticleSystem FullchargeParticle;
+    public AudioSource AudSource;
+    public AudioClip maxCharge;
+    public AudioClip charging;
     // Start is called before the first frame update
     void Start()
     {
         totalDamage = damage;
         totalDamageFullCharge = damageFullCharge;
+        AudSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class ChargingLaser : PlayerWeapon
             {
                 if (!ChargeParticle.isPlaying) 
                 {
-                    GetComponent<AudioSource>().Play();
+                    AudSource.PlayOneShot(charging);
                     ChargeParticle.Play();
                 }
                 if (ChargeParticle.isPlaying)
@@ -47,7 +51,11 @@ public class ChargingLaser : PlayerWeapon
                 cCharge += Time.deltaTime;
                 if (cCharge >= nearFullChargeRate)
                 {
-                    if (!FullchargeParticle.isPlaying) { FullchargeParticle.Play(); }
+                    if (!FullchargeParticle.isPlaying)
+                    {
+                        AudSource.Play();
+                        FullchargeParticle.Play();
+                    }
                 }
                 player.switchController.Reticle.PlayCrosshairAnimation();
             }
@@ -56,6 +64,7 @@ public class ChargingLaser : PlayerWeapon
 
     override public void WeaponRelease()
     {
+        AudSource.Stop();
         GameObject projectileInstance = null;
         // change damage depending on charge rate, if nearly full charge use the big projectile
         if (cCharge >= nearFullChargeRate)

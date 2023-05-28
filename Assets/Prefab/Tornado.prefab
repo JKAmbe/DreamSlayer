@@ -10321,7 +10321,6 @@ MonoBehaviour:
   - {fileID: 5989625387304941162}
   - {fileID: 4745806038600467754}
   - {fileID: 2235954217667960478}
-  suckAudio: {fileID: 3284683056928824635, guid: d06cc6b5ec1d366418734e3e5462cde9, type: 3}
   swooshAudio: {fileID: -131535462994218143, guid: 25b08601c04e6c1459576fa793c48c76, type: 3}
 --- !u!82 &6566292801216400048
 AudioSource:
@@ -10758,7 +10757,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 22069044ee7d6c647b9568115abc9095, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c6e8e622e96d2bb44923f2d8164632a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
