@@ -9,67 +9,67 @@ public class Prompt : MonoBehaviour
     private string[] stringArray =
     {
         " ", //1
-        "Welcome to Nightmare Slayers!\nThis tutorial is built to help you understand how this game works and it's mechanics", //2
-        "Let's start into movement!", //3
-        "Movement in this game is based on the X and Y axes\nW - Up Direction\nA - Left Direction\nS - Down Direction\nD - Right Direction", //4
+        "Welcome to Nightmare Slayers!\nThis tutorial will help you understand this game and its mechanics.", //2
+        "Let's start with movement!", //3
+        "You can move in the X and Y axes.\nW/S - Up/Down Direction\nA/D - Left/Right Direction", //4
         "Try it yourself!", //5
         " ", //6
         "Now that we have mastered basic movement,\nLet's move onto shooting", //7
-        "Shooting can be achieved by pressing/holding left-click", //8
+        "Shoot your weapon by holding Left-Click", //8
         "Aim for the target!", //9
         " ", //10
-        "Great Job!\nLet's dive into the other characters that are available to us", //11
-        "Different characters enable us to use different play-styles through shooting mechanics and abilities", //12
-        "Currently, we are using the default blue.", //13
-        "To change characters on the fly, press right-click", //14
+        "Great Job!\nLet's dive into the other characters", //11
+        "Different characters have their own weapons and special abilities.", //12
+        "Currently, we are using Blue.", //13
+        "Press Right-Click and change to Red.", //14
         " ", //15
-        "Try holding left-click and release on the target!", //16
+        "Hold Left-click to charge and release on the target!", //16
         " ", //17
-        "Lets try the white, press right-click", //18
+        "Let's try White, press right-click", //18
         " ", //19
         "White can't aim with the mouse, but there is more than one way to aim...", //20
-        "Defeat the enemy", //21
+        "Defeat the target!", //21
         " ", //22
         "Not only do each character have their own unique style...", //23
         "Each character also has their own special ability!", //24
-        "We can access this ability by pressing space-bar", //25
-        "Let's go through them starting with blue", //26
+        "Press the Space-Bar to use the special ability.", //25
+        "Let's go through each one.", //26
         "Go back to blue with right-click", //27
         " ", //28
-        "Blue ability is a bomb that can you help you eradicate your enemies\nTry it with space-bar", //29
+        "Blue's ability is a bomb that damages enemies and erases projectiles.\nTry it with space-bar", //29
         " ", //30
-        "Lets switch over to red and see their ability!", //31
+        "Let's switch over to Red.", //31
         " ", //32
-        "Red ability is a shield, try timing it with enemy projectiles\nUse it to help you beat the enemy", //33
+        "Red's ability is a shield that blocks projectiles.\nUse it to help you beat the enemy", //33
         " ", //34
-        "The shield has a time limit, so keep that in mind", //35
-        "Now lets check out white's ability\nChange to white with right-click", //36
+        "The shield has a limit, so keep that in mind", //35
+        "Now let's switch over to White.", //36
         " ", //37
-        "White has the ability to parry enemy bullets\nSee if you can time the enemy bullets", //38
+        "White's ability can parry enemy projectiles.\nSee if you can time it with enemy attacks.", //38
         " ", //39
-        "The player has a health bar that we can see on the bottom right hand corner", //40
-        "If this bar goes down to zero, you will lose", //41
+        "The green bar is your character's health.", //40
+        "You will lose if this bar goes down to 0!", //41
         "Let's take a closer look at enemies", //42
-        "Each enemy will have a health-bar and will shoot at the player", //43
-        "These bullets will hurt the player, so make sure you avoid being hit", //44
-        "Wipe out the enemies to progress further!", //45
+        "Enemies will fire various projeciles at you.", //43
+        "Make sure to avoid their attacks!", //44
+        "Wipe out the enemies!", //45
         " ", //46
-        "Let's go over the different type of enemies you may encounter", //47
-        "There are the basic shooter which you have just experienced,", //48
+        "Let's go over the different enemy types.", //47
+        "You came across the basic Shooters...", //48
         "But now we have two new types!", //49
         "The Laser and the Shield", //50
-        "We don't want to give everything away so hopefully you'll be able to figure out\nhow they work and how to defeat them", //51
-        "Now let's go over the buffs/drops you may encounter in your playthrough", //52
+        "Hopefully you'll be able to figure out\nhow they work and how to defeat them", //51
+        "There are special powerups in the level.", //52
         "There are two notable drops", //53
-        "First is a power buff that allows the player's projectile to deal more damage", //54
-        "Second is a health drop\nThis lets you recover any lost health points", //55
-        "Move into them to obtain these boosts!", //56
-        "Now lets go into obstacles", //57
-        "There are two types of obstacles\nDestructible (Right) and Non-Destructible (Left)", //58
-        "As you can see, they both have different colours\nTry to remember this distinction", //59
-        "Another distinction is that moving obstacles,\nsuch as these", //60
-        "...are non-destructible, so try to maneuver around them!", //61
-        "Let's test your memory and eliminate the destructible obstacle!", //62
+        "The Blue item gives you temporary bonus damage.", //54
+        "The Red item recovers your health.", //55
+        "Move into them to pick them up!", //56
+        "Now, let's go into obstacles", //57
+        "There are Destrucible (Right) and \nNon-Destrictible (Left) obstacles.", //58
+        "They have different colours\nTry to remember this distinction", //59
+        "There are moving obstacles, too", //60
+        "They're Non-Destructive, so move around them!", //61
+        "Break the destructible obstacle!", //62
         "Well done!", //63
         "This is the end of the tutorial\nHopefully you have learnt how to play Nightmare Slayers...", //64
         "...because this game is not easy" //65
