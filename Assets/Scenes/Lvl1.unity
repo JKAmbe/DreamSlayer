@@ -2590,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e71a250121964611baf3f1e1cb7b8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 120
+  Speed: 100
   destoryPosition: -10000000
 --- !u!64 &1163898876
 MeshCollider:
