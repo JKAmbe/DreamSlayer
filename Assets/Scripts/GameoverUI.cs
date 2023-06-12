@@ -14,6 +14,7 @@ public class GameoverUI : MonoBehaviour
     public TextMeshProUGUI TipText;
     public AudioClip losingSound;
     public AudioClip VictorySound;
+    public EndlessScoreManager endlessManager;
 
     public Button BossfightButton;
 
@@ -75,6 +76,7 @@ public class GameoverUI : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(losingSound);
             GameoverText.text = "Game over!";
             TipText.text = TipTexts[Random.Range(0, TipTexts.Length)];
+            if (endlessManager) { TipText.text = "Final Score: " + endlessManager.totalScore; }
         }
     }
 
