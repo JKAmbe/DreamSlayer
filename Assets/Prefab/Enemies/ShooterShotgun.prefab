@@ -265,7 +265,7 @@ MonoBehaviour:
   target: {fileID: 0}
   bullet: {fileID: 7270365283419375815, guid: 86be5507841cbec4c8e37ea30ecf227c, type: 3}
   shootPoint: {fileID: 3647081395664579085}
-  projectileSpeed: 30
+  projectileSpeed: 60
   rateOfFire: 0.325
 --- !u!114 &967813179883215074
 MonoBehaviour:

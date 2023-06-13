@@ -5034,9 +5034,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -49.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2927149502585236509, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BossFight
+      objectReference: {fileID: 0}
     - target: {fileID: 3265722187231047843, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

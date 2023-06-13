@@ -2012,6 +2012,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 981002261636922519, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: endlessManager
+      value: 
+      objectReference: {fileID: 1148590706}
     - target: {fileID: 981002261636922521, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_Name
       value: GameoverUI
