@@ -263,9 +263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   laser: {fileID: 0}
-  speed: 3
+  speed: 4
   stopDuration: 1
-  lockOnDuration: 2
+  lockOnDuration: 3
 --- !u!1 &8422453112118592594
 GameObject:
   m_ObjectHideFlags: 0

@@ -2590,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e71a250121964611baf3f1e1cb7b8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 120
+  Speed: 100
   destoryPosition: -10000000
 --- !u!64 &1163898876
 MeshCollider:
@@ -3012,15 +3012,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654739234194536173, guid: 9e180cab6359c9c4da15f56f0965a74c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -504.52136
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654739234194536173, guid: 9e180cab6359c9c4da15f56f0965a74c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4869.0737
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654739234194536173, guid: 9e180cab6359c9c4da15f56f0965a74c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17474.004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654739234194536173, guid: 9e180cab6359c9c4da15f56f0965a74c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5006,6 +5006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameoverUI
       objectReference: {fileID: 0}
+    - target: {fileID: 981002261894344406, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -192
+      objectReference: {fileID: 0}
     - target: {fileID: 981002262120570329, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -5020,11 +5024,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 981002262397520153, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -73
+      value: -131.6
       objectReference: {fileID: 0}
     - target: {fileID: 981002263745339416, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803544169562112571, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927149502585236509, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BossFight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265722187231047843, guid: 4e7747f6f7a978f4eb730a005137bf08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

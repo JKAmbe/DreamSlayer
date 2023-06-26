@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+//using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class GameoverUI : MonoBehaviour
     public TextMeshProUGUI TipText;
     public AudioClip losingSound;
     public AudioClip VictorySound;
+    public EndlessScoreManager endlessManager;
 
     public Button BossfightButton;
 
@@ -36,10 +38,10 @@ public class GameoverUI : MonoBehaviour
         "Shoutout to John Matrix: Time Puncher Extraordinare",
         "Shoutout to Blood Debt",
         "Shoutout to Halloween Tower",
-        "Stop playing as Red bro",
-        "Blue is the best girl",
-        "Red is the best girl",
-        "White is the best girl"
+        //"Stop playing as Red bro",
+        //"Blue is the best girl",
+        //"Red is the best girl",
+        //"White is the best girl"
     };
 
 
@@ -67,13 +69,14 @@ public class GameoverUI : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(VictorySound);
             GameoverText.text = "You Win!";
             TipText.text = "";
-            if (BossfightButton) { BossfightButton.enabled = true; }
+            if (BossfightButton) { BossfightButton.gameObject.SetActive(true); }
         }
         if (!bWin)
         {
             GetComponent<AudioSource>().PlayOneShot(losingSound);
             GameoverText.text = "Game over!";
             TipText.text = TipTexts[Random.Range(0, TipTexts.Length)];
+            if (endlessManager) { TipText.text = "Final Score: " + endlessManager.totalScore; }
         }
     }
 
@@ -94,8 +97,8 @@ public class GameoverUI : MonoBehaviour
     public void BossFight()
     {
         AudioListener.pause = false;
-        Time.timeScale = 0.0f;
-        SceneManager.LoadScene("Level2");
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Lvl2");
     }
 }
  

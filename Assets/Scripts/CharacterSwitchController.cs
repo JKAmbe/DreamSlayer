@@ -30,6 +30,11 @@ public class CharacterSwitchController : MonoBehaviour
         {
             SwitchCharacters();
         }
+        // switch characters by pressing 1 2 and 3 on keyboard
+        if (Input.GetKey(KeyCode.Alpha1) ) { ActivateCharacter(0); }
+        if (Input.GetKey(KeyCode.Alpha2) ) { ActivateCharacter(1); }
+        if (Input.GetKey(KeyCode.Alpha3) ) { ActivateCharacter(2); }
+
     }
 
     void ActivateCharacter(int characterIndex)
