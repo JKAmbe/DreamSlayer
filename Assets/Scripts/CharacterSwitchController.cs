@@ -51,7 +51,8 @@ public class CharacterSwitchController : MonoBehaviour
         // for some reason the character's position needs to be changed before they can move
         currentCharacter.transform.position = charPosition;
         CharacterPrefabs[characterIndex].SetActive(true);
-        MainCamera.target = currentCharacter.transform;
+        if (MainCamera)
+            MainCamera.target = currentCharacter.transform;
         Reticle.player = currentCharacter;
         Reticle.ChangeCrosshairSprite(currentCharacter.GetComponent<PlayerBase>().Reticle, currentCharacter.GetComponent<PlayerBase>().ReticleColor);
     }

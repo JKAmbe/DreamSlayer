@@ -26,6 +26,7 @@ public class AimingReticle : MonoBehaviour
 
         if (player)
         {
+            
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, canvas.worldCamera.WorldToScreenPoint(player.transform.position), canvas.worldCamera, out playerPos);
 
             switch (player.GetComponent<PlayerBase>().CharacterWeapon.WeaponAimingMode)
