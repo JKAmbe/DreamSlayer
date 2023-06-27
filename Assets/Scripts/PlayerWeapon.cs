@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Management;
 using UnityEngine.UIElements;
 
 public class PlayerWeapon : MonoBehaviour
@@ -29,11 +30,23 @@ public class PlayerWeapon : MonoBehaviour
    
     protected float refireTimer = 0.0f;
 
+    bool VRActive = false;
+    public GameObject VRInterract;
+
 
     // Start is called before the first frame update
     void Start()
     {
         totalDamage = damage;
+
+        if (XRGeneralSettings.Instance.Manager.activeLoader != null)
+        {
+            VRActive = true;
+        }
+        if (!VRInterract)
+        {
+            VRInterract = GameObject.Find("VRInterractable");
+        }
     }
 
     // Update is called once per frame
@@ -62,6 +75,10 @@ public class PlayerWeapon : MonoBehaviour
         {
             case EAimMode.Freelook:
                 Direction = (Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
+                if (VRActive)
+                {
+                    Direction = VRInterract.transform.forward;
+                }
                 break;
             case EAimMode.PitchYaw:
                 Direction = transform.forward;
@@ -90,7 +107,8 @@ public class PlayerWeapon : MonoBehaviour
         refireTimer = 1.0f / shotsPerSecond;
 
         // call the reticle shooting animation from the player and to PlayerManager
-        player.switchController.Reticle.PlayCrosshairAnimation();
+        if (player.switchController.Reticle)
+            player.switchController.Reticle.PlayCrosshairAnimation();
         //animator.SetTrigger("trigShoot");
         animator.Play("Base Layer.Shoot", 0, 0.0f);
     }

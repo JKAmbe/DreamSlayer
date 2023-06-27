@@ -10,7 +10,7 @@ public class DamageBuffPickUp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         audioSource.Play();
-        Debug.Log("ACTVIATE");
+        //Debug.Log("ACTVIATE");
         if (other.GetComponent<PlayerBase>())
         {
             other.GetComponent<PlayerBase>().BuffDamage(damageMultiplier, buffDuration);

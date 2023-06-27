@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.XR.Management;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
+
 
 
 public enum aimingType 
@@ -70,6 +73,11 @@ public class PlayerBase : MonoBehaviour
     public float iFrameTime = 1.0f;
     float iframeCounter;
 
+    [Header("iFrame/Health")]
+    bool VRActive = false;
+    public GameObject VRInterract;
+
+
     private void Start()
     {
         cam = Camera.main;
@@ -82,11 +90,32 @@ public class PlayerBase : MonoBehaviour
         {
             CharacterWeapon.Init(this);
         }
+
+        if (XRGeneralSettings.Instance.Manager.activeLoader != null)
+        {
+            VRActive = true;
+        }
+        if (!VRInterract)
+        {
+            VRInterract = GameObject.Find("VRInterractable");
+        }
+            
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal") * AxisDamping.x, Input.GetAxis("Vertical") * AxisDamping.y, 0);
+        Vector3 move = Vector3.zero;
+        if (VRActive)
+        {
+            Vector3 relativeToVRInterract =  VRInterract.transform.position - transform.position;
+            move = new Vector3(relativeToVRInterract.normalized.x * AxisDamping.x, relativeToVRInterract.normalized.y * AxisDamping.y, relativeToVRInterract.z);
+            move -= (Vector3.forward*-2);
+        }
+        else
+        {
+            move = new Vector3(Input.GetAxis("Horizontal") * AxisDamping.x, Input.GetAxis("Vertical") * AxisDamping.y, 0);
+        }  
+        
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         Quaternion rotation = Quaternion.Euler(new Vector3(-move.y * directionRange.x, move.x * directionRange.y, -move.x * directionRange.z));
@@ -174,9 +203,9 @@ public class PlayerBase : MonoBehaviour
         TakeDamageParticle.Play();
         audioSource.Play();
         // start iframe
-        Debug.Log("Start iframe");
+        //Debug.Log("Start iframe");
         animator.SetBool("bTakeDamage", true);
-        Debug.Log("set trigger");
+        //Debug.Log("set trigger");
         StartCoroutine(useiFrame());
     }
 
@@ -184,7 +213,7 @@ public class PlayerBase : MonoBehaviour
     {
         bIframeOn = true;
         healthBar.binvulnerable = true;
-        Debug.Log("test");
+        //Debug.Log("test");
         //PlayerMesh.GetComponent<Renderer>().material.SetFloat("_bTakeDamage", 1.0f);
         yield return new WaitForSeconds(iFrameTime);
         bIframeOn = false;
@@ -204,5 +233,6 @@ public class PlayerBase : MonoBehaviour
     {
         return 0.0f;
     }
+    
 
 }

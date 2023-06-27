@@ -53,8 +53,12 @@ public class CharacterSwitchController : MonoBehaviour
         CharacterPrefabs[characterIndex].SetActive(true);
         if (MainCamera)
             MainCamera.target = currentCharacter.transform;
-        Reticle.player = currentCharacter;
-        Reticle.ChangeCrosshairSprite(currentCharacter.GetComponent<PlayerBase>().Reticle, currentCharacter.GetComponent<PlayerBase>().ReticleColor);
+        if (Reticle)
+        {
+            Reticle.player = currentCharacter;
+            Reticle.ChangeCrosshairSprite(currentCharacter.GetComponent<PlayerBase>().Reticle, currentCharacter.GetComponent<PlayerBase>().ReticleColor);
+        }
+       
     }
 
     // Cycle through and switch to different characters
