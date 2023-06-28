@@ -79,7 +79,7 @@ public class AbilityBomber : SpecialAbility
     void throwBomb()
     {
         float bombSpeed = Mathf.Lerp(bombMaxSpeed, bombMinSpeed, cFuse / bombFuse);
-        Debug.Log(bombSpeed);
+        //Debug.Log(bombSpeed);
         PlayerBomb bombInstance = Instantiate(BombPrefab, transform.position, Quaternion.identity);
         bombInstance.init(parent.GetPlayerToMouseAim(), bombSpeed, bombFuse, bombDamagePerTick, bombDamageTicks, explosionRadius );
         bAbilityOn = false;

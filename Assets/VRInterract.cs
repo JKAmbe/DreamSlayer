@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class VRInterract : MonoBehaviour
 {
-    [SerializeField] InputActionReference switchCharReference;
-    [SerializeField] InputActionReference fireReference;
-    [SerializeField] InputActionReference abilityReference;
+    [SerializeField] InputActionReference[] switchCharReference;
+    [SerializeField] InputActionReference[] fireReference;
+    [SerializeField] InputActionReference[] abilityReference;
     public CharacterSwitchController switchController;
 
     PlayerWeapon currentWeapon;
@@ -22,11 +22,22 @@ public class VRInterract : MonoBehaviour
         currentWeapon = switchController.currentCharacter.GetComponentInChildren<PlayerWeapon>();
         currentAbility = switchController.currentCharacter.GetComponentInChildren<SpecialAbility>();
 
-        switchCharReference.action.performed += switchCharacter;
-        fireReference.action.performed += fireWeapon;
-        fireReference.action.canceled += releaseWeapon;
-        abilityReference.action.performed += activateAbility;
-        abilityReference.action.canceled += deactivateAbility;
+        foreach (InputActionReference switchAction in switchCharReference)
+        {
+            switchAction.action.performed += switchCharacter;
+        }
+
+        foreach (InputActionReference fireAction in fireReference)
+        {
+            fireAction.action.performed += fireWeapon;
+            fireAction.action.canceled += releaseWeapon;
+        }
+
+        foreach (InputActionReference abilityReference in abilityReference)
+        {
+            abilityReference.action.performed += activateAbility;
+            abilityReference.action.canceled += deactivateAbility;
+        }
     }
     // Update is called once per frame
     void Update()

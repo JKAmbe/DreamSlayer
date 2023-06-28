@@ -73,7 +73,7 @@ public class PlayerBase : MonoBehaviour
     public float iFrameTime = 1.0f;
     float iframeCounter;
 
-    [Header("iFrame/Health")]
+    [Header("iFrame/VR")]
     bool VRActive = false;
     public GameObject VRInterract;
 
@@ -145,6 +145,11 @@ public class PlayerBase : MonoBehaviour
 
     public Vector3 GetPlayerToMouseAim()
     {
+        if (VRActive)
+        {
+            return (VRInterract.transform.forward);
+            
+        }
         return (cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, planeDistance)) - transform.position).normalized;
     }
 
