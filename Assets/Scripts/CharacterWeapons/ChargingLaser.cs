@@ -20,8 +20,9 @@ public class ChargingLaser : PlayerWeapon
     public AudioClip maxCharge;
     public AudioClip charging;
     // Start is called before the first frame update
-    void Start()
+    override public void Start()
     {
+        base.Start();
         totalDamage = damage;
         totalDamageFullCharge = damageFullCharge;
         AudSource = GetComponent<AudioSource>();
@@ -57,7 +58,8 @@ public class ChargingLaser : PlayerWeapon
                         FullchargeParticle.Play();
                     }
                 }
-                player.switchController.Reticle.PlayCrosshairAnimation();
+                if (player.switchController.Reticle)
+                    player.switchController.Reticle.PlayCrosshairAnimation();
             }
         }
     }
@@ -88,7 +90,8 @@ public class ChargingLaser : PlayerWeapon
         Destroy(projectileInstance, duration);
 
         cCharge = 0.0f;
-        player.switchController.Reticle.PlayCrosshairAnimation();
+        if (player.switchController.Reticle)
+            player.switchController.Reticle.PlayCrosshairAnimation();
         ChargeParticle.Stop();
         FullchargeParticle.Stop();
         animator.SetTrigger("trigShoot");

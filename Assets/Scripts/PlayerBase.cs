@@ -124,20 +124,20 @@ public class PlayerBase : MonoBehaviour
     }
     void Update()
     {
-        if (CharacterWeapon && Input.GetButton("Fire1"))
+        if (CharacterWeapon && Input.GetButton("Fire1") && !VRActive)
         {
             CharacterWeapon.WeaponFire();
         }
-        if (CharacterWeapon && Input.GetButtonUp("Fire1"))
+        if (CharacterWeapon && Input.GetButtonUp("Fire1") && !VRActive)
         {
             CharacterWeapon.WeaponRelease();
         }
 
-        if (CharacterSpecialAbility && Input.GetButton("Fire3"))
+        if (CharacterSpecialAbility && Input.GetButton("Fire3") && !VRActive)
         {
             CharacterSpecialAbility.useSpecialAbility();
         }
-        if (CharacterSpecialAbility && Input.GetButtonUp("Fire3"))
+        if (CharacterSpecialAbility && Input.GetButtonUp("Fire3") && !VRActive)
         {
             CharacterSpecialAbility.unuseSpecialAbility();
         }

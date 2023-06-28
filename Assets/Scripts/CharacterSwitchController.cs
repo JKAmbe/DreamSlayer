@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Management;
 using System;
 //using UnityEditor.UI;
 
 public class CharacterSwitchController : MonoBehaviour
 {
     public GameObject[] CharacterPrefabs;
-    GameObject currentCharacter;
+    public GameObject currentCharacter;
     Vector3 charPosition;
     public CameraFollow MainCamera;
     public AimingReticle Reticle;
     public GameoverUI gameoverUI;
+    bool VRActive = false;
 
     public int index;
 
@@ -20,13 +22,17 @@ public class CharacterSwitchController : MonoBehaviour
     {
         currentCharacter = CharacterPrefabs[0];
         ActivateCharacter(0);
+        if (XRGeneralSettings.Instance.Manager.activeLoader != null)
+        {
+            VRActive = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         // check input then switch character to the next one
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire2") && !VRActive)
         {
             SwitchCharacters();
         }
@@ -62,7 +68,7 @@ public class CharacterSwitchController : MonoBehaviour
     }
 
     // Cycle through and switch to different characters
-    void SwitchCharacters()
+    public void SwitchCharacters()
     {
         // Get the index of the currently active character
         index = Array.IndexOf(CharacterPrefabs, currentCharacter);
